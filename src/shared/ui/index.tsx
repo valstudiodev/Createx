@@ -1,0 +1,6 @@
+export { default as ButtonPagination } from '@/shared/ui/ButtonPagination/ui/ButtonPagination'
+export { default as SpinnerDefault } from '@/shared/ui/SpinnerDefault/ui/SpinnerDefault'
+export { default as SpinnerOpen } from '@/shared/ui/SpinnerOpen/ui/SpinnerOpen'
+export { default as Modal } from '@/shared/ui/Modal/ui/Modal'
+export { default as Search } from '@/shared/ui/Search/ui/Search'
+export { default as Toast } from '@/shared/ui/Toast/ui/Toast'

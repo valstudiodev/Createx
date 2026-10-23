@@ -1,0 +1,46 @@
+[data-theme='dark'] {
+  // Brand colors — unchanged
+  --color-white: #fff;
+  --color-primary: #ff3f3a;
+  --color-secondary: #ffcf2d;
+
+  --color-gray-300: #353945;
+  --color-gray-400: #424551;
+  --color-gray-500: #787a80;
+  --color-gray-600: #9a9ca5;
+  --color-gray-700: #b3b7bc;
+  --color-gray-800: #d7dadd;
+  --color-gray-900: #f0f1f4;
+
+  // Backgrounds
+  --color-background: #171923;
+  --color-surface: #1e212c;
+  --color-surface-hover: #292d3a;
+
+  // Gradients
+  --color-background-gradient: linear-gradient(56deg,
+      #ff3f3a 0%,
+      #f75e05 100%);
+
+  --color-btn-gradient: linear-gradient(56deg,
+      #ff3f3a 0%,
+      #f75e05 100%);
+
+  // Accents
+  --color-accent-pink: #f52f6e;
+  --color-accent-purple: #918cff;
+
+  // Status colors
+  --color-danger: #ff6262;
+  --color-success: #03cea4;
+  --color-warning: #ffb454;
+
+  // Borders and focus
+  --color-border: #353945;
+  --color-border-focus: rgba(255, 63, 58, 0.55);
+
+  // Shadows
+  --color-input-hover:
+    0 20px 40px -15px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}

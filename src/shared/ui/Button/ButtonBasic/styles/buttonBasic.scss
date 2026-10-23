@@ -1,0 +1,43 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.button-basic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: toRem(0.5);
+  text-align: center;
+  cursor: pointer;
+  border-radius: toRem(4);
+  transition: background-color 0.3s, color 0.3s;
+  border: toRem(1) solid var(--color-primary);
+  background: var(--color-primary);
+
+
+  &--large {
+    @include adaptiveValue('font-size', 16, 14);
+    @include adaptiveValue('padding-inline', 40, 10);
+    @include adaptiveValue('min-height', 52, 40);
+  }
+
+  &--regular {
+    @include adaptiveValue('font-size', 14, 12);
+    @include adaptiveValue('padding-inline', 32, 15);
+    min-height: toRem(44);
+  }
+
+  &--small {
+    @include adaptiveValue('font-size', 12, 10);
+    @include adaptiveValue('padding-inline', 24, 10);
+    min-height: toRem(36);
+  }
+
+  @include hover {
+    background: transparent;
+    color: var(--color-primary);
+  }
+}

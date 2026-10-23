@@ -1,0 +1,1 @@
+export { default as Logo } from '@/shared/ui/logoCreatex/ui/Logo'

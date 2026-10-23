@@ -1,0 +1,396 @@
+@font-face {
+  font-family: 'iconfont';
+  src:
+    url('@/assets/fonts/icomoon.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class*="--icon-"]::before {
+  font-family: 'iconfont';
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+[class*="--icon-arrow"]::before {
+  content: "\e900";
+}
+
+[class*="--icon-arrow-ellipse"]::before {
+  content: "\e901";
+}
+
+[class*="--icon-arrow-point"]::before {
+  content: "\e902";
+}
+
+[class*="--icon-arrows"]::before {
+  content: "\e903";
+}
+
+[class*="--icon-arrows-circle"]::before {
+  content: "\e904";
+}
+
+[class*="--icon-arrows-circle"]::before {
+  content: "\e904";
+}
+
+[class*="--icon-arrows-square"]::before {
+  content: "\e905";
+}
+
+[class*="--icon-arrows-wide"]::before {
+  content: "\e906";
+}
+
+[class*="--icon-arrow-up-down"]::before {
+  content: "\e907";
+}
+
+[class*="--icon-arrow-watc"]::before {
+  content: "\e908";
+}
+
+[class*="--icon-arrow-wide"]::before {
+  content: "\e909";
+}
+
+[class*="--icon-at-sign"]::before {
+  content: "\e90a";
+}
+
+[class*="--icon-bag"]::before {
+  content: "\e90a";
+}
+
+[class*="--icon-ban"]::before {
+  content: "\e90a";
+}
+
+[class*="--icon-basket"]::before {
+  content: "\e90d";
+}
+
+[class*="--icon-behance"]::before {
+  content: "\e90f";
+}
+
+[class*="--icon-bell"]::before {
+  content: "\e911";
+}
+
+[class*="--icon-burger"]::before {
+  content: "\e912";
+}
+
+[class*="--icon-calendar"]::before {
+  content: "\e913";
+}
+
+[class*="--icon-card"]::before {
+  content: "\e914";
+}
+
+[class*="--icon-check"]::before {
+  content: "\e915";
+}
+
+[class*="--icon-circle-check"]::before {
+  content: "\e916";
+}
+
+[class*="--icon-circle-check-big"]::before {
+  content: "\e917";
+}
+
+[class*="--icon-circle-minus"]::before {
+  content: "\e918";
+}
+
+[class*="--icon-circle-play"]::before {
+  content: "\e919";
+}
+
+[class*="--icon-circle-watch"]::before {
+  content: "\e91a";
+}
+
+[class*="--icon-circleX"]::before {
+  content: "\e91b";
+}
+
+[class*="--icon-close-eye"]::before {
+  content: "\e91c";
+}
+
+[class*="--icon-delete"]::before {
+  content: "\e926";
+}
+
+[class*="--icon-dislike"]::before {
+  content: "\e927";
+}
+
+[class*="--icon-dribble"]::before {
+  content: "\e928";
+}
+
+[class*="--icon-facebook"]::before {
+  content: "\e929";
+}
+
+[class*="--icon-favorite"]::before {
+  content: "\e92a";
+}
+
+[class*="--icon-figma"]::before {
+  content: "\e92b";
+}
+
+[class*="--icon-file"]::before {
+  content: "\e92c";
+}
+
+[class*="--icon-filter"]::before {
+  content: "\e92d";
+}
+
+[class*="--icon-github"]::before {
+  content: "\e92e";
+}
+
+[class*="--icon-gitlab"]::before {
+  content: "\e92f";
+}
+
+[class*="--icon-google"]::before {
+  content: "\e930";
+}
+
+[class*="--icon-google-hanguts"]::before {
+  content: "\e931";
+}
+
+[class*="--icon-grid"]::before {
+  content: "\e932";
+}
+
+[class*="--icon-hanger"]::before {
+  content: "\e933";
+}
+
+[class*="--icon-home"]::before {
+  content: "\e934";
+}
+
+[class*="--icon-info"]::before {
+  content: "\e936";
+}
+
+[class*="--icon-instagram"]::before {
+  content: "\e937";
+}
+
+[class*="--icon-instagram-filled"]::before {
+  content: "\e938";
+}
+
+[class*="--icon-like"]::before {
+  content: "\e939";
+}
+
+[class*="--icon-linkedin"]::before {
+  content: "\e93b";
+}
+
+[class*="--icon-location-dark"]::before {
+  content: "\e93c";
+}
+
+[class*="--icon-location-white"]::before {
+  content: "\e93d";
+}
+
+[class*="--icon-locked"]::before {
+  content: "\e93e";
+}
+
+[class*="--icon-login"]::before {
+  content: "\e93f";
+}
+
+[class*="--icon-login-square"]::before {
+  content: "\e940";
+}
+
+[class*="--icon-mail"]::before {
+  content: "\e941";
+}
+
+[class*="--icon-mail-open"]::before {
+  content: "\e942";
+}
+
+[class*="--icon-message-circle"]::before {
+  content: "\e943";
+}
+
+[class*="--icon-message-square"]::before {
+  content: "\e944";
+}
+
+[class*="--icon-messanger"]::before {
+  content: "\e945";
+}
+
+[class*="--icon-microphpne"]::before {
+  content: "\e946";
+}
+
+[class*="--icon-mute"]::before {
+  content: "\e948";
+}
+
+[class*="--icon-octagon-alert"]::before {
+  content: "\e949";
+}
+
+[class*="--icon-open-eye"]::before {
+  content: "\e94b";
+}
+
+[class*="--icon-open-lock"]::before {
+  content: "\e94c";
+}
+
+[class*="--icon-panels"]::before {
+  content: "\e94d";
+}
+
+[class*="--icon-pannels-column"]::before {
+  content: "\e94e";
+}
+
+[class*="--icon-paperclip"]::before {
+  content: "\e94f";
+}
+
+[class*="--icon-paypal"]::before {
+  content: "\e950";
+}
+
+[class*="--icon-pinterest"]::before {
+  content: "\e951";
+}
+
+[class*="--icon-plus"]::before {
+  content: "\e952";
+}
+
+[class*="--icon-rss"]::before {
+  content: "\e953";
+}
+
+[class*="--icon-search"]::before {
+  content: "\e954";
+}
+
+[class*="--icon-share"]::before {
+  content: "\e955";
+}
+
+[class*="--icon-shevron"]::before {
+  content: "\e956";
+}
+
+[class*="--icon-shield-check"]::before {
+  content: "\e957";
+}
+
+[class*="--icon-skype"]::before {
+  content: "\e958";
+}
+
+[class*="--icon-slack"]::before {
+  content: "\e95a";
+}
+
+[class*="--icon-slack-filled"]::before {
+  content: "\e95b";
+}
+
+[class*="--icon-smarthone"]::before {
+  content: "\e95c";
+}
+
+[class*="--icon-star"]::before {
+  content: "\e95d";
+}
+
+[class*="--icon-stripe"]::before {
+  content: "\e95e";
+}
+
+[class*="--icon-telegram"]::before {
+  content: "\e95f";
+}
+
+[class*="--icon-triangle-alert"]::before {
+  content: "\e960";
+}
+
+[class*="--icon-tumbir"]::before {
+  content: "\e961";
+}
+
+[class*="--icon-twitch"]::before {
+  content: "\e962";
+}
+
+[class*="--icon-twitter"]::before {
+  content: "\e963";
+}
+
+[class*="--icon-user"]::before {
+  content: "\e964";
+}
+
+[class*="--icon-viber"]::before {
+  content: "\e965";
+}
+
+[class*="--icon-vimeo"]::before {
+  content: "\e966";
+}
+
+[class*="--icon-volume"]::before {
+  content: "\e967";
+}
+
+[class*="--icon-volume-2"]::before {
+  content: "\e968";
+}
+
+[class*="--icon-volume-off"]::before {
+  content: "\e969";
+}
+
+[class*="--icon-wallet"]::before {
+  content: "\e96a";
+}
+
+[class*="--icon-whatsapp"]::before {
+  content: "\e96b";
+}
+
+[class*="--icon-youtube"]::before {
+  content: "\e96c";
+}
+
+[class*="--icon-minus"]::before {
+  content: "\e93a";
+}

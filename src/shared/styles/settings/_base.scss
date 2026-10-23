@@ -1,0 +1,39 @@
+@use "sass:math";
+@use '@/shared/styles/settings/settings' as *;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900,);
+
+// variables fonts
+:root {
+  --font-primary: 'Lato', sans-serif;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  background-color: var(--color-white);
+  color: var(--color-gary-800);
+}
+
+[class*="__container"] {
+  max-width: toRem($containerWidth);
+  padding-inline: toRem(math.div($containerPadding, 2));
+  margin: 0 auto;
+}
+
+html[data-menu-open='true'] {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}

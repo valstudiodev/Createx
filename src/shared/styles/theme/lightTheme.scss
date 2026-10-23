@@ -1,0 +1,73 @@
+:root {
+  --color-white: #fff;
+  --color-primary: #FF3F3A;
+  --color-secondary: #FFCF2D;
+
+  --color-gray-300: #E5E8ED;
+  --color-gray-400: #D7DADD;
+  --color-gray-500: #B3B7BC;
+  --color-gray-600: #9A9CA5;
+  --color-gray-700: #787A80;
+  --color-gray-800: #424551;
+  --color-gray-900: #1E212C;
+
+  --color-background-gradient: linear-gradient(56deg,
+      #FF3F3A 0%,
+      #F75E05 100%);
+
+  --color-accent-pink: #F52F6E;
+  --color-accent-purple: #7772F1;
+
+  --color-danger: #FF4242;
+  --color-success: #03CEA4;
+  --color-warning: #F89828;
+
+  --color-border: #D7DADD;
+  --color-border-focus: rgba(255, 63, 58, 0.40);
+
+  --color-btn-gradient: linear-gradient(56deg, #FF3F3A 0%, #F75E05 100%);
+
+  --color-input-hover:
+    0 80px 80px -20px rgba(255, 63, 58, 0.08),
+    0 30px 24px -10px rgba(255, 63, 58, 0.05),
+    0 12px 10px -6px rgba(255, 63, 58, 0.04),
+    0 4px 4px -4px rgba(30, 33, 44, 0.03);
+}
+
+
+// [data-theme='light'] {
+
+//   --color-white: #fff;
+//   --color-primary: #FF3F3A;
+//   --color-secondary: #FFCF2D;
+
+//   --color-gray-300: #E5E8ED;
+//   --color-gray-400: #D7DADD;
+//   --color-gray-500: #B3B7BC;
+//   --color-gray-600: #9A9CA5;
+//   --color-gray-700: #787A80;
+//   --color-gray-800: #424551;
+//   --color-gray-900: #1E212C;
+
+//   --color-background-gradient: linear-gradient(56deg,
+//       #FF3F3A 0%,
+//       #F75E05 100%);
+
+//   --color-accent-pink: #F52F6E;
+//   --color-accent-purple: #7772F1;
+
+//   --color-danger: #FF4242;
+//   --color-success: #03CEA4;
+//   --color-warning: #F89828;
+
+//   --color-border: #D7DADD;
+//   --color-border-focus: rgba(255, 63, 58, 0.40);
+
+//   --color-btn-gradient: linear-gradient(56deg, #FF3F3A 0%, #F75E05 100%);
+
+//   --color-input-hover:
+//     0 80px 80px -20px rgba(255, 63, 58, 0.08),
+//     0 30px 24px -10px rgba(255, 63, 58, 0.05),
+//     0 12px 10px -6px rgba(255, 63, 58, 0.04),
+//     0 4px 4px -4px rgba(30, 33, 44, 0.03);
+// }

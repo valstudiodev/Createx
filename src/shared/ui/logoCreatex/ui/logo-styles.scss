@@ -1,0 +1,11 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.logo {
+  flex-shrink: 0;
+  z-index: 10;
+  @include adaptiveValue('width', 130, 100);
+
+  &__img {}
+}

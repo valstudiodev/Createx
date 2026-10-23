@@ -1,0 +1,1 @@
+export { default as ButtonBasic } from '@/shared/ui/Button/ButtonBasic/ui/ButtonBasic'
