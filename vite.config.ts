@@ -6,7 +6,7 @@ import path from "path";
 export default defineConfig(() => {
   const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages'
   return {
-    base: isGitHubPages ? '/createx/' : '/',
+    base: isGitHubPages ? '/Createx/' : '/',
     plugins: [
       react(),
       tailwindcss()

@@ -1,6 +1,6 @@
 import { Container, Section } from '@/shared/primitives';
 import '../styles/coursesPage.scss';
-import { Link, Outlet } from 'react-router';
+import { Link } from 'react-router';
 import { routeMap } from '@/app/routes/routeMap';
 
 function CoursesPage(): React.JSX.Element {
