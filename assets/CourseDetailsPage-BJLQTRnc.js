@@ -1,0 +1,1 @@
+import{n as e,r as t}from"./index-B3nUJELI.js";import{t as n}from"./Section-CaSnx8dz.js";import"./primitives-Db-rw3c1.js";var r=t();function i(){let t=`course-details-page`;return(0,r.jsx)(n,{className:t,children:(0,r.jsx)(e,{className:`${t}__container`,children:(0,r.jsx)(`h1`,{children:`Course details page`})})})}export{i as default};
