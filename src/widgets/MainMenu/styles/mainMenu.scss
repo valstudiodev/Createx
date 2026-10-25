@@ -56,6 +56,11 @@ html[data-menu-open='true'] {
   &__link {
     text-transform: capitalize;
     @include adaptiveValue('font-size', 16, 14);
+    transition: color 0.3s;
+
+    @include hover {
+      color: var(--color-primary);
+    }
 
     @media (max-width: toEm(768)) {
       font-size: toRem(24);
@@ -72,12 +77,20 @@ html[data-menu-open='true'] {
     z-index: 5;
     @include adaptiveValue('gap', 36, 10);
 
+    @media (max-width: toEm(980)) {
+      flex-grow: 1;
+    }
+
     @media (max-width: toEm(530)) {
       width: 100%;
     }
   }
 
   &__btn {
+    @media (max-width: toEm(980)) {
+      flex-grow: 1;
+    }
+
     @media (max-width: toEm(530)) {
       width: 100%;
     }

@@ -9,7 +9,8 @@ function HomePage(): React.JSX.Element {
     <Section className={homePage}>
       <Container className={`${homePage}__container`}>
         <h1>Home page</h1>
-        <span className='icon--icon-minus'></span>
+
+
       </Container>
     </Section>
   );

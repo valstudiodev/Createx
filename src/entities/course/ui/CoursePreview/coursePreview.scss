@@ -1,0 +1,92 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.course-card-preview {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  box-shadow: var(--color-box-shadow);
+  border: toRem(1) solid var(--color-border);
+  border-radius: toRem(4);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  will-change: box-shadow;
+
+  @media (max-width: toEm(550)) {
+    flex-direction: column;
+  }
+
+  &__image {
+    overflow: hidden;
+    aspect-ratio: 1;
+    width: toRem(214);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: toEm(550)) {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    @include adaptiveValue('padding', 32, 10);
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue('gap', 20, 10);
+    align-items: flex-start;
+
+    @media (max-width: toEm(550)) {
+      width: 100%;
+    }
+  }
+
+  &__category {
+    @include adaptiveValue('font-size', 14, 12);
+    text-transform: capitalize;
+    padding-inline: toRem(8);
+    border-radius: toRem(4);
+    height: toRem(23);
+    text-align: center;
+    align-content: center;
+  }
+
+  &__title {
+    @include adaptiveValue('font-size', 20, 18);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    text-transform: capitalize;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+  }
+
+  &__price {
+    @include adaptiveValue('font-size', 18, 16);
+    font-weight: 700;
+    color: var(--color-danger);
+  }
+
+  &__teacher {
+    display: flex;
+    align-items: center;
+    gap: toRem(2);
+
+    span {
+      color: var(--color-gray-700)
+    }
+  }
+
+  &__teacher-name {}
+
+  @include hover {
+    box-shadow: var(--color-box-shadow-hover);
+  }
+}

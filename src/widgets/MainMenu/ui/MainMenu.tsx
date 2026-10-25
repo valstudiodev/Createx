@@ -96,7 +96,7 @@ function MainMenu({
         <ButtonBasic
           type='button'
           size='large'
-          className={`${classMainMenu}__btn`}
+          className={`${classMainMenu}__btn ${classMainMenu}__btn`}
         >
           Get consultation
         </ButtonBasic>

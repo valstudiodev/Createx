@@ -1,0 +1,14 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.course-list {
+  @include grid-adaptive($size: toRem(350));
+  gap: toRem(30);
+
+  &__item {
+    height: 100%;
+  }
+
+}

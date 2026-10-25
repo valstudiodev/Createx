@@ -11,5 +11,8 @@ export type ButtonBaseProps = {
   type?: ButtonBaseType;
   className?: string;
   children?: React.ReactNode;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  icon?: React.ReactNode;
   to?: LinkProps['to'];
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'className' | 'children'>;
