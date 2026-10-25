@@ -1,0 +1,1 @@
+import{n as e,r as t}from"./index-CDR9diJG.js";import{t as n}from"./Section-DWeuZvOU.js";var r=t();function i(){let t=`home-page`;return(0,r.jsx)(n,{className:t,children:(0,r.jsx)(e,{className:`${t}__container`,children:(0,r.jsx)(`h1`,{children:`Home page`})})})}export{i as default};

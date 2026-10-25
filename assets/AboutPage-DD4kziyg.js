@@ -1,1 +1,0 @@
-import{n as e,r as t}from"./index-CCnHfo2h.js";import{t as n}from"./Section-B64PaIs4.js";import"./primitives-I3ozvIb_.js";var r=t();function i(){let t=`about-page`;return(0,r.jsx)(n,{className:t,children:(0,r.jsx)(e,{className:`${t}__container`,children:(0,r.jsx)(`h1`,{children:`About page`})})})}export{i as default};
