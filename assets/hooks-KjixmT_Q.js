@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./index-BIiMfGBR.js";var n=()=>e(),r=t;export{r as n,n as t};

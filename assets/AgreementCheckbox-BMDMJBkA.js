@@ -1,0 +1,1 @@
+import{g as e}from"./index-BIiMfGBR.js";var t=e();function n({text:e,className:n=``}){let r=`agreement-checkbox`;return(0,t.jsxs)(`label`,{className:`${r} ${n}`,children:[(0,t.jsx)(`input`,{type:`checkbox`,required:!0,className:`${r}__check`}),(0,t.jsx)(`p`,{className:`${r}__text`,children:e})]})}export{n as t};

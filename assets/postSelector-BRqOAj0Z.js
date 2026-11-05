@@ -1,0 +1,1 @@
+var e=e=>e.posts.posts,t=e=>e.posts.singlePost,n=e=>e.posts.postsLoading,r=e=>e.posts.postLoading,i=e=>e.posts.postsError,a=e=>e.posts.postError;export{n as a,i,r as n,t as o,e as r,a as t};

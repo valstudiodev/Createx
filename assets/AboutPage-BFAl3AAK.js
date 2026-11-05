@@ -1,0 +1,1 @@
+import{g as e,h as t}from"./index-BIiMfGBR.js";import{t as n}from"./primitives-EIIrNSSG.js";var r=e();function i(){let e=`about-page`;return(0,r.jsx)(n,{className:e,children:(0,r.jsx)(t,{className:`${e}__container`})})}export{i as default};
