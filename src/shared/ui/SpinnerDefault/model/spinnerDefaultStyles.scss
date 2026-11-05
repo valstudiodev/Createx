@@ -1,3 +1,5 @@
+@use '@/shared/styles/theme/lightTheme' as *;
+
 .spinner-container {
   display: inline-flex;
   align-items: center;
@@ -29,7 +31,7 @@
     width: var(--spinner-size);
     height: var(--spinner-size);
     border: var(--border-width) solid rgba(255, 255, 255, 0.2);
-    border-top-color: #00ff66;
+    border-top-color: var(--color-primary);
     border-radius: 50%;
     animation: spinner-rotate 0.8s linear infinite;
   }

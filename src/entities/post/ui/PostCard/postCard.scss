@@ -1,0 +1,86 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.post-card {
+  width: toRem(390);
+  overflow: hidden;
+
+  &__inner {
+    // overflow: hidden;
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 390 / 300;
+    border-radius: toRem(4);
+    overflow: hidden;
+    transition: scale 0.3s ease-in-out;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: toRem(4);
+    position: absolute;
+    top: toRem(12);
+    left: toRem(12);
+    background-color: var(--color-white);
+    padding-inline: toRem(8);
+    padding-block: toRem(1);
+    border-radius: toRem(4);
+  }
+
+  &__body {}
+
+  &__title {
+    @include adaptiveValue('font-size', 20, 18);
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  &__info {}
+
+  &__category {}
+
+  @include hover {
+    .post-card__image {
+      // scale: 1.1;
+    }
+  }
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: toRem(24);
+
+  &__icon {}
+
+  &__category {
+    font-weight: 700;
+    color: var(--color-gray-700);
+    text-transform: capitalize;
+  }
+
+  &__label {}
+
+  &__category {}
+
+  &__date {}
+
+  &__duration {}
+
+  &__content {}
+
+  &__title {}
+
+  &__text {}
+}

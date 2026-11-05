@@ -1,0 +1,1 @@
+export { default as CourseCreateForm } from '@/features/course/create-course/ui/CourseCreateForm'

@@ -3,12 +3,14 @@ import './logo-styles.scss';
 import LogoCreatex from "@/shared/ui/logoCreatex/assets/logo.svg";
 import { routeMap } from '@/app/routes/routeMap';
 
-function Logo(): React.JSX.Element {
+function Logo({
+  className = ''
+}: { className?: string }): React.JSX.Element {
   const logo = 'logo'
   return (
     <Link
       to={routeMap.home.path}
-      className={logo}
+      className={`${logo} ${className}`}
       aria-label="Createx — home"
     >
       <img

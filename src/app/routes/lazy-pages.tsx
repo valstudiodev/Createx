@@ -9,5 +9,10 @@ export const LazySinglePostPage = lazy(() => import('@/pages/SinglePostPage/ui/S
 export const LazyBlogPage = lazy(() => import('@/pages/Blog-page/ui/BlogPage'));
 export const LazyCourseDetailsPage = lazy(() => import('@/pages/CourseDetailsPage/ui/CourseDetailsPage'));
 export const LazyEventDetailsPage = lazy(() => import('@/pages/EventDetailsPage/ui/EventsDetailsPage'));
+export const LazyAdminLayout = lazy(() => import('@/widgets/AdminLayout/ui/AdminLayout'));
+export const LazyAdminDashboard = lazy(() => import('@/widgets/Admin/AdminDashboard/AdminDashboard'));
+export const LazyAdminCoursesPage = lazy(() => import('@/pages/Admin/Admin-courses/ui/AdminCoursesPage'));
+export const LazyAdminPosts = lazy(() => import('@/pages/Admin/Admin-posts/AdminPosts'));
+export const LazyAdminEvents = lazy(() => import('@/pages/Admin/Admin-events/AdminEvents'));
 export const LazyPage404 = lazy(() => import('@/pages/Page404/ui/Page404'))
 export const LazyErrorPage = lazy(() => import('@/pages/ErrorPage/ui/ErrorPage'))

@@ -1,0 +1,32 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.compact-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include adaptiveValue('gap', 30, 15);
+  background-color: var(--color-btn-gradient);
+  @include adaptiveValue('padding-inline', 100, 20);
+  @include adaptiveValue('padding-block', 60, 20);
+
+  &__image {
+    flex: 0 1 40%;
+
+    @media (max-width: toEm(920)) {
+      display: none;
+      flex: 100%;
+    }
+  }
+
+  &__body {}
+
+  &__title {
+    max-width: toRem(600);
+    @include adaptiveValue('font-size', 32, 20);
+    @include adaptiveValue('margin-bottom', 48, 20);
+  }
+
+  &__subscribe {}
+}

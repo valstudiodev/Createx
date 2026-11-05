@@ -1,0 +1,119 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-700);
+  @include adaptiveValue('padding-top', 80, 30);
+  @include adaptiveValue('padding-bottom', 60, 30);
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include adaptiveValue('gap', 20, 10);
+    flex-wrap: wrap;
+
+    @media (max-width: toEm(541)) {
+      row-gap: toRem(30);
+    }
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue('gap', 24, 12);
+
+  &__logo {
+    color: var(--color-white);
+
+  }
+
+  &__text {
+    max-width: toRem(280);
+    font-size: toRem(12);
+  }
+
+  @media (max-width: toEm(541)) {
+    width: 100%;
+
+    .footer-brand__text {
+      max-width: 100%;
+    }
+  }
+}
+
+.footer-contacts {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+  }
+
+  &__item {}
+
+  &__link {}
+
+  @media (max-width: toEm(702)) {
+    width: 100%;
+  }
+}
+
+.footer-newsletter {
+  max-width: toRem(286);
+
+  &__text {
+    color: var(--color-white);
+    font-size: toRem(10);
+  }
+
+  @media (max-width: toEm(1037)) {
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+
+.footer-column {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+  }
+
+  &__link {
+    line-height: 1.6;
+    transition: color 0.3s;
+
+    @include hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.footer-menu {
+  display: flex;
+  @include adaptiveValue('gap', 80, 20);
+
+  &__column {}
+
+  @media (max-width: toEm(1037)) {
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: toEm(541)) {
+    justify-content: flex-start;
+  }
+}
+
+.footer-title {
+  color: var(--color-white);
+  @include adaptiveValue('font-size', 16, 14);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: toRem(1);
+  margin-bottom: toRem(12);
+}

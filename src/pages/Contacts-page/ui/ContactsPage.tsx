@@ -1,12 +1,15 @@
 import { Container, Section } from '@/shared/primitives';
 import '../styles/contactsPage.scss';
+import ContactFormWrap from '@/widgets/Contacts/ContactFormWrap/ContactFormWrap';
+import ContactGetInTouch from '@/widgets/Contacts/ContactGetInTouch/ContactGetInTouct';
 
 function ContactsPage(): React.JSX.Element {
   const contactsPage = 'contacts-page'
   return (
     <Section className={contactsPage}>
       <Container className={`${contactsPage}__container`}>
-        <h1>Contacts page</h1>
+        <ContactGetInTouch />
+        <ContactFormWrap />
       </Container>
     </Section>
   );

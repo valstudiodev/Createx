@@ -15,8 +15,25 @@
   border-radius: toRem(4);
   transition: background-color 0.3s, color 0.3s;
   border: toRem(1) solid var(--color-primary);
-  background: var(--color-primary);
 
+  &--primary {
+    background: var(--color-primary);
+
+    @include hover {
+      background: transparent;
+      color: var(--color-primary);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+
+    @include hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
 
   &--large {
     @include adaptiveValue('font-size', 16, 14);
@@ -34,10 +51,5 @@
     @include adaptiveValue('font-size', 12, 10);
     @include adaptiveValue('padding-inline', 24, 10);
     min-height: toRem(36);
-  }
-
-  @include hover {
-    background: transparent;
-    color: var(--color-primary);
   }
 }

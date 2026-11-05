@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { LazyAboutPage, LazyBlogPage, LazyContactsPage, LazyCourseDetailsPage, LazyCoursesPage, LazyEventDetailsPage, LazyEventsPage, LazyHomePage, LazyPage404, LazySinglePostPage } from "./lazy-pages";
+import { LazyAboutPage, LazyAdminCoursesPage, LazyAdminDashboard, LazyAdminEvents, LazyAdminLayout, LazyAdminPosts, LazyBlogPage, LazyContactsPage, LazyCourseDetailsPage, LazyCoursesPage, LazyEventDetailsPage, LazyEventsPage, LazyHomePage, LazyPage404, LazySinglePostPage } from "./lazy-pages";
 import { createBrowserRouter } from "react-router";
 import MainLayout from "@/widgets/MainLayout/ui/MainLayout";
 import ErrorPage from "@/pages/ErrorPage/ui/ErrorPage";
@@ -127,6 +127,54 @@ export const routes = [
         meta: {
           id: 'page-404'
         }
+      }
+    ]
+  },
+  {
+    path: 'admin',
+    id: 'admin',
+    element: (
+      <Suspense>
+        <LazyAdminLayout />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        id: 'admin-dashboard',
+        element: (
+          <Suspense>
+            <LazyAdminDashboard />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'courses',
+        id: 'admin-courses',
+        element: (
+          <Suspense>
+            <LazyAdminCoursesPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'posts',
+        id: 'admin-posts',
+        element: (
+          <Suspense>
+            <LazyAdminPosts />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'events',
+        id: 'admin-events',
+        element: (
+          <Suspense>
+            <LazyAdminEvents />
+          </Suspense>
+        ),
       }
     ]
   }

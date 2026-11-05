@@ -1,0 +1,151 @@
+{
+  "footer": {
+    "siteMap": {
+      "title": "SITE MAP",
+      "links": {
+        "aboutUs": "About Us",
+        "courses": "Courses",
+        "events": "Events",
+        "blog": "Blog",
+        "contacts": "Contacts"
+      }
+    },
+    "courses": {
+      "title": "COURSES",
+      "links": {
+        "marketing": "Marketing",
+        "management": "Management",
+        "hrRecruiting": "HR & Recruiting",
+        "design": "Design",
+        "development": "Development"
+      }
+    },
+    "contactUs": {
+      "title": "CONTACT US"
+    },
+    "newsletter": {
+      "title": "SIGN UP TO OUR NEWSLETTER",
+      "description": "*Subscribe to our newsletter to receive communications and early updates from Createx SEO Agency."
+    },
+    "description": "Createx Online School is a leader in online studying. We have lots of courses and programs from the main market experts. We provide relevant approaches to online learning, internships and employment in the largest companies in the country."
+  },
+  "common": {
+    "goToTop": "GO TO TOP",
+    "submitting": "Submitting...",
+    "submit": "Submit"
+  },
+  "buttons": {
+    "joinCourse": "Join the course",
+    "joinEvent": "Join the event",
+    "getConsultation": "Get consultation",
+    "aboutUs": "About us",
+    "exploreCourses": "Explore courses",
+    "sending": "Sending...",
+    "sendMessage": "Send message",
+    "moreAboutUs": "More about us"
+  },
+  "submitForm": {
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Your full name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Your working email"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Your phone number"
+    }
+  },
+  "forms": {
+    "validation": {
+      "name": {
+        "required": "Name is required",
+        "min": "Name must contain at least 2 characters"
+      },
+      "email": {
+        "required": "Email is required",
+        "invalid": "Enter a valid email address"
+      },
+      "phone": {
+        "required": "Phone number is required",
+        "invalid": "Enter a valid phone number"
+      },
+      "lastName": {
+        "required": "Last name is required",
+        "min": "Last name must contain at least 2 characters"
+      },
+      "message": {
+        "required": "Message is required",
+        "min": "Message must contain at least 10 characters"
+      }
+    },
+    "agreements": {
+      "communications": "I agree to receive communications from Createx Online School."
+    }
+  },
+  "contactForm": {
+    "firstName": {
+      "label": "First name*",
+      "placeholder": "Your first name"
+    },
+    "lastName": {
+      "label": "Last name*",
+      "placeholder": "Your last name"
+    },
+    "email": {
+      "label": "Email*",
+      "placeholder": "Your working email"
+    },
+    "phone": {
+      "label": "Phone*",
+      "placeholder": "Your phone number"
+    },
+    "message": {
+      "label": "Message*",
+      "placeholder": "Your message"
+    }
+  },
+  "messages": {
+    "requestSuccess": "Your request was created successfully!",
+    "courseRegistrationSuccess": "Your course registration was created successfully!",
+    "error": "Something went wrong!",
+    "messageSent": "Your message has been sent successfully!",
+    "messageSendError": "Failed to send your message. Please try again."
+  },
+  "titles": {
+    "leaveRequest": "Leave a request",
+    "courseRegistration": "Register for the course",
+    "dropUsALine": "Drop us a line",
+    "getInTouch": "Get in touch",
+    "enjoyStudying": "Enjoy studying with Createx Online Courses",
+    "whyCreatex": "Why Createx?",
+    "howWeDoIt": "That’s how we do it",
+    "onlyPracticingTutors": "Only practicing tutors"
+  },
+  "labels": {
+    "leaveRequestDiscount": "Leave a request now and get 20% off!",
+    "eventReminder": "Don’t miss the event.",
+    "anyQuestions": "Any questions?",
+    "followUs": "Follow us",
+    "talkToUs": "Talk to us:",
+    "callUs": "Call us:",
+    "address": "Address:",
+    "contactInfo": "Contact info",
+    "whoWeAre": "Who we are",
+    "ourBenefits": "Our benefits"
+  },
+  "statistics": {
+    "studentsGraduated": "Students graduated",
+    "completedCourses": "Completed courses",
+    "qualifiedTutors": "Qualified tutors",
+    "yearsOfExperience": "Years of experience"
+  },
+  "advantages": {
+    "experiencedTutors": "Experienced Tutors",
+    "feedbackSupport": "Feedback & Support",
+    "onlineLibrary": "24/7 Online Library",
+    "community": "Community"
+  }
+}

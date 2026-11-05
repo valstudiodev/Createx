@@ -1,0 +1,34 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.contact-get-in-touch {
+  @include adaptiveValue('padding-top', 152, 120);
+  @include adaptiveValue('padding-bottom', 90, 30);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValue('gap', 30, 15);
+
+    @media (max-width: toEm(768)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info {
+    flex: 0 1 toRem(395);
+
+    @media (max-width: toEm(768)) {
+      flex: 100%;
+    }
+  }
+
+  &__map {
+    flex: 0 1 toRem(705);
+
+    @media (max-width: toEm(768)) {
+      flex: 100%;
+    }
+  }
+}

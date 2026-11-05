@@ -3,6 +3,7 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .logo {
+  display: inline-flex;
   flex-shrink: 0;
   z-index: 10;
   @include adaptiveValue('width', 130, 100);

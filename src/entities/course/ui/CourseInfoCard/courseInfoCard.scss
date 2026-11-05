@@ -1,0 +1,51 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.course-info-card {
+  max-width: toRem(495);
+  border: toRem(1) solid var(--color-border);
+  @include adaptiveValue('padding', 32, 16);
+  border-radius: toRem(4);
+  box-shadow: var(--color-box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include adaptiveValue('gap', 32, 16);
+
+  @media (max-width: toEm(768)) {
+    max-width: 100%;
+  }
+
+  &__wrap {}
+
+  &__label {
+    font-size: toRem(14);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: toRem(1);
+    color: var(--color-gray-900);
+    margin-bottom: toRem(4);
+  }
+
+  &__dates,
+  &__duration,
+  &__price {
+    @include adaptiveValue('font-size', 24, 20);
+    color: var(--color-primary);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: toRem(8);
+  }
+
+  &__text {}
+
+  &__duration {}
+
+  &__price {}
+
+  &__btn {
+    width: 100%;
+  }
+}

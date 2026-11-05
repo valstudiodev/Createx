@@ -28,8 +28,13 @@ export const routeMap = {
   ),
   blog: defineRoute('/blog'),
   singlePost: defineRoute(
-    '/blog/:postId',
+    '/blog/:id',
     (id: string | number) => `/blog/${id}`
   ),
-  contacts: defineRoute('/contacts')
+  contacts: defineRoute('/contacts'),
+  // admin
+  admin: defineRoute('/admin'),
+  adminProducts: defineRoute('/admin/courses'),
+  adminPosts: defineRoute('/admin/posts'),
+  adminEvents: defineRoute('/admin/events')
 } as const;

@@ -1,0 +1,101 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.subscribe-section {
+  position: relative;
+  isolation: isolate;
+
+  @include adaptiveValue('padding-top', 120, 30);
+  @include adaptiveValue('padding-bottom', 180, 40);
+
+  &__inner {
+    isolation: isolate;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include adaptiveValue('gap', 60, 20);
+  }
+
+  // Default variant
+  &--default {
+    .subscribe-section__inner {
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: var(--color-bg-gradient);
+        opacity: 0.2;
+        pointer-events: none;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      @include adaptiveValue('width', 354, 200);
+      @include adaptiveValue('height', 246, 140);
+      background-image: url('../assets/subscribe-decor.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    @media (max-width: toEm(1135)) {
+
+      &::before,
+      &::after {
+        opacity: 0.5;
+      }
+    }
+
+    @media (max-width: toEm(630)) {
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // Newsletter variant
+  &--newsletter {
+    .subscribe-section__inner {
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background-color: var(--color-gray-200);
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: toEm(768)) {
+    &__container {
+      gap: 30px;
+    }
+  }
+}

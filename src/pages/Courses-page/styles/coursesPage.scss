@@ -2,6 +2,9 @@
 @use '@/shared/styles/abstracts/input-mixins' as *;
 
 .courses-page {
+  padding-block: toRem(300);
 
   &__container {}
+
+  &__loading {}
 }

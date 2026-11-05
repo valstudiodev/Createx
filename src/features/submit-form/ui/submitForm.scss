@@ -1,0 +1,78 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.submit-form {
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: toRem(8);
+    width: 100%;
+  }
+
+  &__label {
+    @include adaptiveValue('font-size', 16, 14);
+    color: var(--color-gray-800);
+    line-height: 1.6;
+  }
+
+  &__input {
+    border: toRem(1) solid var(--color-border);
+    border-radius: toRem(4);
+    background-color: var(--color-white);
+    padding-block: toRem(13);
+    padding-left: toRem(16);
+    height: toRem(52);
+    width: 100%;
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      line-height: 1.6;
+      color: var(--color-gray-600);
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    @include hover {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: toRem(24);
+    width: 100%;
+    @include adaptiveValue('margin-bottom', 40, 20);
+  }
+
+  &__btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    @include adaptiveValue('padding-inline', 40, 20);
+    width: 100%;
+    border-radius: toRem(4);
+    border: toRem(1) solid var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    height: toRem(52);
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-primary);
+    }
+  }
+
+  &__error {
+    color: var(--color-danger);
+  }
+}

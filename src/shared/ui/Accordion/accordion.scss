@@ -1,0 +1,69 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+
+.accordion {}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include adaptiveValue('gap', 16, 10);
+
+  &__btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+
+    @media (max-width: toEm(585)) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('gap', 20, 10);
+  }
+
+  &__icon {
+    font-size: toRem(24);
+  }
+
+  &__label {
+    @include adaptiveValue('font-size', 20, 18);
+    color: var(--color-primary);
+  }
+
+  &__title {
+    @include adaptiveValue('font-size', 20, 18);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    text-align: left;
+  }
+
+  &__content {
+    min-height: 0;
+    overflow: hidden;
+
+    .accordion-item__content-wrapper {}
+  }
+
+  &__content-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 0.35s ease,
+      opacity 0.3s ease;
+
+    &[data-state='open'] {
+      grid-template-rows: 1fr;
+      min-height: 100%;
+      opacity: 1;
+    }
+  }
+}

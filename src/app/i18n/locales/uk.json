@@ -1,0 +1,151 @@
+{
+  "footer": {
+    "siteMap": {
+      "title": "КАРТА САЙТУ",
+      "links": {
+        "aboutUs": "Про нас",
+        "courses": "Курси",
+        "events": "Події",
+        "blog": "Блог",
+        "contacts": "Контакти"
+      }
+    },
+    "courses": {
+      "title": "КУРСИ",
+      "links": {
+        "marketing": "Маркетинг",
+        "management": "Менеджмент",
+        "hrRecruiting": "HR та рекрутинг",
+        "design": "Дизайн",
+        "development": "Розробка"
+      }
+    },
+    "contactUs": {
+      "title": "ЗВ'ЯЖІТЬСЯ З НАМИ"
+    },
+    "newsletter": {
+      "title": "ПІДПИШІТЬСЯ НА НАШУ РОЗСИЛКУ",
+      "description": "Підпишіться на нашу розсилку, щоб отримувати новини та першими дізнаватися про оновлення від SEO-агенції Createx."
+    },
+    "description": "Createx Online School — лідер у сфері онлайн-навчання. Ми пропонуємо широкий вибір курсів і програм від провідних експертів ринку. Ми забезпечуємо сучасні підходи до онлайн-навчання, стажування та працевлаштування в найбільших компаніях країни."
+  },
+  "common": {
+    "goToTop": "НА ПОЧАТОК",
+    "submitting": "Відправлення...",
+    "submit": "Відправити"
+  },
+  "buttons": {
+    "joinCourse": "Записатися на курс",
+    "joinEvent": "Приєднатися до події",
+    "getConsultation": "Отримати консультацію",
+    "aboutUs": "Про нас",
+    "exploreCourses": "Переглянути курси",
+    "sending": "Відправлення...",
+    "sendMessage": "Надіслати повідомлення",
+    "moreAboutUs": "Більше про нас"
+  },
+  "submitForm": {
+    "name": {
+      "label": "Повне ім'я",
+      "placeholder": "Ваше повне ім'я"
+    },
+    "email": {
+      "label": "Електронна пошта",
+      "placeholder": "Ваша робоча електронна пошта"
+    },
+    "phone": {
+      "label": "Телефон",
+      "placeholder": "Ваш номер телефону"
+    }
+  },
+  "forms": {
+    "validation": {
+      "name": {
+        "required": "Введіть ім'я",
+        "min": "Ім'я повинно містити щонайменше 2 символи"
+      },
+      "email": {
+        "required": "Введіть електронну пошту",
+        "invalid": "Введіть коректну адресу електронної пошти"
+      },
+      "phone": {
+        "required": "Введіть номер телефону",
+        "invalid": "Введіть коректний номер телефону"
+      },
+      "lastName": {
+        "required": "Введіть прізвище",
+        "min": "Прізвище повинно містити щонайменше 2 символи"
+      },
+      "message": {
+        "required": "Введіть повідомлення",
+        "min": "Повідомлення повинно містити щонайменше 10 символів"
+      }
+    },
+    "agreements": {
+      "communications": "Я погоджуюся отримувати інформаційні повідомлення від Createx Online School."
+    }
+  },
+  "contactForm": {
+    "firstName": {
+      "label": "Ім'я*",
+      "placeholder": "Ваше ім'я"
+    },
+    "lastName": {
+      "label": "Прізвище*",
+      "placeholder": "Ваше прізвище"
+    },
+    "email": {
+      "label": "Електронна пошта*",
+      "placeholder": "Ваша робоча електронна пошта"
+    },
+    "phone": {
+      "label": "Телефон*",
+      "placeholder": "Ваш номер телефону"
+    },
+    "message": {
+      "label": "Повідомлення*",
+      "placeholder": "Ваше повідомлення"
+    }
+  },
+  "messages": {
+    "requestSuccess": "Ваш запит успішно створено!",
+    "courseRegistrationSuccess": "Ваша реєстрація на курс успішно оформлена!",
+    "error": "Щось пішло не так!",
+    "messageSent": "Ваше повідомлення успішно надіслано!",
+    "messageSendError": "Не вдалося надіслати повідомлення. Спробуйте ще раз."
+  },
+  "titles": {
+    "leaveRequest": "Залишити заявку",
+    "courseRegistration": "Зареєструватися на курс",
+    "dropUsALine": "Напишіть нам",
+    "getInTouch": "Зв'яжіться з нами",
+    "enjoyStudying": "Навчайтеся із задоволенням разом із Createx Online Courses",
+    "whyCreatex": "Чому Createx?",
+    "howWeDoIt": "Саме так ми працюємо",
+    "onlyPracticingTutors": "Тільки практикуючі викладачі"
+  },
+  "labels": {
+    "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
+    "eventReminder": "Не пропустіть подію!",
+    "anyQuestions": "Є запитання?",
+    "followUs": "Стежте за нами",
+    "talkToUs": "Напишіть нам:",
+    "callUs": "Зателефонуйте нам:",
+    "address": "Адреса:",
+    "contactInfo": "Контактна інформація",
+    "whoWeAre": "Хто ми",
+    "ourBenefits": "Наші переваги"
+  },
+  "statistics": {
+    "studentsGraduated": "Випускників",
+    "completedCourses": "Завершених курсів",
+    "qualifiedTutors": "Кваліфікованих викладачів",
+    "yearsOfExperience": "Років досвіду"
+  },
+  "advantages": {
+    "experiencedTutors": "Досвідчені викладачі",
+    "feedbackSupport": "Зворотний зв'язок та підтримка",
+    "onlineLibrary": "Онлайн-бібліотека 24/7",
+    "community": "Спільнота"
+  }
+}

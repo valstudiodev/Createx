@@ -1,0 +1,28 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.agreement-checkbox {
+  display: flex;
+  align-items: center;
+  gap: toRem(12);
+  cursor: pointer;
+
+  @media (max-width: toEm(460)) {
+    align-items: flex-start;
+  }
+
+  &__check {
+    width: toRem(16);
+    height: toRem(16);
+    border-radius: toRem(3);
+    background-color: var(--color-primary);
+    border: toRem(1) solid var(--color-primary);
+  }
+
+  &__text {
+    @include adaptiveValue('font-size', 16, 14);
+    line-height: 1.6;
+    color: var(--color-gray-800);
+  }
+}

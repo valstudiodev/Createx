@@ -1,0 +1,19 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.default-subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__subscribe {
+    width: 100%;
+  }
+
+  &__title {
+    @include adaptiveValue('font-size', 46, 32);
+    @include adaptiveValue('margin-bottom', 60, 20);
+    max-width: toRem(810);
+  }
+}

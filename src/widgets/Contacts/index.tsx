@@ -1,0 +1,1 @@
+export { default as ContactFormWrap } from '@/widgets/Contacts/ContactFormWrap/ContactFormWrap'

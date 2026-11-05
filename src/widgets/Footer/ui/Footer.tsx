@@ -1,12 +1,19 @@
 import Container from '@/shared/primitives/Container/Container';
-import '../model/_footerStyles.scss';
+import '../styles/footer.scss';
+import FooterBrand from './FooterBrand';
+import FooterContacts from './FooterContacts';
+import FooterMenu from './FooterMenu';
+import FooterNewsletter from './FooterNewsletter';
 
 function Footer(): React.JSX.Element {
   const classFooter = 'footer'
   return (
     <footer className={classFooter}>
       <Container className={`${classFooter}__container`}>
-        <p className={`${classFooter}__text`}>Footer</p>
+        <FooterBrand />
+        <FooterMenu />
+        <FooterContacts />
+        <FooterNewsletter />
       </Container>
     </footer>
   );

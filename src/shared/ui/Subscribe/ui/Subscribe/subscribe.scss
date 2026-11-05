@@ -1,0 +1,67 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.subscribe {
+  max-width: toRem(600);
+  flex-shrink: 0;
+
+  &__body {
+    display: flex;
+    @include adaptiveValue('gap', 24, 12);
+    @include adaptiveValue('margin-bottom', 24, 12);
+
+    @media (max-width: toEm(630)) {
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    border: toRem(1) solid var(--color-border);
+    border-radius: toRem(4);
+    background-color: var(--color-white);
+    padding-left: toRem(16);
+    padding-block: toRem(13);
+    width: 100%;
+    height: toRem(52);
+
+    &::placeholder {
+      color: var(--color-gray-600);
+      line-height: 1.6;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:focus-visible {
+      outline: toRem(2);
+      outline-offset: toRem(4);
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__btn {
+    background-color: var(--color-primary);
+    @include adaptiveValue('padding-inline', 40, 20);
+    border-radius: toRem(4);
+    transition: background-color 0.3s, color 0.3s;
+    border: toRem(1) solid var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    height: toRem(52);
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-primary);
+    }
+  }
+
+  &__error {
+    color: var(--color-danger);
+  }
+}

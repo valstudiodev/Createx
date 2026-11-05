@@ -1,0 +1,16 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.course-grid-rectangle {
+
+  &__list {
+    @include grid-adaptive($size: toRem(450));
+    @include adaptiveValue('gap', 30, 15);
+  }
+
+  &__item {
+    width: 100%;
+  }
+}

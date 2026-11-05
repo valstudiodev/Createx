@@ -1,8 +1,8 @@
-import { CourseDetailsInterface } from '../../model/course.types';
+import { CourseFullDetails } from '@/entities/course/model/course.types';
 import './courseDetails.scss';
 
 interface CourseDetailsProps {
-  course: CourseDetailsInterface
+  course: CourseFullDetails
   className?: string;
 }
 

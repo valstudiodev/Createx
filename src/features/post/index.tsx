@@ -1,0 +1,1 @@
+export { default as PostCreateForm } from '@/features/post/create-post/ui/PostCreateForm'

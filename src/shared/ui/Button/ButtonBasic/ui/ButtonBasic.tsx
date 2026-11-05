@@ -5,6 +5,7 @@ import '../styles/buttonBasic.scss';
 function ButtonBasic({
   size = 'regular',
   type = 'button',
+  variant = 'primary',
   children,
   leftIcon,
   rightIcon,
@@ -12,8 +13,12 @@ function ButtonBasic({
   to,
   ...props
 }: ButtonBaseProps) {
-  const buttonBasic = `button-basic button-basic--${size} ${className}`.trim()
-
+  const buttonBasic = [
+    'button-basic',
+    `button-basic--${size}`,
+    `button-basic--${variant}`,
+    className
+  ].filter(Boolean).join(' ')
 
   if (type === 'link') {
     return (

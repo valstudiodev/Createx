@@ -7,7 +7,7 @@ function AboutPage(): React.JSX.Element {
   return (
     <Section className={aboutPage}>
       <Container className={`${aboutPage}__container`}>
-        <h1>About page</h1>
+
       </Container>
     </Section>
   );

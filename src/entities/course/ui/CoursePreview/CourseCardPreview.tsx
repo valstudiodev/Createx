@@ -24,7 +24,7 @@ function CourseCardPreview({
   }).format(course.price)
   return (
     <Link
-      to={routeMap.courseDetails.path}
+      to={routeMap.courseDetails.navigate(course.id)}
       className={[courseCardPreview, className].filter(Boolean).join(' ')}
       aria-labelledby={`${courseCardPreview}-${course.id}-title`}
     >

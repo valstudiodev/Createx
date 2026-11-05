@@ -1,0 +1,41 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.contact-form-wrap {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue('gap', 30, 15);
+  justify-content: space-between;
+  @include adaptiveValue('padding-top', 90, 30);
+  @include adaptiveValue('padding-bottom', 180, 30);
+
+  &__image {
+    aspect-ratio: 435 / 481;
+    flex: 0 1 toRem(435);
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: toEm(940)) {
+      display: none;
+    }
+  }
+
+  &__body {
+    flex: 0 1 toRem(705);
+
+    @media (max-width: toEm(940)) {
+      flex: 100%;
+    }
+  }
+
+  &__title {
+    @include adaptiveValue('font-size', 46, 32);
+    @include adaptiveValue('margin-bottom', 40, 20);
+  }
+}

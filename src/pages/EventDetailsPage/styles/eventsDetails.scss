@@ -2,6 +2,14 @@
 @use '@/shared/styles/abstracts/input-mixins' as *;
 
 .events-details-page {
+  padding-block: toRem(200);
 
   &__container {}
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: toRem(600);
+  }
 }

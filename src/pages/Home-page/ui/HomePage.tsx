@@ -1,18 +1,17 @@
-import Section from '@/shared/primitives/Section/Section';
+import { AboutSection } from '@/widgets/AboutSection';
 import '../styles/homePage.scss';
-import Container from '@/shared/primitives/Container/Container';
+import HeroSection from '@/widgets/HeroSection/ui/HeroSection';
+import { AdvantagesSection } from '@/widgets/AdvantagesSection';
 
 function HomePage(): React.JSX.Element {
   const homePage = 'home-page'
 
   return (
-    <Section className={homePage}>
-      <Container className={`${homePage}__container`}>
-        <h1>Home page</h1>
-
-
-      </Container>
-    </Section>
+    <div className={homePage}>
+      <HeroSection />
+      <AboutSection />
+      <AdvantagesSection />
+    </div>
   );
 }
 

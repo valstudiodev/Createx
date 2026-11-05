@@ -1,0 +1,15 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.contact-info {
+
+  &__title {
+    @include adaptiveValue('font-size', 46, 32);
+    @include adaptiveValue('margin-bottom', 40, 20);
+  }
+
+  &__details {
+    @include adaptiveValue('margin-bottom', 48, 20);
+  }
+}

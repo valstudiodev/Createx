@@ -1,0 +1,96 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.contact-create-form {
+  display: grid;
+  row-gap: toRem(24);
+
+  &__body {}
+
+  &__field {
+    display: grid;
+    gap: toRem(8);
+  }
+
+  &__label {
+    line-height: 1.6;
+  }
+
+  &__group {
+
+    &--personal {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(toRem(250), 1fr));
+      @include adaptiveValue('gap', 25, 10);
+    }
+
+    &--contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(toRem(250), 1fr));
+      @include adaptiveValue('gap', 25, 10);
+    }
+
+    &--full {}
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(toRem(250), 1fr));
+    @include adaptiveValue('column-gap', 50, 20);
+    @include adaptiveValue('row-gap', 30, 15);
+  }
+
+  &__input,
+  &__textarea {
+    border: toRem(1) solid var(--color-border);
+    border-radius: toRem(4);
+    background-color: var(--color-white);
+    padding-block: toRem(13);
+    padding-left: toRem(16);
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      color: var(--color-gray-600);
+      line-height: 1.6;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    @include hover {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__checkbox {
+    // display: flex;
+    // align-items: flex-start;
+  }
+
+  &__error {
+    color: var(--color-danger);
+  }
+
+  &__btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    @include adaptiveValue('padding-inline', 40, 20);
+    // width: 100%;
+    border-radius: toRem(4);
+    border: toRem(1) solid var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    height: toRem(52);
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-primary);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: toRem(24);
+
+  &__title {
+    @include adaptiveValue('font-size', 16, 14);
+    text-transform: uppercase;
+    letter-spacing: toRem(1);
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue('gap', 32, 20);
+  }
+
+  &__item {
+    line-height: 0;
+  }
+
+  &__link {
+    font-size: toRem(20);
+    color: var(--color-gray-900);
+    transition: color .3s;
+    line-height: 0;
+
+    @include hover {
+      color: var(--color-gray-700);
+    }
+  }
+}

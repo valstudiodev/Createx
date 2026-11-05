@@ -1,0 +1,1 @@
+export { default as SubmitForm } from '@/features/submit-form/ui/SubmitForm'
