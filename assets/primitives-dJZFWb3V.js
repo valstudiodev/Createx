@@ -1,0 +1,1 @@
+import{g as e}from"./index-BaX4FmT0.js";var t=e();function n({children:e,className:n=``}){return(0,t.jsx)(`section`,{className:` ${n}`.trim(),children:e})}export{n as t};

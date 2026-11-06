@@ -1,1 +1,0 @@
-import{g as e}from"./index-BIiMfGBR.js";var t=e();function n(){let e=`page-404`;return(0,t.jsx)(`div`,{className:e,children:(0,t.jsx)(`p`,{className:`${e}__text`,children:`Page is not found.`})})}export{n as default};
