@@ -14,10 +14,10 @@ function PostCardLink({
 
   return (
     <Link
-      className={postCardLink}
+      className={`${postCardLink} ${className}`}
       to={to}
     >
-      
+
     </Link>
   );
 }

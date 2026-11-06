@@ -8,7 +8,6 @@ import { fetchEventByID } from '@/entities/event/model/eventThunk';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { EventSectionAbout, EventSectionInfo } from '@/widgets/event';
 import { SpinnerDefault } from '@/shared/ui';
-import { error } from 'console';
 
 function EventsDetailsPage(): React.JSX.Element {
   const eventsDetailsPage = 'events-details-page'

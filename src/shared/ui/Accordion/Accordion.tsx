@@ -1,5 +1,5 @@
 import './accordion.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AccordionItem } from '@/entities/event/model/event-types';
 import AccordionItemSingle from './AccordionItem';
 

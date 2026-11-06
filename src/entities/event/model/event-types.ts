@@ -1,9 +1,18 @@
 export type EventFormat = 'online' | 'offline'
 
+export type EventCardVariant = 'primary' | 'featured'
+
 export type EventType =
   | 'master-class'
   | 'lecture'
   | 'workshop'
+
+export interface EventCard {
+  event: Event;
+  className?: string;
+  actions: React.ReactElement[];
+  variant: EventCardVariant
+}
 
 export interface Event {
   id: string;

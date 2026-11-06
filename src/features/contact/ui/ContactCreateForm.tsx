@@ -9,7 +9,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { createContact } from '../api/createContactService';
 import { contactsFormFields } from '../config/contact.config';
 import { ErrorMessage, SuccessMessage } from '@/shared/ui/Messages';
-import { group } from 'console';
 import AgreementCheckbox from '@/shared/ui/AgreementCheckbox/AgreementCheckbox';
 
 interface ContactCreateFormProps {

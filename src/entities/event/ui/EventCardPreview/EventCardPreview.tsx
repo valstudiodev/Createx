@@ -1,23 +1,29 @@
 import './eventCardPreview.scss';
-import { Event } from '../../model/event-types';
+import { EventCard } from '../../model/event-types';
+import formateDate from '@/shared/lib/formate-date/formate-date';
+import { Link } from 'react-router';
+import { routeMap } from '@/app/routes/routeMap';
 
-interface EventCardPreviewProps {
-  event: Event;
-  className?: string;
-  actions: React.ReactElement[]
-}
 
 function EventCardPreview({
   event,
   className = '',
+  variant,
   actions
-}: EventCardPreviewProps): React.JSX.Element {
+}: EventCard): React.JSX.Element {
   const eventCardPreview = 'event-card-preview'
 
+  const formattedDate = formateDate(event.date, {
+    day: '2-digit',
+    month: 'short',
+  })
+
   return (
-    <article className={`${eventCardPreview} ${className}`}>
+    <Link
+      to={routeMap.eventDetails.navigate(event.id)}
+      className={`${eventCardPreview} ${eventCardPreview}--${variant} ${className}`}>
       <div className={`${eventCardPreview}__top`}>
-        <span className={`${eventCardPreview}__date`}>{event.date}</span>
+        <span className={`${eventCardPreview}__date`}>{formattedDate}</span>
         <div className={`${eventCardPreview}__time`}>
           <span>{event.startTime}</span> -
           <span>{event.endTime}</span>
@@ -33,7 +39,7 @@ function EventCardPreview({
       <div className={`${eventCardPreview}__actions`}>
         {actions}
       </div>
-    </article>
+    </Link>
   );
 }
 

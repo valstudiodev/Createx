@@ -12,7 +12,7 @@ function MainLayout(): React.JSX.Element {
       <Page className="page">
         <Outlet />
       </Page>
-      {/* <Footer /> */}
+      <Footer />
     </Wrapper>
   );
 }

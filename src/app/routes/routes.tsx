@@ -4,9 +4,10 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "@/widgets/MainLayout/ui/MainLayout";
 import ErrorPage from "@/pages/ErrorPage/ui/ErrorPage";
 import { routeMap } from "./routeMap";
+import { AppRoute } from "@/widgets/MainMenu/model/mainMenuTypes";
 
 
-export const routes = [
+export const routes: AppRoute[] = [
   {
     path: '/',
     Component: MainLayout,

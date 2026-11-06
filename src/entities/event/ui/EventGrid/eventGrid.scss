@@ -5,10 +5,16 @@
 
 .event-grid {
 
-  &__list {
-    @include grid-adaptive($size: toRem(350));
-    @include adaptiveValue('gap', 30, 15);
+  &--primary {
+    .event-grid__list {
+      @include grid-adaptive($size: toRem(350));
+      @include adaptiveValue('gap', 30, 15);
+    }
   }
+
+  &--featured {}
+
+  &__list {}
 
   &__item {
     width: 100%;

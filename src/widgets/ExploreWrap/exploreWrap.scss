@@ -1,0 +1,23 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.explore-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include adaptiveValue('gap', 40, 20);
+  flex-wrap: wrap;
+
+  &__title {
+    @include adaptiveValue('font-size', 28, 22);
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  @media (max-width: toEm(394)) {
+    .button-basic {
+      width: 100%;
+    }
+  }
+}

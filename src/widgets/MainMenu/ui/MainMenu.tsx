@@ -53,9 +53,13 @@ function MainMenu({
     setIsMenuOpen(false)
   }
 
-  const menuItems = routes[0].children.filter(
-    (route) => route?.meta?.isInMenu
-  ) ?? []
+  // const menuItems = routes[0].children.filter(
+  //   (route) => route?.meta?.isInMenu
+  // ) ?? []
+
+  const menuItems = (routes[0]?.children ?? []).filter(
+    (route) => route.meta?.isInMenu,
+  );
 
   return (
     <nav
@@ -71,7 +75,7 @@ function MainMenu({
 
           return (
             <li
-              key={route.id}
+              key={route.id ?? path}
               className={`${classMainMenu}__item`}
             >
               <NavLink

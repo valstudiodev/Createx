@@ -1,0 +1,104 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.event-card-horizontal {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  @include adaptiveValue('column-gap', 40, 20);
+  border: toRem(1) solid var(--color-border);
+  @include adaptiveValue('padding-inline', 40, 20);
+  @include adaptiveValue('padding-block', 32, 16);
+  box-shadow: var(--color-box-shadow);
+  min-height: 100%;
+  background-color: var(--color-white);
+  width: 100%;
+  border-radius: toRem(4);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+
+  @include hover {
+    box-shadow: var(--color-box-shadow-hover);
+  }
+
+  &__timing {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('gap', 20, 10);
+  }
+
+  &__day {
+    @include adaptiveValue('font-size', 48, 30);
+    color: var(--color-primary);
+    line-height: 1.3;
+    letter-spacing: toRem(1);
+    font-weight: 900;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: toRem(4);
+  }
+
+  &__month {
+    @include adaptiveValue('font-size', 20, 18);
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  &___time {
+    @include adaptiveValue('font-size', 16, 14);
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: toRem(4);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(4);
+    align-items: flex-start;
+
+    @media (max-width: toEm(768)) {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include adaptiveValue('font-size', 20, 18);
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  &__type {
+    display: flex;
+    align-items: center;
+    gap: toRem(3);
+    text-transform: capitalize;
+    @include adaptiveValue('font-size', 16, 14);
+    color: var(--color-gray-700);
+    line-height: 1.6;
+  }
+
+  &__actions {
+    @media (max-width: toEm(768)) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: toEm(768)) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    row-gap: toRem(20);
+
+    .event-card-btn {
+      width: 100%;
+    }
+  }
+}

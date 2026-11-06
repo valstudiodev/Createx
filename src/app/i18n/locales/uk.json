@@ -42,7 +42,10 @@
     "exploreCourses": "Переглянути курси",
     "sending": "Відправлення...",
     "sendMessage": "Надіслати повідомлення",
-    "moreAboutUs": "Більше про нас"
+    "moreAboutUs": "Більше про нас",
+    "viewMore": "Переглянути більше",
+    "exploreAllEvents": "Переглянути всі події",
+    "viewAllCourses": "Переглянути всі курси"
   },
   "submitForm": {
     "name": {
@@ -122,7 +125,9 @@
     "enjoyStudying": "Навчайтеся із задоволенням разом із Createx Online Courses",
     "whyCreatex": "Чому Createx?",
     "howWeDoIt": "Саме так ми працюємо",
-    "onlyPracticingTutors": "Тільки практикуючі викладачі"
+    "onlyPracticingTutors": "Тільки практикуючі викладачі",
+    "lecturesWorkshops": "Лекції та практичні заняття",
+    "expertiseConfirmed": "Вашу кваліфікацію буде підтверджено"
   },
   "labels": {
     "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
@@ -134,7 +139,11 @@
     "address": "Адреса:",
     "contactInfo": "Контактна інформація",
     "whoWeAre": "Хто ми",
-    "ourBenefits": "Наші переваги"
+    "ourBenefits": "Наші переваги",
+    "doYouWantMore": "Хочете більше?",
+    "doYouWantMoreCourses": "Хочете більше курсів?",
+    "ourEvents": "Наші події",
+    "createxCertificate": "Сертифікат Createx"
   },
   "statistics": {
     "studentsGraduated": "Випускників",
@@ -147,5 +156,6 @@
     "feedbackSupport": "Зворотний зв'язок та підтримка",
     "onlineLibrary": "Онлайн-бібліотека 24/7",
     "community": "Спільнота"
-  }
+  },
+  "accreditation": "Ми акредитовані міжнародними професійними організаціями та інститутами:"
 }

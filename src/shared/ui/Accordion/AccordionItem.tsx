@@ -1,6 +1,5 @@
 import { AccordionItem } from "@/entities/event/model/event-types";
 import { AccordionLabelType } from "./Accordion";
-import { useState } from "react";
 
 export interface AccordionItemProps {
   item: AccordionItem;

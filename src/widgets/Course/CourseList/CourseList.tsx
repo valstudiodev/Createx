@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
 import { selectCourses, selectCoursesError, selectCoursesLoading } from '@/entities/course/model/courseSelector';
 import { useEffect } from 'react';
 import { fetchCourses } from '@/entities/course/model/courseThunk';
-import { CourseCardPreview } from '@/entities';
 
 interface CourseListProps {
   className?: string;

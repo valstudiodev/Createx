@@ -17,7 +17,6 @@ function EventCreateForm({
     formValues,
     setFormValues,
     eventCreateStatus,
-    errors,
     handleChange,
     handleSubmit,
     handleAddLIstItem,

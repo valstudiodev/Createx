@@ -42,7 +42,10 @@
     "exploreCourses": "Explore courses",
     "sending": "Sending...",
     "sendMessage": "Send message",
-    "moreAboutUs": "More about us"
+    "moreAboutUs": "More about us",
+    "viewMore": "View more",
+    "exploreAllEvents": "Explore all events",
+    "viewAllCourses": "View all courses"
   },
   "submitForm": {
     "name": {
@@ -122,7 +125,9 @@
     "enjoyStudying": "Enjoy studying with Createx Online Courses",
     "whyCreatex": "Why Createx?",
     "howWeDoIt": "That’s how we do it",
-    "onlyPracticingTutors": "Only practicing tutors"
+    "onlyPracticingTutors": "Only practicing tutors",
+    "lecturesWorkshops": "Lectures & workshops",
+    "expertiseConfirmed": "Your expertise will be confirmed"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -134,7 +139,11 @@
     "address": "Address:",
     "contactInfo": "Contact info",
     "whoWeAre": "Who we are",
-    "ourBenefits": "Our benefits"
+    "ourBenefits": "Our benefits",
+    "doYouWantMore": "Do you want more?",
+    "doYouWantMoreCourses": "Do you want more courses?",
+    "ourEvents": "Our Events",
+    "createxCertificate": "Createx Certificate"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",
@@ -147,5 +156,8 @@
     "feedbackSupport": "Feedback & Support",
     "onlineLibrary": "24/7 Online Library",
     "community": "Community"
+  },
+  "text": {
+    "accreditation": "We are accredited by international professional organizations and institutes:"
   }
 }

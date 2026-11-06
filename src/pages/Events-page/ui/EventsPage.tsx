@@ -8,7 +8,7 @@ function EventsPage(): React.JSX.Element {
     <Section className={eventsPage}>
       <Container className={`${eventsPage}__container`}>
 
-        <EventGrid />
+        <EventGrid variant='primary' />
 
       </Container>
     </Section>
