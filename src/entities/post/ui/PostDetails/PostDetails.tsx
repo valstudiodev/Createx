@@ -1,5 +1,11 @@
 import { PostDetailsInterface } from '../../model/post-types';
 import './postDetails.scss';
+import PostCardDate from '../PostCard/PostCardDate';
+import PostCardLabel from '../PostCard/PostCardLabel';
+import ShareItems from '../PostCard/ShareItems';
+import TagItemsList from './TagItemsList';
+import PostDetailsItemsList from './PostDetailsItemsList';
+import braces from "@/assets/icons/braces.svg";
 
 interface PostDetailsProps {
   post: PostDetailsInterface;
@@ -17,16 +23,24 @@ function PostDetails({
   return (
     <article className={`${postDetails} ${className}`}>
       <div className={`${postDetails}__header ${headerPostDetails}`}>
-        <div></div>
+        <div className={`${headerPostDetails}__top`}>
+          <PostCardLabel
+            className={`${headerPostDetails}__label`}
+            variant='static' post={post} />
+          <span className={`${headerPostDetails}__category`}>
+            {post.category}
+          </span>
+        </div>
         <h1 className={`${headerPostDetails}__title`}>{post.title}</h1>
-        <div>
+        <div className={`${headerPostDetails}__wrap`}>
           <div className={`${headerPostDetails}__info`}>
-            <span className={`${headerPostDetails}__date`}>{post.date}</span>
-            <span className={`${headerPostDetails}__duration`}>{post.duration}</span>
+            <PostCardDate post={post} />
+            <span className={`${headerPostDetails}__duration`}>{post.duration} min</span>
           </div>
-          <div className={`${headerPostDetails}__share`}>Share:{post.share}</div>
+          <ShareItems post={post} />
         </div>
       </div>
+
       <div className={`${postDetails}__image`}>
         <img src={post.imageId} alt={post.title} loading='lazy' />
       </div>
@@ -38,18 +52,20 @@ function PostDetails({
         </div>
       ))}
 
-      <div className={`${contentPostDetails}__tags`}>
-        <span>Tags:</span>
-        <ul className={`${contentPostDetails}__list`}>
-          {post.tags.map((tag, index) => (
-            <li
-              key={index}
-              className={`${contentPostDetails}__item`}
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
+      {post.quote && (
+        <div className={`${postDetails}__qoute`}>
+          <img src={braces} alt="" />
+          <p>{post.quote}</p>
+        </div>
+      )}
+
+      {post.list.length > 0 && (
+        <PostDetailsItemsList post={post} />
+      )}
+
+      <div className={`${contentPostDetails}__bottom`}>
+        <TagItemsList post={post} />
+        <ShareItems post={post} />
       </div>
 
     </article>

@@ -1,0 +1,17 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.social-icon-link {
+
+  &__icon {
+    color: var(--color-gray-900);
+    font-size: toRem(20);
+    transition: color 0.3s;
+
+    @include hover {
+      color: var(--color-gray-700);
+    }
+  }
+}

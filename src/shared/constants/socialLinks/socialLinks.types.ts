@@ -7,7 +7,7 @@ export type SocialPlatform =
 export interface SocialLink {
   platform: SocialPlatform;
   label: string;
-  url?: string;
+  url: string;
   iconClass: `--icon-${SocialPlatform}`
 }
 

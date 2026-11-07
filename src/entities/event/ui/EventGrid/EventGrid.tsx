@@ -6,7 +6,6 @@ import { fetchEvents } from '../../model/eventThunk';
 import { WarningMessage } from '@/shared/ui/Messages';
 import EventCardPreview from '../EventCardPreview/EventCardPreview';
 import { ButtonBasic } from '@/shared/ui/Button';
-import { routeMap } from '@/app/routes/routeMap';
 import { EventCardVariant } from '../../model/event-types';
 import EventCardHorizontal from '../EventCardHorizontal/EventCardHorizontal';
 import { useTranslation } from 'react-i18next';

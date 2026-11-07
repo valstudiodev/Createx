@@ -83,7 +83,9 @@ function usePostCreateForm() {
         label: formValues.label,
         category: formValues.category,
         date: formValues.date,
-        // duration: formValues.duration?.trim(),
+        ...(formValues.duration?.trim() && {
+          duration: formValues.duration.trim()
+        }),
         title: formValues.title,
         text: formValues.text,
         action: formValues.action,
