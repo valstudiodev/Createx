@@ -27,6 +27,7 @@ export interface Post {
   text: string;
   action: PostAction;
   label: PostLabel;
+  isRecommended: boolean;
 }
 
 export interface PostState {
@@ -36,6 +37,12 @@ export interface PostState {
   postsLoading: boolean;
   postError: string | null;
   postsError: string | null;
+  latestPosts: Post[];
+  latestPostsLoading: boolean;
+  latestPostsError: string | null;
+  recommendedPosts: Post[];
+  recommendedPostsLoading: boolean;
+  recommendedPostsError: string | null;
 }
 
 export interface PostDetailsInterface extends Post {

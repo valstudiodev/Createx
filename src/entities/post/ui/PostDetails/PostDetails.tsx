@@ -35,7 +35,9 @@ function PostDetails({
         <div className={`${headerPostDetails}__wrap`}>
           <div className={`${headerPostDetails}__info`}>
             <PostCardDate post={post} />
-            <span className={`${headerPostDetails}__duration`}>{post.duration} min</span>
+            {post.duration && (
+              <span className={`${headerPostDetails}__duration`}>{post.duration} min</span>
+            )}
           </div>
           <ShareItems post={post} />
         </div>
@@ -55,7 +57,7 @@ function PostDetails({
       {post.quote && (
         <div className={`${postDetails}__qoute`}>
           <img src={braces} alt="" />
-          <p>{post.quote}</p>
+          <blockquote>{post.quote}</blockquote>
         </div>
       )}
 

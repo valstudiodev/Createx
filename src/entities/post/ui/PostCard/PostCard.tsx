@@ -1,12 +1,10 @@
 import { Link } from 'react-router';
 import './postCard.scss';
 import { Post } from '../../model/post-types';
-import { postLabelConfig } from '../../config/post-label.config';
 import { routeMap } from '@/app/routes/routeMap';
-import { useTranslation } from 'react-i18next';
-import formatLocalizedDate from '@/shared/lib/formatLocalizedDate/formatLocalizedDate';
 import PostCardDate from './PostCardDate';
 import PostCardLabel from './PostCardLabel';
+import PostCardLink from '../PostCardLink/PostCardLink';
 
 interface PostCardProps {
   post: Post,
@@ -16,7 +14,6 @@ interface PostCardProps {
 
 function PostCard({
   post,
-  actions,
   className = ''
 }: PostCardProps): React.JSX.Element {
   const postCard = 'post-card'
@@ -57,8 +54,8 @@ function PostCard({
               id={`${postCard}--${post.id}-title`}
               className={`${postCard}__title`}>{post.title}</h3>
             <p className={`${postCard}__text`}>{post.text}</p>
-            {actions}
           </div>
+          <PostCardLink action={post.action} />
         </div>
       </Link>
     </article>

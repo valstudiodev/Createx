@@ -45,7 +45,8 @@
     "moreAboutUs": "More about us",
     "viewMore": "View more",
     "exploreAllEvents": "Explore all events",
-    "viewAllCourses": "View all courses"
+    "viewAllCourses": "View all courses",
+    "goToBlock": "Go to block"
   },
   "submitForm": {
     "name": {
@@ -127,7 +128,9 @@
     "howWeDoIt": "That’s how we do it",
     "onlyPracticingTutors": "Only practicing tutors",
     "lecturesWorkshops": "Lectures & workshops",
-    "expertiseConfirmed": "Your expertise will be confirmed"
+    "expertiseConfirmed": "Your expertise will be confirmed",
+    "whatOurStudentsSay": "What our students say",
+    "latestPosts": "Latest posts"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -143,7 +146,9 @@
     "doYouWantMore": "Do you want more?",
     "doYouWantMoreCourses": "Do you want more courses?",
     "ourEvents": "Our Events",
-    "createxCertificate": "Createx Certificate"
+    "createxCertificate": "Createx Certificate",
+    "testimonials": "TESTIMONIALS",
+    "ourBlog": "Our blog"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",
@@ -159,5 +164,12 @@
   },
   "text": {
     "accreditation": "We are accredited by international professional organizations and institutes:"
+  },
+  "posts": {
+    "actions": {
+      "watch": "Watch",
+      "listen": "Listen",
+      "read": "Read"
+    }
   }
 }

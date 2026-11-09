@@ -1,0 +1,1 @@
+export { default as Reviews } from '@/widgets/Reviews/ui/Reviews'

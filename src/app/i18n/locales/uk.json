@@ -45,7 +45,8 @@
     "moreAboutUs": "Більше про нас",
     "viewMore": "Переглянути більше",
     "exploreAllEvents": "Переглянути всі події",
-    "viewAllCourses": "Переглянути всі курси"
+    "viewAllCourses": "Переглянути всі курси",
+    "goToBlock": "Перейти до розділу"
   },
   "submitForm": {
     "name": {
@@ -127,7 +128,9 @@
     "howWeDoIt": "Саме так ми працюємо",
     "onlyPracticingTutors": "Тільки практикуючі викладачі",
     "lecturesWorkshops": "Лекції та практичні заняття",
-    "expertiseConfirmed": "Вашу кваліфікацію буде підтверджено"
+    "expertiseConfirmed": "Вашу кваліфікацію буде підтверджено",
+    "whatOurStudentsSay": "Що говорять наші студенти",
+    "latestPosts": "Останні публікації"
   },
   "labels": {
     "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
@@ -143,7 +146,9 @@
     "doYouWantMore": "Хочете більше?",
     "doYouWantMoreCourses": "Хочете більше курсів?",
     "ourEvents": "Наші події",
-    "createxCertificate": "Сертифікат Createx"
+    "createxCertificate": "Сертифікат Createx",
+    "testimonials": "ВІДГУКИ",
+    "ourBlog": "Наш блог"
   },
   "statistics": {
     "studentsGraduated": "Випускників",
@@ -157,5 +162,14 @@
     "onlineLibrary": "Онлайн-бібліотека 24/7",
     "community": "Спільнота"
   },
-  "accreditation": "Ми акредитовані міжнародними професійними організаціями та інститутами:"
+  "text": {
+    "accreditation": "Ми акредитовані міжнародними професійними організаціями та інститутами:"
+  },
+  "posts": {
+    "actions": {
+      "watch": "Дивитися",
+      "listen": "Слухати",
+      "read": "Читати"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PostState } from "./post-types";
-import { fetchPostById, fetchPosts } from "./postThunk";
+import { fetchLatestPosts, fetchPostById, fetchPosts, fetchRecommendedPosts } from "./postThunk";
 
 const initialState: PostState = {
   singlePost: null,
@@ -9,6 +9,12 @@ const initialState: PostState = {
   postsLoading: false,
   postError: null,
   postsError: null,
+  latestPosts: [],
+  latestPostsLoading: false,
+  latestPostsError: null,
+  recommendedPosts: [],
+  recommendedPostsLoading: false,
+  recommendedPostsError: null,
 }
 
 
@@ -46,6 +52,34 @@ export const postSlice = createSlice({
       .addCase(fetchPostById.rejected, (state, action) => {
         state.postLoading = false
         state.postError = action.payload ?? 'Failed to fetchpost by ID.'
+      })
+
+      .addCase(fetchLatestPosts.pending, (state) => {
+        state.latestPostsLoading = true
+        state.latestPostsError = null
+      })
+      .addCase(fetchLatestPosts.fulfilled, (state, action) => {
+        state.latestPostsLoading = false
+        state.latestPostsError = null
+        state.latestPosts = action.payload
+      })
+      .addCase(fetchLatestPosts.rejected, (state, action) => {
+        state.latestPostsLoading = false
+        state.latestPostsError = action.payload ?? 'Failed to fetch latest posts.'
+      })
+
+      .addCase(fetchRecommendedPosts.pending, (state) => {
+        state.recommendedPostsLoading = true
+        state.recommendedPostsError = null
+      })
+      .addCase(fetchRecommendedPosts.fulfilled, (state, action) => {
+        state.recommendedPostsLoading = false
+        state.recommendedPostsError = null
+        state.recommendedPosts = action.payload
+      })
+      .addCase(fetchRecommendedPosts.rejected, (state, action) => {
+        state.recommendedPostsLoading = false
+        state.recommendedPostsError = action.payload ?? 'Failed to fetch recommended posts.'
       })
   }
 })

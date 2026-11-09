@@ -1,31 +1,34 @@
+import { useTranslation } from 'react-i18next';
+import { PostAction } from '../../model/post-types';
 import './postCardLink.scss';
 
 interface PostCardLinkProps {
-  key: string;
-  label: string;
+  action: PostAction,
+  label?: string;
   className?: string;
 }
 
 function PostCardLink({
-  key,
   className = '',
+  action,
   label,
 }: PostCardLinkProps) {
   const postCardLink = 'post-card-link'
+
+  const { t } = useTranslation()
+
   return (
-    <button
-      type='button'
+    <div
       className={`${postCardLink} ${className}`}
-      key={key}
       aria-label={label}
     >
       <span className={`${postCardLink}__label`}>
-        {label}
+        {t(`posts.actions.${action}`)}
       </span>
       <span
         aria-hidden='true'
         className={`${postCardLink}__icon ${postCardLink}__icon--icon-arrow`}></span>
-    </button>
+    </div>
   );
 }
 

@@ -1,0 +1,1 @@
+export { default as LatestPosts } from '@/widgets/posts/LatestPosts/LatestPosts'

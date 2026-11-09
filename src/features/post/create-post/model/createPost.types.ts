@@ -32,7 +32,8 @@ export interface PostFormValues {
   quote: string;
   list: string[];
   tags: string[];
-  share: SocialPlatform[]
+  share: SocialPlatform[];
+  // isRecommend: boolean;
 }
 
 export interface PostFormErrors {

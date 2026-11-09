@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getPostById, getPosts } from "../api/postService";
+import { getLatestPosts, getPostById, getPosts, getRecommendedPosts } from "../api/postService";
 import { Post, PostDetailsInterface } from "./post-types";
 
 
@@ -14,6 +14,34 @@ export const fetchPosts = createAsyncThunk<Post[], void, { rejectValue: string }
         return rejectWithValue(error.message)
       }
       return rejectWithValue('Failed to fetch posts.')
+    }
+  }
+)
+
+export const fetchLatestPosts = createAsyncThunk<Post[], void, { rejectValue: string }>(
+  'posts/fetchLatestPosts',
+  async (_, { rejectWithValue }) => {
+    try {
+      return await getLatestPosts()
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message)
+      }
+      return rejectWithValue('Failed to fetch latest posts.')
+    }
+  }
+)
+
+export const fetchRecommendedPosts = createAsyncThunk<Post[], void, { rejectValue: string }>(
+  'posts/fetchRecommendedPosts',
+  async (_, { rejectWithValue }) => {
+    try {
+      return await getRecommendedPosts()
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message)
+      }
+      return rejectWithValue('Failed to fetch recommended posts.')
     }
   }
 )

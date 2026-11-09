@@ -1,0 +1,78 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.review-card {
+  display: flex;
+  align-items: flex-start;
+  gap: toRem(24);
+  background-color: var(--color-white);
+  border-radius: toRem(4);
+  box-shadow:
+    0 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 4px 4px -4px rgba(30, 33, 44, 0.03);
+  @include adaptiveValue('padding-block', 64, 20);
+  @include adaptiveValue('padding-inline', 105, 20);
+  // max-width: toRem(1020);
+  height: 100%;
+
+  @media (max-width: toEm(600)) {
+    flex-direction: column;
+  }
+
+  &__body {
+    flex-grow: 1;
+  }
+
+  &__icon {}
+
+  &__text {
+    // position: relative;
+    @include adaptiveValue('font-size', 20, 18);
+    max-width: toRem(750);
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   // top: toRem(8);
+    //   @include adaptiveValue('left', 50, 10);
+    //   @include adaptiveValue('top', 70, 10);
+    //   // left: toRem(105);
+    //   width: toRem(28);
+    //   height: toRem(20);
+    //   background-image: url('../assets/braces.svg');
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    // }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('gap', 20, 10);
+  }
+
+  &__avatar {}
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(4);
+    align-items: flex-start;
+  }
+
+  &__author {
+    @include adaptiveValue('font-size', 16, 14);
+    line-height: 1.6;
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  &__position {
+    font-size: toRem(14);
+    color: var(--color-gray-700);
+  }
+}

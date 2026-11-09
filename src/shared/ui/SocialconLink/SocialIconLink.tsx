@@ -1,4 +1,3 @@
-import VisuallyHidden from '@/shared/lib/visually-hidden/VisuallyHidden';
 import './socialIconLink.scss';
 
 interface SocialIconLinkProps {
