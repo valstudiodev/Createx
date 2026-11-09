@@ -1,0 +1,1 @@
+import{_ as e,g as t}from"./index-tFgz4seV.js";import{t as n}from"./primitives-wJlSIAmb.js";var r=e();function i(){let e=`about-page`;return(0,r.jsx)(n,{className:e,children:(0,r.jsx)(t,{className:`${e}__container`})})}export{i as default};

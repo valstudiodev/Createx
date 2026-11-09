@@ -1,1 +1,0 @@
-import{g as e,h as t}from"./index-CituFB5L.js";import{t as n}from"./primitives-CofHoION.js";import{t as r}from"./EventGrid-y9ziwLnV.js";var i=e();function a(){let e=`events-page`;return(0,i.jsx)(n,{className:e,children:(0,i.jsx)(t,{className:`${e}__container`,children:(0,i.jsx)(r,{variant:`primary`})})})}export{a as default};

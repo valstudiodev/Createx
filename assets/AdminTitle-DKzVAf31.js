@@ -1,0 +1,1 @@
+import{_ as e}from"./index-tFgz4seV.js";var t=e();function n({title:e}){return(0,t.jsx)(`h1`,{className:`admin-title`,children:e})}export{n as t};
