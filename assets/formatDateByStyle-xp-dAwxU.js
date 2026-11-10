@@ -1,0 +1,1 @@
+function e(e,t=`long`,n=`en-US`){if(!e)return``;let r=new Date(`${e}T00:00:00`);return Number.isNaN(r.getTime())?``:new Intl.DateTimeFormat(n,{month:t===`long`?`long`:`short`,day:`numeric`}).format(r)}export{e as t};
