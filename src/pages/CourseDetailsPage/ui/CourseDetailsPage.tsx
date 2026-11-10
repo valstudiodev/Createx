@@ -1,4 +1,4 @@
-import { Container, Section } from '@/shared/primitives';
+import { Section } from '@/shared/primitives';
 import '../styles/courseDetails.scss';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
@@ -11,6 +11,8 @@ import { CourseAboutWrap, RecommendedCourses } from '@/widgets/Course';
 import { CourseDetails } from '@/entities';
 import { Reviews } from '@/widgets/Reviews';
 import { FormSection } from '@/widgets';
+import BenefitSection from '@/widgets/CourseDetails/BenefitSection/ui/BenefitSection';
+import CourseProgram from '@/widgets/CourseDetails/LessonsSection/ui/CourseProgram';
 
 function CourseDetailsPage(): React.JSX.Element {
   const courseDetailsPage = 'course-details-page'
@@ -62,14 +64,17 @@ function CourseDetailsPage(): React.JSX.Element {
 
   return (
     <Section className={courseDetailsPage}>
-      <CourseAboutWrap course={course} />
-      <CourseDetails course={course} />
+      {/* <CourseAboutWrap course={course} /> */}
+      {/* <CourseDetails course={course} /> */}
 
-      <Reviews />
-      <FormSection type='course-registration' />
+      {/* <Reviews /> */}
+      {/* <FormSection type='course-registration' /> */}
       <RecommendedCourses
         loading={coursesLoading}
         courses={recommendedCourses} />
+
+      {/* <BenefitSection /> */}
+      <CourseProgram />
     </Section >
   );
 }

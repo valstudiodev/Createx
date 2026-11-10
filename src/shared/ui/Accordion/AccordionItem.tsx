@@ -30,9 +30,10 @@ function AccordionItemSingle({
           <span className={`${accordionItem}__icon`}>
             {isOpen ? '-' : '+'}
           </span>
-          <span className={`${accordionItem}__label`}>
-            {itemLabel} {index + 1}
-          </span>
+          <div className={`${accordionItem}__label`}>
+            <span>{itemLabel}</span>
+            <span>{index + 1}.</span>
+          </div>
         </div>
         <h4 className={`${accordionItem}__title`}>
           {item.title}
@@ -44,9 +45,9 @@ function AccordionItemSingle({
         data-state={isOpen ? 'open' : 'closed'}
       >
         {isOpen && (
-          <div className={`${accordionItem}__content`}>
+          <p className={`${accordionItem}__content`}>
             {item.content}
-          </div>
+          </p>
         )}
       </div>
 

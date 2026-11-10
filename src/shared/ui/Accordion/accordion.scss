@@ -14,7 +14,7 @@
   &__btn {
     cursor: pointer;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: toRem(8);
 
     @media (max-width: toEm(585)) {
@@ -34,6 +34,10 @@
   }
 
   &__label {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: toRem(4);
     @include adaptiveValue('font-size', 20, 18);
     color: var(--color-primary);
   }
@@ -48,6 +52,7 @@
   &__content {
     min-height: 0;
     overflow: hidden;
+    @include adaptiveValue('margin-left', 40, 10);
 
     .accordion-item__content-wrapper {}
   }

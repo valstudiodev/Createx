@@ -52,38 +52,3 @@ export const eventAbout: AccordionItem[] = [
   },
 ];
 
-// export const eventsDetails: EventFullDetails[] = [
-//   {
-//     ...eventsPreview[0],
-//     about: [
-//       'Discover modern digital marketing strategies.',
-//       'Learn how to build effective marketing campaigns.',
-//       'Explore practical tools for measuring campaign performance.',
-//     ],
-//     price: 50,
-//     information: [
-//       'The event will take place online. Participants will receive access instructions before the event.',
-//     ]
-//   },
-//   {
-//     ...eventsPreview[1],
-//     about: [
-//       'Explore the principles of modern web design.',
-//       'Learn how to create intuitive user interfaces.',
-//     ],
-//     price: 35,
-//     information: [
-//       'Bring your laptop to participate in the practical exercises.',
-//     ]
-//   },
-//   {
-//     ...eventsPreview[2],
-//     about: [
-//       'Learn effective leadership techniques.',
-//       'Discover strategies for building high-performing teams.',
-//     ],
-//     information: [
-//       'The lecture includes a Q&A session.',
-//     ]
-//   },
-// ];

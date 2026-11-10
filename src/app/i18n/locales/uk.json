@@ -133,7 +133,9 @@
     "latestPosts": "Останні публікації",
     "featuredCourses": "Популярні курси",
     "youMayAlsoLike": "Вам також може сподобатися",
-    "doYouWantMoreCourses": "Хочете більше курсів?"
+    "doYouWantMoreCourses": "Хочете більше курсів?",
+    "whoWillBenefit": "Кому буде корисний цей курс:",
+    "whatWillYouLearn": "Чого ви навчитеся"
   },
   "labels": {
     "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
@@ -153,7 +155,9 @@
     "testimonials": "ВІДГУКИ",
     "ourBlog": "Наш блог",
     "readyToLearn": "Готові навчатися?",
-    "checkOtherCourses": "Перегляньте інші курси"
+    "checkOtherCourses": "Перегляньте інші курси",
+    "courseProgram": "Програма курсу",
+    "forWhom": "Для кого?"
   },
   "statistics": {
     "studentsGraduated": "Випускників",
@@ -175,6 +179,20 @@
       "watch": "Дивитися",
       "listen": "Слухати",
       "read": "Читати"
+    }
+  },
+  "courseBenefits": {
+    "experience": {
+      "title": "Професійний досвід",
+      "description": "Понад 1 рік активного досвіду роботи"
+    },
+    "designers": {
+      "title": "Дизайнери мобільних застосунків",
+      "description": "Покращуйте свої навички UX"
+    },
+    "ux": {
+      "title": "Професійні дизайнери",
+      "description": "Почувайтеся впевненіше у сфері UX"
     }
   }
 }

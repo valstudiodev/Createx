@@ -133,7 +133,9 @@
     "latestPosts": "Latest posts",
     "featuredCourses": "Featured Courses",
     "youMayAlsoLike": "You may also like",
-    "doYouWantMoreCourses": "Do you want more courses?"
+    "doYouWantMoreCourses": "Do you want more courses?",
+    "whoWillBenefit": "Who will benefit from the course:",
+    "whatWillYouLearn": "What will you learn"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -153,7 +155,9 @@
     "testimonials": "TESTIMONIALS",
     "ourBlog": "Our blog",
     "readyToLearn": "Ready to learn?",
-    "checkOtherCourses": "Check other courses"
+    "checkOtherCourses": "Check other courses",
+    "courseProgram": "Course program",
+    "forWhom": "For whom?"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",
@@ -175,6 +179,20 @@
       "watch": "Watch",
       "listen": "Listen",
       "read": "Read"
+    }
+  },
+  "courseBenefits": {
+    "experience": {
+      "title": "Professional experience",
+      "description": "More than 1 year of active work experience"
+    },
+    "designers": {
+      "title": "Mobile app designers",
+      "description": "Improve your UX skills"
+    },
+    "ux": {
+      "title": "Professional designers",
+      "description": "Feel more confident in UX"
     }
   }
 }
