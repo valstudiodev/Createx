@@ -1,0 +1,36 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.featured-courses {
+  @include adaptiveValue('padding-block', 90, 30);
+
+  &__container {}
+
+  &__headline {
+    @include adaptiveValue('margin-bottom', 60, 20);
+
+    h2 {
+      @include adaptiveValue('font-size', 46, 32);
+    }
+  }
+
+  &__list {
+    @include grid-adaptive($size: toRem(450));
+    @include adaptiveValue('gap', 30, 15);
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: toRem(800);
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  &__ &__btn {}
+}

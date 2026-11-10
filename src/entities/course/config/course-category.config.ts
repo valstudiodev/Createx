@@ -13,22 +13,22 @@ export const coursesCategoryConfig: Record<CourseCategory, CategoryConfig> = {
     color: '#fff'
   },
   management: {
-    label: 'marketing',
+    label: 'management',
     background: '#5A87FC',
     color: '#fff'
   },
   hr: {
-    label: 'marketing',
+    label: 'HR & Recruting',
     background: '#F89828',
     color: '#fff'
   },
   design: {
-    label: 'marketing',
+    label: 'Design',
     background: '#F52F6E',
     color: '#fff'
   },
   development: {
-    label: 'marketing',
+    label: 'Development',
     background: '#7772F1',
     color: '#fff'
   }

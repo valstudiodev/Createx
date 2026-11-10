@@ -1,7 +1,6 @@
 import { collection, doc, getDoc, getDocs, limit, orderBy, query, where } from "firebase/firestore";
 import { Post, PostDetailsInterface } from "../model/post-types";
 import db from "@/shared/config/firebase/firebase-config";
-import { snapshot } from "node:test";
 
 // export async function getPosts(): Promise<Post[]> {
 //   const postsCollection = collection(db, 'posts')

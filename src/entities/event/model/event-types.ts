@@ -34,7 +34,7 @@ export interface EventPreview extends Event { }
 
 export interface EventDetails extends Event {
   about: AccordionItem[];
-  price?: number;
+  price: number;
   information?: string[];
 }
 

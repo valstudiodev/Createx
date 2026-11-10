@@ -130,7 +130,10 @@
     "lecturesWorkshops": "Lectures & workshops",
     "expertiseConfirmed": "Your expertise will be confirmed",
     "whatOurStudentsSay": "What our students say",
-    "latestPosts": "Latest posts"
+    "latestPosts": "Latest posts",
+    "featuredCourses": "Featured Courses",
+    "youMayAlsoLike": "You may also like",
+    "doYouWantMoreCourses": "Do you want more courses?"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -148,7 +151,9 @@
     "ourEvents": "Our Events",
     "createxCertificate": "Createx Certificate",
     "testimonials": "TESTIMONIALS",
-    "ourBlog": "Our blog"
+    "ourBlog": "Our blog",
+    "readyToLearn": "Ready to learn?",
+    "checkOtherCourses": "Check other courses"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",

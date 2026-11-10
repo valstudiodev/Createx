@@ -23,8 +23,9 @@ const initialState: CourseFormValues = {
   learningOutcomes: [],
   startDate: '',
   endDate: '',
-  durationMonths: 0,
-  lessonsCount: 0,
+  durationMonths: '',
+  lessonsCount: '',
+  isFeatured: false
 }
 
 function useCourseCreateForm() {
@@ -34,18 +35,23 @@ function useCourseCreateForm() {
   const [courseCreateStatus, setCourseCreateStatus] = useState<RequestStatus>('idle');
   const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
-    const value = e.target.value
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ): void => {
+    const { name, value, type } = e.target;
 
-    const name = e.target.name
+    const newValue =
+      type === 'checkbox' && e.target instanceof HTMLInputElement
+        ? e.target.checked
+        : value;
 
-    setFormValues(
-      (prev) => ({
-        ...prev,
-        [name]: value,
-      })
-    )
-  }
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: newValue,
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
@@ -82,12 +88,16 @@ function useCourseCreateForm() {
     const rating = Number(formValues.rating)
     const coursesCount = Number(formValues.coursesCount)
     const studentsCount = Number(formValues.studentsCount)
+    const durationMonths = Number(formValues.durationMonths)
+    const lessonsCount = Number(formValues.lessonsCount)
 
     if (
       !Number.isFinite(price) ||
       !Number.isFinite(rating) ||
       !Number.isInteger(coursesCount) ||
-      !Number.isInteger(studentsCount)
+      !Number.isInteger(studentsCount) ||
+      !Number.isInteger(durationMonths) ||
+      !Number.isInteger(lessonsCount)
     ) {
       setError('Please enter valid numbers.')
       setCourseCreateStatus('error')
@@ -106,14 +116,13 @@ function useCourseCreateForm() {
       return
     }
 
-    if (coursesCount < 0) {
-      setError('Courses count cannot be negative.')
-      setCourseCreateStatus('error')
-      return
-    }
-
-    if (studentsCount < 0) {
-      setError('Students count cannot be negative.')
+    if (
+      coursesCount < 0 ||
+      studentsCount < 0 ||
+      durationMonths < 0 ||
+      lessonsCount < 0
+    ) {
+      setError('Numeric values cannot be negative.')
       setCourseCreateStatus('error')
       return
     }
@@ -128,22 +137,23 @@ function useCourseCreateForm() {
       const payload: CreateCoursePayload = {
         title: formValues.title,
         category: formValues.category,
-        price: Number(formValues.price),
+        price,
         teacherName: formValues.teacherName,
         image: formValues.image,
         position: formValues.position,
         specialty: formValues.specialty,
-        rating: Number(formValues.rating),
-        coursesCount: Number(formValues.coursesCount),
-        studentsCount: Number(formValues.studentsCount),
+        rating,
+        coursesCount,
+        studentsCount,
         description: formValues.description,
         socialMedia: socialMedia,
         about: formValues.about,
         learningOutcomes: formValues.learningOutcomes,
         startDate: formValues.startDate,
         endDate: formValues.endDate,
-        durationMonths: formValues.durationMonths,
-        lessonsCount: formValues.lessonsCount
+        durationMonths,
+        lessonsCount,
+        isFeatured: formValues.isFeatured
       }
 
       await createCourse(payload)
@@ -209,7 +219,6 @@ function useCourseCreateForm() {
     handleRemoveListItem,
     handleListItemChange
   }
-
 }
 
 export default useCourseCreateForm

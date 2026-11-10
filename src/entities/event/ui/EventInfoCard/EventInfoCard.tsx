@@ -1,3 +1,4 @@
+import formatDateByStyle from '@/shared/lib/formatDateByStyle/formatDateByStyle';
 import { EventFullDetails } from '../../model/event-types';
 import './eventInfoCard.scss';
 
@@ -14,12 +15,14 @@ function EventInfoCard({
 }: EventInfoCardProps): React.JSX.Element {
   const eventInfoCard = 'event-info-card'
 
+  const date = formatDateByStyle(event.date, 'long')
+
   return (
     <article className={`${eventInfoCard} ${className}`}>
       <div className={`${eventInfoCard}__wrap`}>
         <span className={`${eventInfoCard}__label`}>Time</span>
         <div className={`${eventInfoCard}__info`}>
-          <span className={`${eventInfoCard}__date`}>{event.date}</span>,
+          <span className={`${eventInfoCard}__date`}>{date}</span>,
           <div className={`${eventInfoCard}__time`}>
             <span>{event.startTime}</span> -
             <span>{event.endTime}</span>
@@ -30,10 +33,14 @@ function EventInfoCard({
         </p>
       </div>
       <div className={`${eventInfoCard}__wrap`}>
-        <div className={`${eventInfoCard}__price`}>
-          <span className={`${eventInfoCard}__label`}>price</span>
-          <span className={`${eventInfoCard}__amount`}>{event.price}</span>
-        </div>
+        {event.price > 0 ? (
+          <div className={`${eventInfoCard}__price`}>
+            <span className={`${eventInfoCard}__label`}>price</span>
+            <span className={`${eventInfoCard}__amount`}>{event.price}$</span>
+          </div>
+        ) : (
+          <span>Free</span>
+        )}
         <p className={`${eventInfoCard}__text`}>
           Nulla sem adipiscing adipiscing felis fringilla. Adipiscing mauris quam ac elit tristique dis.
         </p>
@@ -41,7 +48,7 @@ function EventInfoCard({
       <div className={`${eventInfoCard}__actions`}>
         {actions}
       </div>
-    </article>
+    </article >
   );
 }
 

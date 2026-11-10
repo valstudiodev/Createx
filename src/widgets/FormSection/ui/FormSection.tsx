@@ -4,6 +4,7 @@ import './formSection.scss';
 import { formSectionConfig } from '../config/formSection.config';
 import { SubmitForm } from '@/features';
 import Title from '@/shared/ui/Title/Title';
+import { Container } from '@/shared/primitives';
 
 function FormSection({
   type,
@@ -23,21 +24,24 @@ function FormSection({
 
   return (
     <section className={stylesCombined}>
-      <div className={`${formSection}__body`}>
-        <div className={`${formSection}__header`}>
-          <Title
-            label={t(label)}
-            variant='left'
-            className={`${formSection}__title`}
-          >
-            {t(title)}
-          </Title>
+      <Container className={`${formSection}__container`}>
+        <div className={`${formSection}__body`}>
+          <div className={`${formSection}__header`}>
+            <Title
+              label={t(label)}
+              variant='left'
+              className={`${formSection}__title`}
+            >
+              {t(title)}
+            </Title>
+          </div>
+          <SubmitForm type={type} />
         </div>
-        <SubmitForm type={type} />
-      </div>
-      <div className={`${formSection}__image`}>
-        <img src={image} alt="" />
-      </div>
+        <div className={`${formSection}__image`}>
+          <img src={image} alt="" />
+        </div>
+      </Container>
+
     </section>
   );
 }

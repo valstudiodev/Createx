@@ -17,8 +17,9 @@ export interface CourseFormValues {
 
   about: string;
   learningOutcomes?: string[];
-  startDate?: string;
-  endDate?: string;
-  durationMonths?: number;
-  lessonsCount?: number;
+  startDate: string;
+  endDate: string;
+  durationMonths: string;
+  lessonsCount: string;
+  isFeatured: boolean
 }

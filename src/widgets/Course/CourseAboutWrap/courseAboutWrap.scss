@@ -6,10 +6,14 @@
 .course-about-wrap {
   @include adaptiveValue('padding-top', 120, 30);
   @include adaptiveValue('padding-bottom', 60, 30);
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  @include adaptiveValue('gap', 30, 15);
+
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include adaptiveValue('gap', 30, 15);
+  }
 
   @media (max-width: toEm(768)) {
     flex-wrap: wrap;

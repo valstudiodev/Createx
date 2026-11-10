@@ -4,7 +4,6 @@ import { selectPosts, selectPostsError, selectPostsLoading } from '../../model/p
 import { useEffect } from 'react';
 import { fetchPosts } from '../../model/postThunk';
 import PostCard from '../PostCard/PostCard';
-import PostCardLink from '../PostCardLink/PostCardLink';
 
 interface PostsGridProps {
   className?: string;
@@ -43,7 +42,7 @@ function PostsGrid({
             className={`${postsGrid}__item`}
             key={post.id}
           >
-            <PostCard
+            {/* <PostCard
               post={post}
               actions={[
                 ...(post.action === 'listen'
@@ -64,7 +63,8 @@ function PostsGrid({
                     key='watch' label='Watch' />] : []
                 )
               ]}
-            />
+            /> */}
+            <PostCard post={post} />
           </li>
         ))}
       </ul>

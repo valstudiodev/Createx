@@ -3,10 +3,14 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .form-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include adaptiveValue('gap', 30, 15);
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiveValue('gap', 30, 15);
+  }
 
   &--request {
     @include adaptiveValue('padding-block', 120, 30);
@@ -24,13 +28,14 @@
   &--course-registration {
     @include adaptiveValue('padding-top', 180, 40);
     @include adaptiveValue('padding-bottom', 100, 30);
+    background-color: var(--color-gray-200);
 
     .form-section__body {
-      order: 1;
+      order: 2;
     }
 
     .form-section__image {
-      order: 2;
+      order: 1;
       aspect-ratio: 550 / 502;
     }
   }

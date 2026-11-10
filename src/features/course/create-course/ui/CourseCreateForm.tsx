@@ -1,6 +1,8 @@
+import { SuccessMessage } from '@/shared/ui/Messages';
 import useCourseCreateForm from '../model/useCourseCreateForm';
 import '../styles/courseCreateForm.scss';
 import { socialMediaConfig, SocialPlatform } from '@/shared/constants/socialLinks/socialLinks.types';
+import { useEffect, useState } from 'react';
 
 function CourseCreateForm(): React.JSX.Element {
   const courseCreateForm = 'course-create-form'
@@ -17,9 +19,23 @@ function CourseCreateForm(): React.JSX.Element {
     handleListItemChange
   } = useCourseCreateForm()
 
+  const [success, setSuccess] = useState<boolean>(false);
+
   const loading = courseCreateStatus === 'loading'
-  const success = courseCreateStatus === 'success'
   const errorStatus = courseCreateStatus === 'error'
+
+  useEffect(() => {
+    if (courseCreateStatus !== 'success') return
+
+    setSuccess(true)
+
+    const timer = setTimeout(() => {
+      setSuccess(false)
+    }, 3000);
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [courseCreateStatus]);
 
 
   return (
@@ -249,28 +265,41 @@ function CourseCreateForm(): React.JSX.Element {
           />
         </label>
 
+        <label className={`${courseCreateForm}__field`}>
+          Months:
+          <input
+            type="text"
+            name='durationMonths'
+            value={formValues.durationMonths}
+            onChange={handleChange}
+            className={`${courseCreateForm}__input`}
+            placeholder='Add months...'
+          />
+        </label>
+
+        <label className={`${courseCreateForm}__field`}>
+          Lessons:
+          <input
+            type="text"
+            name='lessonsCount'
+            value={formValues.lessonsCount}
+            onChange={handleChange}
+            className={`${courseCreateForm}__input`}
+            placeholder='Add a count of lessons...'
+          />
+        </label>
+
       </div>
 
-      <div className={`${courseCreateForm}__duration`}>
+      <label className={`${courseCreateForm}__checkbox`}>
+        isFeatured
         <input
-          type="text"
-          name='durationMonths'
-          value={formValues.durationMonths}
+          type="checkbox"
+          name='isFeatured'
+          checked={formValues.isFeatured}
           onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add months...'
         />
-
-        <input
-          type="text"
-          name='lessonsCount'
-          value={formValues.lessonsCount}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add a count of lessons...'
-        />
-      </div>
-
+      </label>
 
       <button
         type='submit'
@@ -285,7 +314,7 @@ function CourseCreateForm(): React.JSX.Element {
       )}
 
       {success && (
-        <div className='text-center text-4xl text-green-800'>Course created successfully!!!</div>
+        <SuccessMessage message='Course created successfully!!!' />
       )}
     </form>
   );

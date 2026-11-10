@@ -7,10 +7,7 @@ export const fetchCourses = createAsyncThunk<CourseFullDetails[], void, { reject
   'courses/fetchCourses',
   async (_, { rejectWithValue }) => {
     try {
-      console.log('fetchCourses: started')
-
       const response = await getCourses()
-      console.log('fetchCourses: finished')
       return response
 
     } catch (error: unknown) {

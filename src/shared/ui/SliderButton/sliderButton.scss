@@ -22,9 +22,16 @@
     rotate: 90deg;
   }
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   @include hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    &:not(:disabled) {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
   }
 
   @include input('touch') {

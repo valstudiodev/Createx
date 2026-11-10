@@ -1,6 +1,7 @@
 @use '@/shared/styles/settings/settings' as *;
 @use '@/shared/styles/abstracts/input-mixins' as *;
 @use '@/shared/styles/theme/lightTheme' as *;
+@use '../../../../shared/styles/mixins/grid' as *;
 
 .course-create-form {
   display: grid;
@@ -17,7 +18,11 @@
 
   &__field {
     display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: toRem(5);
     min-width: 0;
+    width: 100%;
 
     &:has(.course-create-form__textarea) {
       grid-column: 1 / -1;
@@ -61,6 +66,14 @@
     cursor: pointer;
   }
 
+  &__checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: toRem(5);
+    justify-content: flex-end;
+  }
+
   &__btn-add,
   &__btn-remove {
     display: inline-flex;
@@ -101,6 +114,18 @@
       opacity: 0.6;
       transform: none;
     }
+  }
+
+  &__wrap {
+    grid-column: 1 / -1;
+    margin-bottom: toRem(20);
+  }
+
+  &__dates {
+    // grid-column: 1 / -1;
+    @include grid-adaptive($size: toRem(300));
+    gap: toRem(20);
+    grid-column: 1 / -1;
   }
 
   &__btn-add {

@@ -10,7 +10,6 @@ interface PostListProps {
 
 function PostList({
   posts,
-  renderActions,
   className = ''
 }: PostListProps): React.JSX.Element {
   const postList = 'post-list'
@@ -21,7 +20,7 @@ function PostList({
         <PostCard
           key={post.id}
           post={post}
-          actions={renderActions?.(post) ?? []}
+        // actions={renderActions?.(post) ?? []}
         />
       ))}
     </div>

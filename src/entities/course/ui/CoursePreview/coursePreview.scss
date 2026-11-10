@@ -5,6 +5,8 @@
 .course-card-preview {
   display: flex;
   align-items: center;
+  height: 100%;
+  width: 100%;
   background-color: var(--color-white);
   box-shadow: var(--color-box-shadow);
   border: toRem(1) solid var(--color-border);
@@ -12,10 +14,6 @@
   overflow: hidden;
   transition: box-shadow 0.3s;
   will-change: box-shadow;
-
-  @media (max-width: toEm(550)) {
-    flex-direction: column;
-  }
 
   &__image {
     overflow: hidden;
@@ -39,6 +37,7 @@
     flex-direction: column;
     @include adaptiveValue('gap', 20, 10);
     align-items: flex-start;
+    flex-grow: 1;
 
     @media (max-width: toEm(550)) {
       width: 100%;
@@ -84,9 +83,11 @@
     }
   }
 
-  &__teacher-name {}
-
   @include hover {
     box-shadow: var(--color-box-shadow-hover);
+  }
+
+  @media (max-width: toEm(550)) {
+    flex-direction: column;
   }
 }

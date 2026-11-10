@@ -14,6 +14,7 @@ export interface Course {
   title: string;
   price: number;
   teacherName: string;
+  isFeatured: boolean;
 }
 
 export interface CourseTeacherDetails {
@@ -29,8 +30,8 @@ export interface CourseTeacherDetails {
 export interface CourseDetailsInfo extends Course {
   about?: string;
   learningOutcomes?: string[];
-  startDate?: string;
-  endDate?: string;
+  startDate: string;
+  endDate: string;
   durationMonths?: number;
   lessonsCount?: number;
 }
@@ -52,10 +53,11 @@ export interface CreateCoursePayload {
   socialMedia: SocialLink[];
   about: string;
   learningOutcomes?: string[];
-  startDate?: string;
-  endDate?: string;
+  startDate: string;
+  endDate: string;
   durationMonths?: number;
   lessonsCount?: number;
+  isFeatured: boolean;
 }
 
 export interface CourseState {

@@ -130,7 +130,10 @@
     "lecturesWorkshops": "Лекції та практичні заняття",
     "expertiseConfirmed": "Вашу кваліфікацію буде підтверджено",
     "whatOurStudentsSay": "Що говорять наші студенти",
-    "latestPosts": "Останні публікації"
+    "latestPosts": "Останні публікації",
+    "featuredCourses": "Популярні курси",
+    "youMayAlsoLike": "Вам також може сподобатися",
+    "doYouWantMoreCourses": "Хочете більше курсів?"
   },
   "labels": {
     "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
@@ -148,7 +151,9 @@
     "ourEvents": "Наші події",
     "createxCertificate": "Сертифікат Createx",
     "testimonials": "ВІДГУКИ",
-    "ourBlog": "Наш блог"
+    "ourBlog": "Наш блог",
+    "readyToLearn": "Готові навчатися?",
+    "checkOtherCourses": "Перегляньте інші курси"
   },
   "statistics": {
     "studentsGraduated": "Випускників",

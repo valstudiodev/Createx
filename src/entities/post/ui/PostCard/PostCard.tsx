@@ -9,7 +9,7 @@ import PostCardLink from '../PostCardLink/PostCardLink';
 interface PostCardProps {
   post: Post,
   className?: string;
-  actions: React.ReactElement[]
+  // actions: React.ReactElement[]
 }
 
 function PostCard({

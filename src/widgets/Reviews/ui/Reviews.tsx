@@ -3,7 +3,7 @@ import './reviews.scss';
 import Title from '@/shared/ui/Title/Title';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { Swiper as SwiperInstance } from 'swiper'
 import { reviewsData } from '@/entities/review/data/review.data';
 import ReviewCard from '@/entities/review/ui/ReviewCard';

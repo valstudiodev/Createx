@@ -3,13 +3,23 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .compact-subscribe {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   @include adaptiveValue('gap', 30, 15);
-  background-color: var(--color-btn-gradient);
   @include adaptiveValue('padding-inline', 100, 20);
   @include adaptiveValue('padding-block', 60, 20);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.2;
+    background: var(--color-btn-gradient);
+    border-radius: toRem(4);
+  }
 
   &__image {
     flex: 0 1 40%;

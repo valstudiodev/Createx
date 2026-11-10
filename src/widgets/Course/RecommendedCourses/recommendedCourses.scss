@@ -1,0 +1,50 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.recommended-courses {
+  @include adaptiveValue('padding-top', 120, 30);
+  @include adaptiveValue('padding-bottom', 185, 40);
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: toRem(400);
+  }
+
+  &__container {}
+
+  &__headline {
+    @include adaptiveValue('margin-bottom', 60, 20);
+
+    h2 {
+      @include adaptiveValue('font-size', 46, 32);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: toRem(24);
+  }
+
+  &__explore {
+    @include adaptiveValue('padding-top', 85, 20);
+  }
+
+  &__slider {
+    overflow: hidden;
+    // padding: toRem(2) toRem(2);
+    // margin: toRem(-2) toRem(-2);
+  }
+
+  &__swiper {
+    overflow: visible;
+  }
+
+  &__slide {
+    height: auto;
+  }
+}

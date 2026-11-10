@@ -6,6 +6,8 @@ import LectureSection from '@/widgets/LecturesSection/LectureSection';
 import SertificateSection from '@/widgets/SertificateSection/ui/SertificateSection';
 import { Reviews } from '@/widgets/Reviews';
 import LatestPosts from '@/widgets/posts/LatestPosts/LatestPosts';
+import { FeaturedCourses } from '@/widgets/Course';
+import { SubscribeSection } from '@/widgets';
 
 function HomePage(): React.JSX.Element {
   const homePage = 'home-page'
@@ -16,13 +18,13 @@ function HomePage(): React.JSX.Element {
     <div className={homePage}>
       <HeroSection />
       <AboutSection />
+      <FeaturedCourses />
       <AdvantagesSection />
       <LectureSection />
       <SertificateSection />
-
-
       <LatestPosts />
       <Reviews />
+      <SubscribeSection />
     </div>
   );
 }

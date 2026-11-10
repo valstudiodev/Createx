@@ -24,6 +24,7 @@
     padding-block: toRem(13);
     width: 100%;
     height: toRem(52);
+    transition: border-color 0.3s;
 
     &::placeholder {
       color: var(--color-gray-600);
@@ -39,9 +40,12 @@
     }
 
     &:focus-visible {
-      outline: toRem(2);
-      outline-offset: toRem(4);
-      border-color: var(--color-primary);
+      outline: toRem(1) solid var(--color-primary);
+      outline-offset: toRem(2);
+    }
+
+    @include hover {
+      border-color: var(--color-gray-700);
     }
   }
 
