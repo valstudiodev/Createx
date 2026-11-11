@@ -3,7 +3,7 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .sertificate-section {
-  @include adaptiveValue('padding-block', 22, 20);
+  @include adaptiveValue('padding-block', 120, 40);
 
   &__container {
     display: flex;

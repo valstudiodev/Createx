@@ -25,7 +25,8 @@ const initialState: CourseFormValues = {
   endDate: '',
   durationMonths: '',
   lessonsCount: '',
-  isFeatured: false
+  isFeatured: false,
+  courseProgram: []
 }
 
 function useCourseCreateForm() {
@@ -217,7 +218,8 @@ function useCourseCreateForm() {
     handleSocialMediaChange,
     handleAddListItem,
     handleRemoveListItem,
-    handleListItemChange
+    handleListItemChange,
+    setFormValues
   }
 }
 

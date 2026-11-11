@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: center;
   @include adaptiveValue('gap', 40, 20);
-  flex-wrap: wrap;
 
   &__title {
     @include adaptiveValue('font-size', 28, 22);
@@ -15,7 +14,9 @@
     color: var(--color-gray-900);
   }
 
-  @media (max-width: toEm(394)) {
+  @media (max-width: toEm(460)) {
+    flex-direction: column;
+
     .button-basic {
       width: 100%;
     }

@@ -32,5 +32,9 @@
     width: 100%;
   }
 
-  &__ &__btn {}
+  &__btn {
+    @media (max-width: toEm(460)) {
+      width: 100%;
+    }
+  }
 }

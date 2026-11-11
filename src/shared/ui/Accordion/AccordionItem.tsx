@@ -1,5 +1,7 @@
 import { AccordionItem } from "@/entities/event/model/event-types";
 import { AccordionLabelType } from "./Accordion";
+import AccordionIcon from "./AccordionIcon";
+import { useState } from "react";
 
 export interface AccordionItemProps {
   item: AccordionItem;
@@ -27,9 +29,7 @@ function AccordionItemSingle({
         aria-expanded={isOpen}
       >
         <div className={`${accordionItem}__wrap`}>
-          <span className={`${accordionItem}__icon`}>
-            {isOpen ? '-' : '+'}
-          </span>
+          <AccordionIcon isOpen={isOpen} />
           <div className={`${accordionItem}__label`}>
             <span>{itemLabel}</span>
             <span>{index + 1}.</span>

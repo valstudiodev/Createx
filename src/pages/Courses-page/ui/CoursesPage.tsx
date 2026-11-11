@@ -1,7 +1,10 @@
-import { Container, Section } from '@/shared/primitives';
+import { Section } from '@/shared/primitives';
 import '../styles/coursesPage.scss';
 // import CourseList from '@/widgets/Course/CourseList/CourseList';
-import CourseGridSquare from '@/entities/course/ui/CourseGridSquare/CourseGridSquare';
+import { Reviews } from '@/widgets/Reviews';
+import SertificateSection from '@/widgets/SertificateSection/ui/SertificateSection';
+import { SubscribeSection } from '@/widgets';
+import CoursesSection from '@/widgets/Course/CoursesSection/CoursesSection';
 // import CourseGridRectangle from '@/entities/course/ui/CourseGridRectangle/CourseGridRectangle';
 
 function CoursesPage(): React.JSX.Element {
@@ -9,11 +12,11 @@ function CoursesPage(): React.JSX.Element {
 
   return (
     <Section className={coursesPage}>
-      <Container className={`${coursesPage}__container`}>
-        {/* <CourseList /> */}
-        <CourseGridSquare />
-        {/* <CourseGridRectangle /> */}
-      </Container>
+
+      <CoursesSection />
+      <Reviews />
+      <SertificateSection />
+      <SubscribeSection />
     </Section>
   );
 }

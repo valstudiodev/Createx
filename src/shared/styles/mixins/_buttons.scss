@@ -1,4 +1,5 @@
 @use "sass:math";
+@use '../abstracts/input-mixins' as *;
 
 @mixin icon-menu ($width,
   $height,

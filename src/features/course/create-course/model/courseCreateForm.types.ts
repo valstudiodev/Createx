@@ -1,4 +1,5 @@
 import { CourseCategory } from "@/entities/course/model/course.types";
+import { AccordionItem } from "@/entities/event/model/event-types";
 import { SocialPlatform } from "@/shared/constants/socialLinks/socialLinks.types";
 
 export interface CourseFormValues {
@@ -14,6 +15,7 @@ export interface CourseFormValues {
   studentsCount: string;
   description: string;
   socialMedia: SocialPlatform[];
+  courseProgram: AccordionItem[];
 
   about: string;
   learningOutcomes?: string[];

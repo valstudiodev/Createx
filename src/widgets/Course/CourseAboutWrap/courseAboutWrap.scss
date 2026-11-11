@@ -13,6 +13,24 @@
     align-items: flex-start;
     justify-content: space-between;
     @include adaptiveValue('gap', 30, 15);
+
+    @media (max-width: toEm(768)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+
+    @media (max-width: toEm(768)) {
+      flex-grow: 1;
+    }
+  }
+
+  &__info-card {
+
+    @media (max-width: toEm(768)) {
+      flex-grow: 1;
+    }
   }
 
   @media (max-width: toEm(768)) {

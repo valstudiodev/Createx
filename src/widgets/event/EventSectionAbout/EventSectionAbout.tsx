@@ -4,11 +4,14 @@ import EventAboutContent from '@/entities/event/ui/EventAboutContent/EventAboutC
 import EventInfoCard from '@/entities/event/ui/EventInfoCard/EventInfoCard';
 import { Link } from 'react-router';
 import { ButtonBasic } from '@/shared/ui/Button';
+import { useTranslation } from 'react-i18next';
 
 function EventSectionAbout({
   event
 }: { event: EventFullDetails }): React.JSX.Element {
   const eventSectionAbout = 'event-section-about'
+
+  const { t } = useTranslation()
 
   return (
     <div className={eventSectionAbout}>
@@ -27,7 +30,7 @@ function EventSectionAbout({
           <ButtonBasic
             className={`${eventSectionAbout}__btn`}
           >
-            Join the event
+            {t('buttons.joinEvent')}
           </ButtonBasic>
         ]}
       />

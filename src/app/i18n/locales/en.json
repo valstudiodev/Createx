@@ -135,7 +135,11 @@
     "youMayAlsoLike": "You may also like",
     "doYouWantMoreCourses": "Do you want more courses?",
     "whoWillBenefit": "Who will benefit from the course:",
-    "whatWillYouLearn": "What will you learn"
+    "whatWillYouLearn": "What will you learn",
+    "weWillTalkAbout": "We will talk about:",
+    "whoWillBenefitFromEvent": "Who will benefit from the event:",
+    "userExperience": "User Experience. Principles of Human-Centered Design",
+    "ourOnlineCourses": "Our online courses"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -157,7 +161,9 @@
     "readyToLearn": "Ready to learn?",
     "checkOtherCourses": "Check other courses",
     "courseProgram": "Course program",
-    "forWhom": "For whom?"
+    "forWhom": "For whom?",
+    "course": "Course",
+    "enjoyYourStudying": "Enjoy your studying!"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",

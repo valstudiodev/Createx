@@ -6,9 +6,7 @@
 .reviews {
   background-color: var(--color-gray-200);
   @include adaptiveValue('padding-top', 90, 30);
-  @include adaptiveValue('padding-bottom', 160, 40);
-
-  &__container {}
+  @include adaptiveValue('padding-bottom', 80, 30);
 
   &__body {
     display: flex;

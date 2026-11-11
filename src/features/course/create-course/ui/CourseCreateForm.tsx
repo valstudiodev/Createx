@@ -3,6 +3,7 @@ import useCourseCreateForm from '../model/useCourseCreateForm';
 import '../styles/courseCreateForm.scss';
 import { socialMediaConfig, SocialPlatform } from '@/shared/constants/socialLinks/socialLinks.types';
 import { useEffect, useState } from 'react';
+import CourseProgramFields from './CourseProgramFields';
 
 function CourseCreateForm(): React.JSX.Element {
   const courseCreateForm = 'course-create-form'
@@ -16,7 +17,8 @@ function CourseCreateForm(): React.JSX.Element {
     handleSocialMediaChange,
     handleAddListItem,
     handleRemoveListItem,
-    handleListItemChange
+    handleListItemChange,
+    setFormValues
   } = useCourseCreateForm()
 
   const [success, setSuccess] = useState<boolean>(false);
@@ -43,6 +45,10 @@ function CourseCreateForm(): React.JSX.Element {
       className={courseCreateForm}
       onSubmit={handleSubmit}
     >
+
+      <h2 className={`${courseCreateForm}__title`}>
+        Teacher information:
+      </h2>
       <label className={`${courseCreateForm}__field`}>
         <input
           type="text"
@@ -198,6 +204,9 @@ function CourseCreateForm(): React.JSX.Element {
       </fieldset>
 
       {/* about info */}
+      <h2 className={`${courseCreateForm}__title`}>
+        Course information:
+      </h2>
       <label className={`${courseCreateForm}__field`}>
         <textarea
           name="about"
@@ -209,7 +218,9 @@ function CourseCreateForm(): React.JSX.Element {
         </textarea>
       </label>
 
+
       <div className={`${courseCreateForm}__wrap`}>
+        <h3 className='mb-2 text-xl'>You will learn item:</h3>
         {formValues.learningOutcomes?.map((item, index) => (
           <div
             key={index}
@@ -220,7 +231,7 @@ function CourseCreateForm(): React.JSX.Element {
               name='learningOutcomes'
               value={item}
               onChange={(e) => handleListItemChange(index, e.target.value)}
-              className={`${courseCreateForm}__input`}
+              className={`${courseCreateForm}__input mb-2`}
               placeholder='Add a list item...'
             />
             <button
@@ -291,6 +302,19 @@ function CourseCreateForm(): React.JSX.Element {
 
       </div>
 
+      <h2 className={`${courseCreateForm}__title`}>
+        Course program:
+      </h2>
+      <CourseProgramFields
+        items={formValues.courseProgram}
+        onChange={(items) =>
+          setFormValues((prev) => ({
+            ...prev,
+            courseProgram: items
+          }))
+        }
+      />
+
       <label className={`${courseCreateForm}__checkbox`}>
         isFeatured
         <input
@@ -300,6 +324,8 @@ function CourseCreateForm(): React.JSX.Element {
           onChange={handleChange}
         />
       </label>
+
+
 
       <button
         type='submit'

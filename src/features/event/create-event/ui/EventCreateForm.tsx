@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import useEventCreateForm from '../model/useEventCreateForm';
 import '../styles/eventCreateForm.scss';
-import { ErrorMessage } from '@/shared/ui/Messages';
+import { ErrorMessage, SuccessMessage } from '@/shared/ui/Messages';
 import EventAboutFields from './EventAboutFields';
 
 interface EventCreateFormProps {
@@ -187,7 +187,7 @@ function EventCreateForm({
       </button>
 
       {success && (
-        <div>Success!!!</div>
+        <SuccessMessage message='The event created successfully!' />
       )}
 
       {error && (

@@ -26,7 +26,7 @@
   }
 
   &--course-registration {
-    @include adaptiveValue('padding-top', 180, 40);
+    @include adaptiveValue('padding-top', 90, 30);
     @include adaptiveValue('padding-bottom', 100, 30);
     background-color: var(--color-gray-200);
 

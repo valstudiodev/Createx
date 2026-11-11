@@ -49,9 +49,16 @@
     }
   }
 
+  &__title {
+    font-size: toRem(18);
+    font-weight: 700;
+  }
+
   &__item {}
 
-  &__input {}
+  &__input {
+    margin-bottom: toRem(10);
+  }
 
   &__textarea {}
 

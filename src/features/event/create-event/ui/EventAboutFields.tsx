@@ -39,7 +39,7 @@ function EventAboutFields({
 
   return (
     <div className={eventAboutFields}>
-      <h3>Event themes</h3>
+      <h3 className={`${eventAboutFields}__title`}>Event themes</h3>
 
       {items.map((item, index) => (
         <fieldset

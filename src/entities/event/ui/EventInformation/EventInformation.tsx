@@ -1,5 +1,7 @@
+import { Title } from '@/shared/ui';
 import { EventFullDetails } from '../../model/event-types';
 import './styles.scss';
+import { useTranslation } from 'react-i18next';
 
 interface EventInformationProps {
   event: EventFullDetails;
@@ -10,15 +12,23 @@ function EventInformation({
 }: EventInformationProps): React.JSX.Element {
   const eventInformation = 'event-information'
 
+  const { t } = useTranslation()
+
   return (
     <div className={eventInformation}>
       <div className={`${eventInformation}__content`}>
-        <span className={`${eventInformation}__label`}>
+        {/* <span className={`${eventInformation}__label`}>
           for whom?
         </span>
         <h2 className={`${eventInformation}__title`}>
           Who will benefit from the event:
-        </h2>
+        </h2> */}
+        <Title
+          label={t('labels.forWhom')}
+          className={`${eventInformation}__title`}
+        >
+          {t('titles.whoWillBenefitFromEvent')}
+        </Title>
       </div>
       <div className={`${eventInformation}__items`}>
         <ul className={`${eventInformation}__list`}>
