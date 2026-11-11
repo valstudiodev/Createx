@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-Cx0BB4qO.js";import{u as t}from"./index-DfauJk4Q.js";import{t as n}from"./primitives-tLz1joYf.js";var r=e();function i(){let e=`admin-dashboard`;return(0,r.jsx)(n,{className:e,children:(0,r.jsx)(t,{className:`${e}__container`,children:(0,r.jsx)(`h1`,{children:`Admin dashboard`})})})}export{i as default};
