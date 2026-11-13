@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-Cx0BB4qO.js";import{u as t}from"./index-iV3CZhlD.js";import{t as n}from"./primitives-CjQTAicP.js";import{t as r}from"./EventGrid-zlO395Tp.js";var i=e();function a(){let e=`events-page`;return(0,i.jsx)(n,{className:e,children:(0,i.jsx)(t,{className:`${e}__container`,children:(0,i.jsx)(r,{variant:`primary`})})})}export{a as default};
