@@ -2,7 +2,6 @@
 @use '@/shared/styles/abstracts/input-mixins' as *;
 
 .blog-page {
-  padding-block: toRem(200);
 
   &__container {}
 }

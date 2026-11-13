@@ -39,7 +39,7 @@ function FeaturedCourses({
   if (isLoading) {
     return (
       <div className={`${clFeaturedCourses}__loading`}>
-        <SpinnerDefault />
+        <SpinnerDefault size='large' />
       </div>
     )
   }

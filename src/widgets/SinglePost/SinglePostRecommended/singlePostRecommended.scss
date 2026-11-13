@@ -1,0 +1,49 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.single-post-recommended {
+  @include adaptiveValue('padding-top', 120, 30);
+  @include adaptiveValue('padding-bottom', 180, 40);
+
+
+  &__container {}
+
+  &__headline {
+
+    h2 {
+      @include adaptiveValue('font-size', 46, 32);
+      color: var(--color-gray-900);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: toRem(24);
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: toRem(400);
+  }
+
+  &__slide {
+    width: 100%;
+    height: auto;
+  }
+
+  &__explore {
+    @include adaptiveValue('padding-top', 85, 20);
+    // text-align: center;
+  }
+
+  &__slider {}
+
+  &__swiper {}
+
+  .swiper-wrapper {}
+}

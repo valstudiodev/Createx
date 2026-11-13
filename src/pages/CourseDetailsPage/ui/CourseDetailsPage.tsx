@@ -56,7 +56,7 @@ function CourseDetailsPage(): React.JSX.Element {
   }
 
   if (error) {
-    return <ErrorMessage message='Course noy found.' />
+    return <ErrorMessage message='Course not found.' />
   }
 
   if (!course) {

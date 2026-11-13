@@ -1,55 +1,51 @@
 import { Container, Section } from '@/shared/primitives';
 import '../styles/singlePost.scss';
-import { useParams } from 'react-router';
+import SinglePostSection from '@/widgets/SinglePost/SinglePostSection/SinglePostSection';
+import SinglePostRecommended from '@/widgets/SinglePost/SinglePostRecommended/SinglePostRecommended';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
-import { selectPostError, selectPostLoading, selectSinglePost } from '@/entities/post/model/postSelector';
+import { selectPostsError, selectPostsLoading, selectRecommendedPosts } from '@/entities/post/model/postSelector';
+import { useParams } from 'react-router';
 import { useEffect } from 'react';
-import { fetchPostById } from '@/entities/post/model/postThunk';
-import { SpinnerDefault } from '@/shared/ui';
-import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
-import PostDetails from '@/entities/post/ui/PostDetails/PostDetails';
+import { fetchPosts } from '@/entities/post/model/postThunk';
+import { ErrorMessage } from '@/shared/ui/Messages';
+import { SubscribeSection } from '@/widgets';
+
 
 function SinglePostPage(): React.JSX.Element {
-  const singlePostPage = 'single-post-page'
+  const singlePostPage = 'single-post-page';
 
   const { id } = useParams<{ id: string }>()
 
   const dispatch = useAppDispatch()
 
-  const post = useAppSelector(selectSinglePost)
-  const postLoading = useAppSelector(selectPostLoading)
-  const postError = useAppSelector(selectPostError)
+  const postsLoading = useAppSelector(selectPostsLoading)
+  const postsError = useAppSelector(selectPostsError)
+
+  const recommendedPosts = useAppSelector((state) =>
+    selectRecommendedPosts(state, id ?? '')
+  )
 
   useEffect(() => {
     if (!id) return
 
-    dispatch(fetchPostById({ postId: id }))
+    dispatch(fetchPosts())
 
   }, [dispatch, id]);
 
-  if (postLoading) {
-    return (
-      <div className={`${singlePostPage}__loading`}>
-        <SpinnerDefault size='large' />
-      </div>
-    )
-  }
-
-  if (postError) {
-    return <ErrorMessage message={`${postError}`} />
-  }
-
-  if (!post) {
-    return <WarningMessage message='Post not found.' />
-  }
-
   return (
     <Section className={singlePostPage}>
-      <Container className={`${singlePostPage}__container`}>
-        <PostDetails post={post} />
-      </Container>
+      <SinglePostSection />
+
+      <SubscribeSection variant='newsletter' />
+      <SinglePostRecommended
+        loading={postsLoading}
+        posts={recommendedPosts} />
+
+      {postsError && (
+        <ErrorMessage message={postsError} />
+      )}
     </Section>
   );
 }
 
-export default SinglePostPage;
+export default SinglePostPage

@@ -9,6 +9,7 @@ import { ButtonBasic } from '@/shared/ui/Button';
 import { EventCardVariant } from '../../model/event-types';
 import EventCardHorizontal from '../EventCardHorizontal/EventCardHorizontal';
 import { useTranslation } from 'react-i18next';
+import { SpinnerDefault } from '@/shared/ui';
 
 interface EventGridProps {
   className?: string;
@@ -34,7 +35,11 @@ function EventGrid({
   }, [dispatch]);
 
   if (loading) {
-    return <div className='text-center text-4xl'>Loading Event list...</div>
+    return (
+      <div className={`${eventGrid}__loading`}>
+        <SpinnerDefault size='large' />
+      </div>
+    )
   }
 
   if (error) {

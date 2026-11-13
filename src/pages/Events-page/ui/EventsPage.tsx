@@ -1,6 +1,6 @@
 import { Container, Section } from '@/shared/primitives';
 import '../styles/eventsPage.scss';
-import EventGrid from '@/entities/event/ui/EventGrid/EventGrid';
+import EventsSection from '@/widgets/event/EventsSection/EventsSection';
 function EventsPage(): React.JSX.Element {
   const eventsPage = 'events-page'
 
@@ -8,7 +8,7 @@ function EventsPage(): React.JSX.Element {
     <Section className={eventsPage}>
       <Container className={`${eventsPage}__container`}>
 
-        <EventGrid variant='primary' />
+        <EventsSection variant='primary' />
 
       </Container>
     </Section>

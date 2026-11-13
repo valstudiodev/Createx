@@ -9,6 +9,8 @@ import Headline from '@/shared/ui/Headline/Headline';
 import { ButtonBasic } from '@/shared/ui/Button';
 import { routeMap } from '@/app/routes/routeMap';
 import { useTranslation } from 'react-i18next';
+import { SpinnerDefault } from '@/shared/ui';
+import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 
 interface LatestPostsProps {
   className?: string;
@@ -32,14 +34,22 @@ function LatestPosts({
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading LATEST posts...</div>
+    return (
+      <div className={`${clLatestPosts}__loading`}>
+        <SpinnerDefault size='large' />
+      </div>
+    )
   }
 
   if (error) {
     return (
-      <div>
-        <p>{error}</p>
-      </div>
+      <ErrorMessage message={error} />
+    )
+  }
+
+  if (latestPosts.length === 0) {
+    return (
+      <WarningMessage message='Latest posts sre not found.' />
     )
   }
 

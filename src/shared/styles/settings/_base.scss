@@ -1,5 +1,6 @@
 @use "sass:math";
 @use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900,);
 

@@ -1,0 +1,16 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.single-post-section {
+  @include adaptiveValue('padding-top', 200, 150);
+  @include adaptiveValue('padding-bottom', 120, 30);
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: toRem(600);
+  }
+}

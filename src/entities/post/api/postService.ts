@@ -85,9 +85,12 @@ export async function getRecommendedPosts(): Promise<Post[]> {
 
 
 export async function getPostById(postId: string): Promise<PostDetailsInterface | null> {
+  console.log('Requested post ID:', postId);
   const postDocRef = doc(db, 'posts', postId)
 
   const postSnap = await getDoc(postDocRef)
+
+  console.log('Document exists:', postSnap.exists());
 
   if (!postSnap.exists()) {
     console.log(`Document with ID ${postId} is not found!`);

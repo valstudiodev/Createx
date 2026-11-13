@@ -1,38 +1,17 @@
-import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
 import './postsGrid.scss';
-import { selectPosts, selectPostsError, selectPostsLoading } from '../../model/postSelector';
-import { useEffect } from 'react';
-import { fetchPosts } from '../../model/postThunk';
 import PostCard from '../PostCard/PostCard';
+import { Post } from '../../model/post-types';
 
 interface PostsGridProps {
+  posts: Post[]
   className?: string;
 }
 
 function PostsGrid({
+  posts,
   className = ''
 }: PostsGridProps): React.JSX.Element {
   const postsGrid = 'posts-grid'
-
-  const dispatch = useAppDispatch()
-
-  const posts = useAppSelector(selectPosts)
-  const postsLoading = useAppSelector(selectPostsLoading)
-  const postsError = useAppSelector(selectPostsError)
-
-  useEffect(() => {
-    dispatch(fetchPosts())
-  }, [dispatch]);
-
-  if (postsLoading) {
-    return <div className='text-center text-4xl'>Loading Posts list...</div>
-  }
-
-  if (postsError) {
-    return (
-      <div>{postsError}</div>
-    )
-  }
 
   return (
     <div className={`${postsGrid} ${className}`}>
@@ -42,28 +21,6 @@ function PostsGrid({
             className={`${postsGrid}__item`}
             key={post.id}
           >
-            {/* <PostCard
-              post={post}
-              actions={[
-                ...(post.action === 'listen'
-                  ? [<PostCardLink
-                    className={`${postsGrid}__btn`}
-                    key='listen' label='Listen' />] : []
-                ),
-
-                ...(post.action === 'read'
-                  ? [<PostCardLink
-                    className={`${postsGrid}__btn`}
-                    key='read' label='read' />] : []
-                ),
-
-                ...(post.action === 'watch'
-                  ? [<PostCardLink
-                    className={`${postsGrid}__btn`}
-                    key='watch' label='Watch' />] : []
-                )
-              ]}
-            /> */}
             <PostCard post={post} />
           </li>
         ))}

@@ -46,7 +46,9 @@
     "viewMore": "View more",
     "exploreAllEvents": "Explore all events",
     "viewAllCourses": "View all courses",
-    "goToBlock": "Go to block"
+    "goToBlock": "Go to block",
+    "exploreEvents": "Explore events",
+    "browseCourses": "Browse courses"
   },
   "submitForm": {
     "name": {
@@ -139,7 +141,11 @@
     "weWillTalkAbout": "We will talk about:",
     "whoWillBenefitFromEvent": "Who will benefit from the event:",
     "userExperience": "User Experience. Principles of Human-Centered Design",
-    "ourOnlineCourses": "Our online courses"
+    "ourOnlineCourses": "Our online courses",
+    "createxSchoolJournal": "Createx School Journal",
+    "doYouWantMoreContent": "Do you want more articles, podcasts and videos?",
+    "lecturesWorkshopsMasterclasses": "Lectures, workshops & master-classes",
+    "createxOnlineSchool": "Createx Online School"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -163,7 +169,8 @@
     "courseProgram": "Course program",
     "forWhom": "For whom?",
     "course": "Course",
-    "enjoyYourStudying": "Enjoy your studying!"
+    "enjoyYourStudying": "Enjoy your studying!",
+    "aboutUs": "About us"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",
@@ -200,5 +207,9 @@
       "title": "Professional designers",
       "description": "Feel more confident in UX"
     }
+  },
+  "aboutUs": {
+    "description": "Createx Online School is a leader in online studying. We have lots of courses and programs from the main market experts.",
+    "text": "We provide relevant approaches to online learning, internships and employment in the largest companies in the country. Our educational programs help you get a new specialty from scratch. During your studies, we will help you find a job. Check the courses and online events that we organise."
   }
 }

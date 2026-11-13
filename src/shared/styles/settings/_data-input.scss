@@ -1,0 +1,99 @@
+@use "sass:math";
+@use '@/shared/styles/settings/settings' as *;
+
+// --- 2. MOUSE MODE ---
+html[data-input="mouse"] {
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    .lang-currency__group {
+      &::before {
+        rotate: 180deg;
+      }
+    }
+  }
+}
+
+// --- 1. KEYBOARD MODE ---
+html[data-input="keyboard"] {
+  :focus-visible {
+    outline: toRem(2) solid #000;
+    outline-offset: toRem(4);
+  }
+
+  & footer :focus-visible {
+    outline-color: #fff;
+  }
+
+  .is-active {
+    .submenu-dropdowne {
+      display: block;
+    }
+
+    .menu-dropdown__link {
+      &::before {
+        rotate: 0deg;
+      }
+    }
+  }
+
+  .item-product {
+    &:focus-within {
+      .item-product__actions {
+        translate: 0 0;
+      }
+    }
+
+    &:focus-visible {
+      .item-product__title {
+        // color: $brandDark;
+      }
+    }
+  }
+
+  .button-quick-view,
+  .button-shop-cart,
+  .button-wishlist {
+
+    &:focus,
+    &:focus-visible {
+      &::before {
+        // color: $brandPrimary;
+      }
+    }
+  }
+
+  :focus-visible {
+    .item-categories__title {
+      // color: $brandDark;
+      outline-color: red;
+    }
+  }
+}
+
+// --- 3. TOUCH MODE ---
+html[data-input="touch"] {
+  .menu-dropdown__item--submenu {
+    &.is-active {
+      .menu-dropdown__link {
+        &::before {
+          rotate: 0deg;
+        }
+      }
+    }
+  }
+
+  .item-product__actions {
+    translate: 0 0;
+  }
+
+  &:focus-visible {
+    .lang-currency__group {
+      &::before {
+        rotate: 90deg;
+      }
+    }
+  }
+}

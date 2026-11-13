@@ -61,6 +61,14 @@
     }
 
   }
+
+  @include input('touch') {
+    border-color: var(--color-primary);
+  }
+
+  @include input('keyboard') {
+    offset: toRem(2);
+  }
 }
 
 .advantages-content {
