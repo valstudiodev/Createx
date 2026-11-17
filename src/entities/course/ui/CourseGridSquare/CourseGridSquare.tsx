@@ -1,8 +1,4 @@
-import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
 import './styles.scss';
-import { selectCourses, selectCoursesError, selectCoursesLoading } from '../../model/courseSelector';
-import { useEffect } from 'react';
-import { fetchCourses } from '../../model/courseThunk';
 import CourseCard from '../CourseCard/CourseCard';
 import { WarningMessage } from '@/shared/ui/Messages';
 import { Course } from '../../model/course.types';

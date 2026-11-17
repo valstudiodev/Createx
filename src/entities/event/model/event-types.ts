@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type EventFormat = 'online' | 'offline'
 
 export type EventCardVariant = 'primary' | 'featured'
@@ -6,6 +8,13 @@ export type EventType =
   | 'master-class'
   | 'lecture'
   | 'workshop'
+
+export interface EventCard {
+  event: Event;
+  className?: string;
+  variant?: EventCardVariant;
+  actions?: ReactNode;
+}
 
 export interface Event {
   id: string;

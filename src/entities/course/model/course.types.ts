@@ -1,5 +1,4 @@
 import { AccordionItem } from "@/entities/event/model/event-types";
-import { SocialLink } from "@/shared/constants/socialLinks/socialLinks.types";
 
 export type CourseCategory =
   | 'marketing'
@@ -17,16 +16,6 @@ export interface Course {
   teacherId: string;
   isFeatured: boolean;
 }
-
-// export interface CourseTeacherDetails {
-//   position?: string;
-//   specialty?: string;
-//   rating?: number;
-//   coursesCount?: number;
-//   studentsCount?: number;
-//   description?: string;
-//   socialMedia?: SocialLink[]
-// }
 
 export interface CourseDetailsInfo {
   about?: string;

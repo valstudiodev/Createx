@@ -5,14 +5,19 @@
 
 .event-section-about {
   @include adaptiveValue('padding-block', 60, 30);
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+
   @include adaptiveValue('gap', 30, 15);
 
-  @media (max-width: toEm(1125)) {
-    // flex-direction: column;
-    flex-wrap: wrap;
+
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media (max-width: toEm(1125)) {
+      flex-wrap: wrap;
+    }
   }
 
   &__content {

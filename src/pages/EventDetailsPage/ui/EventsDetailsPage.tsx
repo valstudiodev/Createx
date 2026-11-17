@@ -1,38 +1,45 @@
-import { Container, Section } from '@/shared/primitives';
+import { Section } from '@/shared/primitives';
 import '../styles/eventsDetails.scss';
 import { useParams } from 'react-router';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
-import { selectEvent, selectEventError, selectEventLoading } from '@/entities/event/model/eventSelector';
+import { selectEvent, selectEventError, selectEventLoading, selectEventsError, selectEventsLoading, selectEventsRecommended } from '@/entities/event/model/eventSelector';
 import { useEffect } from 'react';
-import { fetchEventByID } from '@/entities/event/model/eventThunk';
+import { fetchEventByID, fetchEvents } from '@/entities/event/model/eventThunk';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { EventSectionAbout, EventSectionInfo } from '@/widgets/event';
 import { SpinnerDefault } from '@/shared/ui';
 import EventTeacherDetails from '@/widgets/event/EventTeacherDetails/EventTeacherDetails';
+import { FormSection, HeroSectionDetails, SubscribeSection } from '@/widgets';
+import { useTranslation } from 'react-i18next';
+import EventsRecommended from '@/widgets/event/EventsRecommended/EventsRecommended';
 
 function EventsDetailsPage(): React.JSX.Element {
   const eventsDetailsPage = 'events-details-page'
 
   const { id } = useParams()
 
+  const { t } = useTranslation()
+
   const dispatch = useAppDispatch()
 
   const event = useAppSelector(selectEvent)
+  const eventsLoading = useAppSelector(selectEventsLoading)
   const eventLoading = useAppSelector(selectEventLoading)
+  const eventsError = useAppSelector(selectEventsError)
   const eventError = useAppSelector(selectEventError)
+
+  const recommendedEvents = useAppSelector((state) =>
+    selectEventsRecommended(state, id ?? '')
+  )
 
   useEffect(() => {
     if (!id) return
 
     dispatch(fetchEventByID({ eventId: id }))
+    dispatch(fetchEvents())
   }, [dispatch, id]);
 
-  useEffect(() => {
-    console.log('Event from Redux:', event);
-    console.log('Event details:', event?.details);
-  }, [event]);
-
-  if (eventLoading) {
+  if (eventsLoading || eventLoading) {
     return (
       <div className={`${eventsDetailsPage}__loading`}>
         <SpinnerDefault size='large' />
@@ -40,8 +47,8 @@ function EventsDetailsPage(): React.JSX.Element {
     )
   }
 
-  if (eventError) {
-    return <ErrorMessage message={`${eventError}`} />
+  if (eventsError || eventError) {
+    return <ErrorMessage message={`${eventsError}`} />
   }
 
   if (!event) {
@@ -50,13 +57,19 @@ function EventsDetailsPage(): React.JSX.Element {
 
   return (
     <Section className={eventsDetailsPage}>
-      <Container className={`${eventsDetailsPage}__container`}>
-        <EventSectionAbout event={event} />
-
-        <EventTeacherDetails teacherId={event.teacherId} />
-
-        <EventSectionInfo event={event} />
-      </Container>
+      <HeroSectionDetails
+        label={t('labels.onlineLecture')}
+        title={t('titles.organizationalStructure')}
+      />
+      <EventSectionAbout event={event} />
+      <EventTeacherDetails teacherId={event.teacherId} />
+      <EventSectionInfo event={event} />
+      <SubscribeSection variant='compact' />
+      <FormSection type='request' />
+      <EventsRecommended
+        loading={eventsLoading}
+        events={recommendedEvents}
+      />
     </Section>
   );
 }

@@ -46,6 +46,7 @@ export const eventSlice = createSlice({
       .addCase(fetchEventByID.rejected, (state, action) => {
         state.eventLoading = false
         state.eventError = action.payload ?? 'Failed to fetch event by ID.'
+        state.event = null
       })
   }
 })

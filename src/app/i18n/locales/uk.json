@@ -146,7 +146,10 @@
     "doYouWantMoreContent": "Хочете більше статей, подкастів та відео?",
     "lecturesWorkshopsMasterclasses": "Лекції, воркшопи та майстер-класи",
     "createxOnlineSchool": "Онлайн-школа Createx",
-    "meetOurTeam": "Познайомтеся з нашою командою"
+    "meetOurTeam": "Познайомтеся з нашою командою",
+    "organizationalStructure": "Формування організаційної структури компанії в умовах невизначеності",
+    "youMayBeInterestedIn": "Вас може зацікавити",
+    "doYouWantMore": "Хочете більше?"
   },
   "labels": {
     "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
@@ -172,7 +175,9 @@
     "course": "Курс",
     "enjoyYourStudying": "Насолоджуйтеся навчанням!",
     "aboutUs": "Про нас",
-    "bestTutors": "Найкращі викладачі зібралися тут"
+    "bestTutors": "Найкращі викладачі зібралися тут",
+    "onlineLecture": "Онлайн-лекція",
+    "checkOtherOnlineEvents": "Перегляньте інші онлайн-події"
   },
   "statistics": {
     "studentsGraduated": "Випускників",

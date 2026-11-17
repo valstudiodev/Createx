@@ -74,7 +74,15 @@
     text-transform: capitalize;
   }
 
-  &__actions {}
+  &__actions {
+    button[type='button'] {
+      width: 100%;
+    }
+
+    a {
+      width: 100%;
+    }
+  }
 
   .event-card-btn {
     width: 100%;

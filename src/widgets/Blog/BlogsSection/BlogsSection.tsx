@@ -62,6 +62,7 @@ function BlogsSection({
         </Title>
         {/* filter */}
         <PostsGrid posts={posts} />
+        {/* pagination */}
       </Container>
     </Section>
   );

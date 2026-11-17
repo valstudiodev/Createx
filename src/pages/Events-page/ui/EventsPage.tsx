@@ -1,16 +1,14 @@
-import { Container, Section } from '@/shared/primitives';
+import { Section } from '@/shared/primitives';
 import '../styles/eventsPage.scss';
 import EventsSection from '@/widgets/event/EventsSection/EventsSection';
+import { SubscribeSection } from '@/widgets';
 function EventsPage(): React.JSX.Element {
   const eventsPage = 'events-page'
 
   return (
     <Section className={eventsPage}>
-      <Container className={`${eventsPage}__container`}>
-
-        <EventsSection variant='primary' />
-
-      </Container>
+      <EventsSection variant='primary' />
+      <SubscribeSection variant='default' />
     </Section>
   );
 }

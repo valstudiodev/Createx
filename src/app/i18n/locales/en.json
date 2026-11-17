@@ -146,7 +146,10 @@
     "doYouWantMoreContent": "Do you want more articles, podcasts and videos?",
     "lecturesWorkshopsMasterclasses": "Lectures, workshops & master-classes",
     "createxOnlineSchool": "Createx Online School",
-    "meetOurTeam": "Meet our team"
+    "meetOurTeam": "Meet our team",
+    "organizationalStructure": "Formation of the organizational structure of the company in the face of uncertainty",
+    "youMayBeInterestedIn": "You may be interested in",
+    "doYouWantMore": "Do you want more?"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -172,7 +175,9 @@
     "course": "Course",
     "enjoyYourStudying": "Enjoy your studying!",
     "aboutUs": "About us",
-    "bestTutors": "Best tutors are all here"
+    "bestTutors": "Best tutors are all here",
+    "onlineLecture": "Online lecture",
+    "checkOtherOnlineEvents": "Check other online events"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",

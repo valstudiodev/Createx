@@ -5,6 +5,7 @@ import EventInfoCard from '@/entities/event/ui/EventInfoCard/EventInfoCard';
 import { Link } from 'react-router';
 import { ButtonBasic } from '@/shared/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { Container, Section } from '@/shared/primitives';
 
 function EventSectionAbout({
   event
@@ -14,29 +15,31 @@ function EventSectionAbout({
   const { t } = useTranslation()
 
   return (
-    <div className={eventSectionAbout}>
-      <EventAboutContent
-        className={`${eventSectionAbout}__content`}
-        event={event} />
-      <EventInfoCard
-        className={`${eventSectionAbout}__info-card`}
-        event={event}
-        actions={[
-          <Link
-            key='facebook'
-            className={`${eventSectionAbout}__link`}
-            to='/'>
-            event on facebook
-          </Link>,
-          <ButtonBasic
-            key="join"
-            className={`${eventSectionAbout}__btn`}
-          >
-            {t('buttons.joinEvent')}
-          </ButtonBasic>
-        ]}
-      />
-    </div>
+    <Section className={eventSectionAbout}>
+      <Container className={`${eventSectionAbout}__container`}>
+        <EventAboutContent
+          className={`${eventSectionAbout}__content`}
+          event={event} />
+        <EventInfoCard
+          className={`${eventSectionAbout}__info-card`}
+          event={event}
+          actions={[
+            <Link
+              key='facebook'
+              className={`${eventSectionAbout}__link`}
+              to='/'>
+              event on facebook
+            </Link>,
+            <ButtonBasic
+              key="join"
+              className={`${eventSectionAbout}__btn`}
+            >
+              {t('buttons.joinEvent')}
+            </ButtonBasic>
+          ]}
+        />
+      </Container>
+    </Section>
   );
 }
 

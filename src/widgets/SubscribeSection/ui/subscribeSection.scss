@@ -6,9 +6,6 @@
   position: relative;
   isolation: isolate;
 
-  @include adaptiveValue('padding-top', 120, 30);
-  @include adaptiveValue('padding-bottom', 180, 40);
-
   &__inner {
     isolation: isolate;
   }
@@ -24,6 +21,9 @@
 
   // Default variant
   &--default {
+    @include adaptiveValue('padding-top', 120, 30);
+    @include adaptiveValue('padding-bottom', 180, 40);
+
     .subscribe-section__inner {
       &::before {
         content: '';
@@ -90,6 +90,11 @@
         pointer-events: none;
       }
     }
+  }
+
+  &--compact {
+    @include adaptiveValue('padding-block', 60, 30);
+
   }
 
   // Responsive

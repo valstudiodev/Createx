@@ -11,6 +11,7 @@ import { SliderButton, SpinnerDefault } from '@/shared/ui';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ExploreWrap from '@/widgets/ExploreWrap/ExploreWrap';
 import { ButtonBasic } from '@/shared/ui/Button';
+import { routeMap } from '@/app/routes/routeMap';
 
 interface SinglePostRecommendedProps {
   posts: Post[];
@@ -118,7 +119,12 @@ function SinglePostRecommended({
 
         <ExploreWrap
           title={t('titles.doYouWantMoreContent')}
-          actions={<ButtonBasic>{t('buttons.goToBlock')}</ButtonBasic>}
+          actions={
+            <ButtonBasic
+              type='link'
+              to={routeMap.courses.path}
+            >{t('buttons.goToBlock')}
+            </ButtonBasic>}
           className={`${singlePostRecommended}__explore`}
         />
 

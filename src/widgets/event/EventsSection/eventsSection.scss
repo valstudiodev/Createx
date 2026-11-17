@@ -4,6 +4,8 @@
 @use '@/shared/styles/mixins/grid' as *;
 
 .events-section {
+  @include adaptiveValue('padding-top', 200, 150);
+  @include adaptiveValue('padding-bottom', 266, 50);
 
   &__container {}
 

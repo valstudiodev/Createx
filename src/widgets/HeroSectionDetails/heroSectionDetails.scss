@@ -3,7 +3,7 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 @use '@/shared/styles/mixins/grid' as *;
 
-.course-hero {
+.hero-section-details {
   position: relative;
   @include adaptiveValue('padding-top', 228, 150);
   @include adaptiveValue('padding-bottom', 120, 40);

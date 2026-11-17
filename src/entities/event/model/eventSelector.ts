@@ -1,4 +1,6 @@
 import { RootState } from "@/app/store/store";
+import { createSelector } from "@reduxjs/toolkit";
+import { Event } from "./event-types";
 
 
 export const selectEvents = (state: RootState) => state.events.events
@@ -7,3 +9,39 @@ export const selectEventsLoading = (state: RootState) => state.events.eventsLoad
 export const selectEventLoading = (state: RootState) => state.events.eventLoading
 export const selectEventsError = (state: RootState) => state.events.eventsError
 export const selectEventError = (state: RootState) => state.events.eventError
+
+export const selectEventsRecommended = createSelector(
+  [
+    selectEvents,
+    (_state: RootState, currentEventId: string) => currentEventId
+  ],
+  (events, currentEventId) => {
+    const currentEvent = events.find(
+      (event) => event.id === currentEventId
+    )
+
+    if (!currentEvent) return []
+
+    const sortByDate = (a: Event, b: Event): number => b.date.localeCompare(a.date)
+
+    const availableEvents = events.filter(
+      (event) => event.id !== currentEvent.id
+    )
+
+    const sameTypeEvent = events
+      .filter(
+        (event) =>
+          event.id !== currentEventId &&
+          event.type === currentEvent.type
+      ).sort(sortByDate)
+
+    const otherCategoriesEvents = availableEvents
+      .filter(
+        (event) =>
+          event.id !== currentEventId &&
+          event.type !== currentEvent.type
+      ).sort(sortByDate)
+
+    return [...sameTypeEvent, ...otherCategoriesEvents].slice(0, 4)
+  }
+)

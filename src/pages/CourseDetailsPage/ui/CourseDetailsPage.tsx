@@ -8,17 +8,20 @@ import { selectCourse, selectCourseError, selectCourseLoading, selectCourses, se
 import { SpinnerDefault } from '@/shared/ui';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { CourseAboutWrap, RecommendedCourses } from '@/widgets/Course';
-// import { Reviews } from '@/widgets/Reviews';
-// import { FormSection } from '@/widgets';
-// import BenefitSection from '@/widgets/CourseDetails/BenefitSection/ui/BenefitSection';
 import CourseProgram from '@/widgets/CourseDetails/LessonsSection/ui/CourseProgram';
 import TeacherDetailsCourse from '@/widgets/CourseDetails/TeacherDetailsSection/TeacherDetailsCourse';
-// import CourseHero from '@/widgets/Course/CourseHero/CourseHero';
+import BenefitSection from '@/widgets/CourseDetails/BenefitSection/ui/BenefitSection';
+import { FormSection } from '@/widgets';
+import { Reviews } from '@/widgets/Reviews';
+import HeroSectionDetails from '@/widgets/HeroSectionDetails/HeroSectionDetails';
+import { useTranslation } from 'react-i18next';
 
 function CourseDetailsPage(): React.JSX.Element {
   const courseDetailsPage = 'course-details-page'
 
   const { id } = useParams<{ id: string }>()
+
+  const { t } = useTranslation()
 
   const dispatch = useAppDispatch()
 
@@ -66,15 +69,20 @@ function CourseDetailsPage(): React.JSX.Element {
   return (
     <Section className={courseDetailsPage}>
       {/* <CourseHero /> */}
+      <HeroSectionDetails
+        title={t('titles.userExperience')}
+        label={t('labels.course')}
+      />
       <CourseAboutWrap course={course} />
-      {/* <CourseDetailsWrap course={course} /> */}
       <TeacherDetailsCourse teacherId={course.teacherId} />
+
       {/* learning process */}
       {/* discount */}
-      {/* <BenefitSection /> */}
+
+      <BenefitSection />
       <CourseProgram items={course.details.courseProgram} />
-      {/* <Reviews /> */}
-      {/* <FormSection type='course-registration' /> */}
+      <Reviews />
+      <FormSection type='course-registration' />
       <RecommendedCourses
         loading={coursesLoading}
         courses={recommendedCourses} />

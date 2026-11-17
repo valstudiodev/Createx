@@ -13,7 +13,8 @@
   }
 
   &--request {
-    @include adaptiveValue('padding-block', 120, 30);
+    @include adaptiveValue('padding-top', 60, 30);
+    @include adaptiveValue('padding-bottom', 120, 30);
 
     .form-section__body {
       order: 1;

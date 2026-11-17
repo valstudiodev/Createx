@@ -4,8 +4,6 @@
 @use '@/shared/styles/mixins/grid' as *;
 
 .teacher-details {
-  @include adaptiveValue('padding-top', 60, 30);
-  @include adaptiveValue('padding-bottom', 90, 30);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

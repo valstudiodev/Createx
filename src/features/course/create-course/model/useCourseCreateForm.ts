@@ -3,7 +3,6 @@ import { CourseFormValues } from "./courseCreateForm.types";
 import { RequestStatus } from "@/shared/types/types";
 import { CreateCoursePayload } from "@/entities/course/model/course.types";
 import { createCourse } from "../api/createCourseServise";
-import { socialMediaConfig, SocialPlatform } from "@/shared/constants/socialLinks/socialLinks.types";
 
 
 const initialState: CourseFormValues = {
