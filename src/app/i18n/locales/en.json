@@ -145,7 +145,8 @@
     "createxSchoolJournal": "Createx School Journal",
     "doYouWantMoreContent": "Do you want more articles, podcasts and videos?",
     "lecturesWorkshopsMasterclasses": "Lectures, workshops & master-classes",
-    "createxOnlineSchool": "Createx Online School"
+    "createxOnlineSchool": "Createx Online School",
+    "meetOurTeam": "Meet our team"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -170,7 +171,8 @@
     "forWhom": "For whom?",
     "course": "Course",
     "enjoyYourStudying": "Enjoy your studying!",
-    "aboutUs": "About us"
+    "aboutUs": "About us",
+    "bestTutors": "Best tutors are all here"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",

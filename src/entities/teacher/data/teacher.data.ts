@@ -1,0 +1,125 @@
+import { socialMediaConfig } from '@/shared/constants/socialLinks/socialLinks.types';
+import { Teacher } from '../model/teacher.types';
+import teacher01 from "../assets/img/teachers/teacher-01.jpg";
+import teacher02 from "../assets/img/teachers/teacher-02.jpg";
+import teacher03 from "../assets/img/teachers/teacher-03.jpg";
+import teacher04 from "../assets/img/teachers/teacher-04.jpg";
+import teacher05 from "../assets/img/teachers/teacher-05.jpg";
+import teacher06 from "../assets/img/teachers/teacher-06.jpg";
+import teacher07 from "../assets/img/teachers/teacher-07.jpg";
+import teacher08 from "../assets/img/teachers/teacher-08.jpg";
+import teacher09 from "../assets/img/teachers/teacher-09.jpg";
+
+export const teachers: Teacher[] = [
+  {
+    id: 'teacher-1',
+    name: 'Jerome Bell',
+    image: teacher01,
+    position: 'Senior Marketing Strategist',
+    specialty: 'Digital Marketing',
+    rating: 4.9,
+    coursesCount: 12,
+    studentsCount: 2400,
+    description: 'Marketing strategist specializing in digital marketing.',
+    socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.behance, socialMediaConfig.twitter],
+  },
+  {
+    id: 'teacher-2',
+    name: 'Marvin McKinney',
+    image: teacher02,
+    position: 'HR Business Partner',
+    specialty: 'Human Resources',
+    rating: 4.8,
+    coursesCount: 8,
+    studentsCount: 1850,
+    description: 'HR professional specializing in talent acquisition.',
+    socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.facebook],
+  },
+  {
+    id: 'teacher-3',
+    name: 'Leslie Alexander',
+    image: teacher03,
+    position: 'Senior UX/UI Designer',
+    specialty: 'Product Design',
+    rating: 4.9,
+    coursesCount: 15,
+    studentsCount: 3100,
+    description: 'Product designer focused on user-centered interfaces.',
+    socialMedia: [socialMediaConfig.behance],
+  },
+  {
+    id: 'teacher-4',
+    name: 'Kristin Watson',
+    image: teacher04,
+    position: 'Frontend Development Lead',
+    specialty: 'Web Development',
+    rating: 5,
+    coursesCount: 10,
+    studentsCount: 2750,
+    description: 'Frontend developer specializing in JavaScript and React.',
+    socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.behance],
+  },
+  {
+    id: 'teacher-5',
+    name: 'Guy Hawkins',
+    image: teacher05,
+    position: 'Business Development Manager',
+    specialty: 'Business Management',
+    rating: 4.7,
+    coursesCount: 9,
+    studentsCount: 1600,
+    description: 'Business expert focused on strategic planning and leadership.',
+    socialMedia: [socialMediaConfig.linkedin],
+  },
+  {
+    id: 'teacher-6',
+    name: 'Dianne Russell',
+    image: teacher06,
+    position: 'Creative Director',
+    specialty: 'Graphic Design',
+    rating: 4.9,
+    coursesCount: 11,
+    studentsCount: 2200,
+    description: 'Creative professional specializing in branding and visual communication.',
+    socialMedia: [socialMediaConfig.behance],
+  },
+  {
+    id: 'teacher-7',
+    name: 'Brooklyn Simmons',
+    image: teacher07,
+    position: 'Senior Project Manager',
+    specialty: 'Project Management',
+    rating: 4.8,
+    coursesCount: 7,
+    studentsCount: 1450,
+    description: 'Project manager focused on effective workflows and delivery.',
+    socialMedia: [socialMediaConfig.linkedin],
+  },
+  {
+    id: 'teacher-8',
+    name: 'Kathryn Murphy',
+    image: teacher08,
+    position: 'Digital Marketing Consultant',
+    specialty: 'Content Marketing',
+    rating: 4.9,
+    coursesCount: 13,
+    studentsCount: 2900,
+    description: 'Marketing consultant specializing in content and social media.',
+    socialMedia: [
+      socialMediaConfig.facebook,
+      socialMediaConfig.twitter,
+    ],
+  },
+  {
+    id: 'teacher-9',
+    name: 'Cody Fisher',
+    image: teacher09,
+    position: 'Fullstack Developer',
+    specialty: 'Fullstack Development',
+    rating: 4.8,
+    coursesCount: 14,
+    studentsCount: 2600,
+    description: 'Developer specializing in JavaScript, TypeScript, and backend technologies.',
+    socialMedia: [socialMediaConfig.linkedin],
+  },
+];

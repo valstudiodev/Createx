@@ -17,12 +17,6 @@ function EventInformation({
   return (
     <div className={eventInformation}>
       <div className={`${eventInformation}__content`}>
-        {/* <span className={`${eventInformation}__label`}>
-          for whom?
-        </span>
-        <h2 className={`${eventInformation}__title`}>
-          Who will benefit from the event:
-        </h2> */}
         <Title
           label={t('labels.forWhom')}
           className={`${eventInformation}__title`}
@@ -32,7 +26,7 @@ function EventInformation({
       </div>
       <div className={`${eventInformation}__items`}>
         <ul className={`${eventInformation}__list`}>
-          {event.information?.map((item, index) => (
+          {event.details.information?.map((item, index) => (
             <li
               key={index}
               className={`${eventInformation}__item`}

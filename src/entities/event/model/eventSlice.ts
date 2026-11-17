@@ -34,10 +34,11 @@ export const eventSlice = createSlice({
 
       .addCase(fetchEventByID.pending, (state) => {
         state.eventLoading = true
-        state.eventsError = null
+        state.eventError = null
         state.event = null
       })
       .addCase(fetchEventByID.fulfilled, (state, action) => {
+        console.log('Fulfilled payload:', action.payload);
         state.eventLoading = false
         state.eventError = null
         state.event = action.payload

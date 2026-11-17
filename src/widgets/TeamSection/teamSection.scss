@@ -1,0 +1,22 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.team-section {
+  @include adaptiveValue('padding-top', 166, 40);
+  @include adaptiveValue('padding-bottom', 90, 30);
+  background-color: var(--color-gray-200);
+
+  &__headline {
+
+    h2 {
+      @include adaptiveValue('font-size', 46, 32);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: toRem(24);
+  }
+}

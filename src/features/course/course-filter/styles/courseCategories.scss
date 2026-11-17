@@ -1,0 +1,33 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.course-categories {
+
+  @media (max-width: toEm(901)) {
+    flex-grow: 1;
+  }
+
+  @media (max-width: toEm(750)) {
+    display: flex;
+    overflow: auto;
+    padding-inline: toRem(15);
+    margin-inline: toRem(-15);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: toRem(12);
+    flex-wrap: wrap;
+
+    @media (max-width: toEm(901)) {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+
+  }
+
+  &__item {}
+}

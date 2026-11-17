@@ -23,11 +23,13 @@ function EventSectionAbout({
         event={event}
         actions={[
           <Link
+            key='facebook'
             className={`${eventSectionAbout}__link`}
             to='/'>
             event on facebook
           </Link>,
           <ButtonBasic
+            key="join"
             className={`${eventSectionAbout}__btn`}
           >
             {t('buttons.joinEvent')}

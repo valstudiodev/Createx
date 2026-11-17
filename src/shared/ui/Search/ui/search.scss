@@ -1,0 +1,50 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.search {
+  // max-width: toRem(315);
+  flex: 0 1 toRem(315);
+
+
+  @media (max-width: toEm(901)) {
+    flex-grow: 1;
+  }
+
+  &__label {}
+
+  &__input {
+    position: relative;
+    padding-left: toRem(16);
+    padding-block: toRem(12);
+    width: 100%;
+
+    &::placeholder {
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__form {
+    display: inline-flex;
+    align-items: center;
+    border: toRem(1) solid var(--color-border);
+    border-radius: toRem(4);
+    display: flex;
+
+    // &:focus-within {
+    //   outline: toRem(2) solid #000;
+    //   outline-offset: toRem(4);
+    // }
+  }
+
+  &__icon {
+    padding-right: toRem(16);
+  }
+}

@@ -1,18 +1,18 @@
-import { AboutSection } from '@/widgets/AboutSection';
 import '../styles/homePage.scss';
-import HeroSection from '@/widgets/HeroSection/ui/HeroSection';
+import LatestPosts from '@/widgets/posts/LatestPosts/LatestPosts';
+import { FeaturedCourses } from '@/widgets/Course';
+import TeamSectiion from '@/widgets/TeamSection/TeamSection';
+import { teachers } from '@/entities/teacher/data/teacher.data';
+import { SubscribeSection } from '@/widgets';
+import { HeroSection } from '@/widgets/HeroSection';
+import { AboutSection } from '@/widgets/AboutSection';
 import { AdvantagesSection } from '@/widgets/AdvantagesSection';
 import LectureSection from '@/widgets/LecturesSection/LectureSection';
 import SertificateSection from '@/widgets/SertificateSection/ui/SertificateSection';
 import { Reviews } from '@/widgets/Reviews';
-import LatestPosts from '@/widgets/posts/LatestPosts/LatestPosts';
-import { FeaturedCourses } from '@/widgets/Course';
-import { SubscribeSection } from '@/widgets';
 
 function HomePage(): React.JSX.Element {
   const homePage = 'home-page'
-
-
 
   return (
     <div className={homePage}>
@@ -22,8 +22,9 @@ function HomePage(): React.JSX.Element {
       <AdvantagesSection />
       <LectureSection />
       <SertificateSection />
-      <LatestPosts />
+      <TeamSectiion teachers={teachers} />
       <Reviews />
+      <LatestPosts />
       <SubscribeSection />
     </div>
   );

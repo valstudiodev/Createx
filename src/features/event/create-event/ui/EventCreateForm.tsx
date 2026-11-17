@@ -3,6 +3,7 @@ import useEventCreateForm from '../model/useEventCreateForm';
 import '../styles/eventCreateForm.scss';
 import { ErrorMessage, SuccessMessage } from '@/shared/ui/Messages';
 import EventAboutFields from './EventAboutFields';
+import { teachers } from '@/entities/teacher/data/teacher.data';
 
 interface EventCreateFormProps {
   className?: string;
@@ -47,6 +48,27 @@ function EventCreateForm({
       className={`${eventCreateForm} ${className}`}
       onSubmit={handleSubmit}
     >
+
+      <label className={`${eventCreateForm}__field`}>
+        Select teacher:
+
+        <select
+          name="teacherId"
+          value={formValues.teacherId}
+          onChange={handleChange}
+          className={`${eventCreateForm}__select`}
+          required
+        >
+          <option value="">Select teacher</option>
+
+          {teachers.map((teacher) => (
+            <option key={teacher.id} value={teacher.id}>
+              {teacher.name}
+            </option>
+          ))}
+        </select>
+      </label>
+
       <label className={`${eventCreateForm}__field`}>
         <input
           className={`${eventCreateForm}__input`}

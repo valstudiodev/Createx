@@ -1,0 +1,31 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.filter-button {
+  display: flex;
+  align-items: flex-start;
+  gap: toRem(4);
+  padding-block: toRem(10);
+  padding-inline: toRem(20);
+  border: toRem(1) solid transparent;
+  border-radius: toRem(4);
+  text-transform: capitalize;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  font-weight: 700;
+  transition: border-color 0.3s;
+  cursor: pointer;
+
+  &__amount {
+    font-size: toRem(12);
+  }
+
+  &--active {
+    border-color: var(--color-primary);
+  }
+
+  @include hover {
+    border-color: var(--color-primary);
+  }
+}

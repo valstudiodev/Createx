@@ -1,5 +1,7 @@
 import { CourseFullDetails } from '@/entities/course/model/course.types';
 import './courseDetails.scss';
+import { teachers } from '@/entities/teacher/data/teacher.data';
+import { WarningMessage } from '@/shared/ui/Messages';
 
 interface CourseDetailsProps {
   course: CourseFullDetails
@@ -12,81 +14,91 @@ function CourseDetails({
 }: CourseDetailsProps): React.JSX.Element {
   const courseDetails = 'course-details'
 
+  const teacher = teachers.find(
+    (teacher) => teacher.id === course.teacherId
+  )
+
+  if (!teacher) {
+    return (
+      <WarningMessage message='Teacher not found.' />
+    )
+  }
+
   return (
     <article className={`${courseDetails} ${className}`}>
-      {course.image && (
+      {teacher.image && (
         <div className={`${courseDetails}__image`}>
           <img
             className={`${courseDetails}__image-content`}
-            src={course.image}
-            alt={course.teacherName}
+            src={teacher.image}
+            alt={teacher.name}
           />
         </div>
       )}
       <div className={`${courseDetails}__body`}>
-        {course.position && (
+        {teacher.position && (
           <span className={`${courseDetails}__position`}>
-            {course.position}
+            {teacher.position}
           </span>
         )}
-        {course.teacherName && (
+        {teacher.name && (
           <h3 className={`${courseDetails}__name`}>
-            {course.teacherName}
+            {teacher.name}
           </h3>
         )}
-        {course.specialty && (
+        {teacher.specialty && (
           <p className={`${courseDetails}__specialty`}>
-            {course.specialty}
+            {teacher.specialty}
           </p>
         )}
 
         <div className={`${courseDetails}__info`}>
-          {course.rating != null && (
+          {teacher.rating != null && (
             <div className={`${courseDetails}__rating`}>
               <span
                 aria-hidden='true'
                 className={`${courseDetails}__icon ${courseDetails}__icon--icon-star`}>
               </span>
               <span className={`${courseDetails}__stat-value`}>
-                {course.rating}
+                {teacher.rating}
               </span>
               <span className={`${courseDetails}__stat-label`}>rate</span>
             </div>
           )}
-          {course.coursesCount != null && (
+          {teacher.coursesCount != null && (
             <div className={`${courseDetails}__courses`}>
               <span
                 aria-hidden='true'
                 className={`${courseDetails}__icon ${courseDetails}__icon--icon-circle-play`}>
               </span>
-              <span className={`${courseDetails}__stat-value`}>{course.coursesCount}</span>
+              <span className={`${courseDetails}__stat-value`}>{teacher.coursesCount}</span>
               <span className={`${courseDetails}__stat-label`}>courses</span>
             </div>
           )}
-          {course.studentsCount != null && (
+          {teacher.studentsCount != null && (
             <div className={`${courseDetails}__students`}>
               <span
                 aria-hidden='true'
                 className={`${courseDetails}__icon ${courseDetails}__icon--icon-user`}>
               </span>
               <span className={`${courseDetails}__stat-value`}>
-                {course.studentsCount}
+                {teacher.studentsCount}
               </span>
               <span className={`${courseDetails}__stat-label`}>students</span>
             </div>
           )}
         </div>
 
-        {course.description && (
+        {teacher.description && (
           <p className={`${courseDetails}__description`}>
-            {course.description}
+            {teacher.description}
           </p>
         )}
 
-        {course.socialMedia && course.socialMedia.length > 0 && (
+        {teacher.socialMedia && teacher.socialMedia.length > 0 && (
           <div className={`${courseDetails}__social-media`}>
             <ul className={`${courseDetails}__list`}>
-              {course.socialMedia?.map((link) => (
+              {teacher.socialMedia?.map((link) => (
                 <li
                   key={link.platform}
                   className={`${courseDetails}__item`}

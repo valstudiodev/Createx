@@ -3,6 +3,7 @@ import { Course } from "../../model/course.types";
 import { routeMap } from "@/app/routes/routeMap";
 import { coursesCategoryConfig } from "../../config/course-category.config";
 import './coursePreview.scss';
+import { teachers } from "@/entities/teacher/data/teacher.data";
 
 interface CourseCardPreviewProps {
   className?: string;
@@ -17,6 +18,10 @@ function CourseCardPreview({
 
   const category = coursesCategoryConfig[course.category]
 
+  const teacher = teachers.find(
+    (item) => item.id === course.teacherId
+  )
+
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -28,10 +33,10 @@ function CourseCardPreview({
       className={[courseCardPreview, className].filter(Boolean).join(' ')}
       aria-labelledby={`${courseCardPreview}-${course.id}-title`}
     >
-      {course.image && (
+      {teacher?.image && (
         <div className={`${courseCardPreview}__image`}>
           <img
-            src={course.image} alt='' loading='lazy' />
+            src={teacher.image} alt='' loading='lazy' />
         </div>
       )}
       <div className={`${courseCardPreview}__body`}>
@@ -56,7 +61,7 @@ function CourseCardPreview({
           <div className={`${courseCardPreview}__teacher`}>
             <span>by</span>
             <span className={`${courseCardPreview}__teacher-name`}>
-              {course.teacherName}
+              {teacher?.name ?? 'Teacher is not found.'}
             </span>
           </div>
         </div>

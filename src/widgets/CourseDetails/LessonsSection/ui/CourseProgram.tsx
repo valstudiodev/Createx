@@ -4,13 +4,15 @@ import courseImage from "../assets/course-programm-imag.png";
 import { Title } from '@/shared/ui';
 import { useTranslation } from 'react-i18next';
 import { Accordion } from '@/shared/ui/Accordion';
-import { courseProgramItems } from '../data/courseProgram.data';
+import { AccordionItem } from '@/entities/event/model/event-types';
 
 interface CourseProgramProps {
+  items: AccordionItem[];
   className?: string;
 }
 
 function CourseProgram({
+  items,
   className = ''
 }: CourseProgramProps): React.JSX.Element {
   const courseProgram = 'course-program'
@@ -28,7 +30,7 @@ function CourseProgram({
             {t('titles.whatWillYouLearn')}
           </Title>
           <Accordion
-            items={courseProgramItems}
+            items={items}
             itemLabel='Lesson'
             className={`${courseProgram}__accordion`}
           />

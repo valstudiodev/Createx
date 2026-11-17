@@ -1,6 +1,5 @@
 import { RootState } from "@/app/store/store";
 import { createSelector } from "@reduxjs/toolkit";
-import { CourseFullDetails } from "./course.types";
 
 
 export const selectCourses = (state: RootState) => state.courses.courses
@@ -25,24 +24,24 @@ export const selectRecommendedCourses = createSelector(
 
     if (!currentCourse) return []
 
-    const sortByRating = (
-      a: CourseFullDetails,
-      b: CourseFullDetails
-    ): number => (b.rating ?? 0) - (a.rating ?? 0)
+    // const sortByRating = (
+    //   a: CourseFullDetails,
+    //   b: CourseFullDetails
+    // ): number => (b.rating ?? 0) - (a.rating ?? 0)
 
     const sameCategoryCourses = courses
       .filter(
         (course) =>
           course.id !== currentCourseId &&
           course.category === currentCourse.category
-      ).sort(sortByRating)
+      )
 
     const otherCategoryCourses = courses
       .filter(
         (course) =>
           course.id !== currentCourseId &&
           course.category !== currentCourse.category
-      ).sort(sortByRating)
+      )
 
     return [...sameCategoryCourses, ...otherCategoryCourses].slice(0, 4)
   }

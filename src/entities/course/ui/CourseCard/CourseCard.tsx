@@ -3,6 +3,7 @@ import { coursesCategoryConfig } from "../../config/course-category.config";
 import { Course } from "../../model/course.types";
 import './courseCard.scss';
 import { routeMap } from "@/app/routes/routeMap";
+import { teachers } from "@/entities/teacher/data/teacher.data";
 
 interface CourseCardProps {
   className?: string;
@@ -17,11 +18,21 @@ function CourseCard({
 
   const category = coursesCategoryConfig[course.category]
 
+  const teacher = teachers.find(
+    (item) => item.id === course.teacherId
+  )
+
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     maximumFractionDigits: 0,
   }).format(course.price)
+
+  console.log('CourseCard:', {
+    id: course.id,
+    title: course.title,
+    teacherId: course.teacherId,
+  });
 
   return (
     <Link
@@ -29,10 +40,10 @@ function CourseCard({
       className={[courseCard, className].filter(Boolean).join(' ')}
       aria-labelledby={`${courseCard}-${course.id}-title`}
     >
-      {course.image && (
+      {teacher?.image && (
         <div className={`${courseCard}__image`}>
           <img
-            src={course.image} alt='' loading='lazy' />
+            src={teacher.image} alt='' loading='lazy' />
         </div>
       )}
       <div className={`${courseCard}__body`}>
@@ -57,7 +68,7 @@ function CourseCard({
           <div className={`${courseCard}__teacher`}>
             <span>by</span>
             <span className={`${courseCard}__teacher-name`}>
-              {course.teacherName}
+              {teacher?.name ?? 'Teacher is not found.'}
             </span>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Container, Section } from '@/shared/primitives';
+import { Section } from '@/shared/primitives';
 import '../styles/singlePost.scss';
 import SinglePostSection from '@/widgets/SinglePost/SinglePostSection/SinglePostSection';
 import SinglePostRecommended from '@/widgets/SinglePost/SinglePostRecommended/SinglePostRecommended';
@@ -8,7 +8,7 @@ import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import { fetchPosts } from '@/entities/post/model/postThunk';
 import { ErrorMessage } from '@/shared/ui/Messages';
-import { SubscribeSection } from '@/widgets';
+// import { SubscribeSection } from '@/widgets';
 
 
 function SinglePostPage(): React.JSX.Element {
@@ -36,7 +36,7 @@ function SinglePostPage(): React.JSX.Element {
     <Section className={singlePostPage}>
       <SinglePostSection />
 
-      <SubscribeSection variant='newsletter' />
+      {/* <SubscribeSection variant='newsletter' /> */}
       <SinglePostRecommended
         loading={postsLoading}
         posts={recommendedPosts} />

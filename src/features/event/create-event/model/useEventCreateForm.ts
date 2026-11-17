@@ -14,6 +14,7 @@ const initialState: EventFormValues = {
   endTime: '',
   format: '',
   type: '',
+  teacherId: '',
   about: [],
   price: 0,
   information: [],
@@ -50,6 +51,16 @@ function useEventCreateForm() {
 
     if (Object.keys(validationErrors).length > 0) return
 
+    const price = Number(formValues.price)
+
+    if (!Number.isFinite(price) || price < 0) {
+      setErrors((prev) => ({
+        ...prev,
+        price: 'Please enter a valid price.',
+      }));
+      return;
+    }
+
     setEventCreateStatus('loading')
 
     try {
@@ -60,14 +71,20 @@ function useEventCreateForm() {
         endTime: formValues.endTime,
         format: formValues.format as EventFormat,
         type: formValues.type as EventType,
-        about: formValues.about,
-        price: formValues.price,
-        information: formValues.information
+        teacherId: formValues.teacherId,
+        details: {
+          about: formValues.about,
+          price,
+          information: formValues.information
+        }
       }
 
       await createEvent(payload)
       setEventCreateStatus('success')
-      setFormValues(initialState)
+      setFormValues({
+        ...initialState,
+        id: crypto.randomUUID()
+      })
       setErrors({})
 
     } catch (error) {

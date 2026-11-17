@@ -10,6 +10,7 @@ import { EventCardVariant } from '../../model/event-types';
 import EventCardHorizontal from '../EventCardHorizontal/EventCardHorizontal';
 import { useTranslation } from 'react-i18next';
 import { SpinnerDefault } from '@/shared/ui';
+import { routeMap } from '@/app/routes/routeMap';
 
 interface EventGridProps {
   className?: string;
@@ -64,26 +65,28 @@ function EventGrid({
               <EventCardPreview
                 variant='featured'
                 event={event}
-                actions={[
+                actions={
                   <ButtonBasic
+                    type='link'
+                    to={routeMap.eventDetails.navigate(event.id)}
                     variant='secondary'
                     className='event-card-btn'>
                     {t('buttons.viewMore')}
                   </ButtonBasic>
-                ]}
+                }
               />
             ) : (
               <EventCardHorizontal
                 variant='featured'
                 event={event}
-                actions={[
+                actions={
                   <ButtonBasic
                     variant='secondary'
                     className='event-card-btn'
                   >
                     {t('buttons.viewMore')}
                   </ButtonBasic>
-                ]}
+                }
               />
             )}
 

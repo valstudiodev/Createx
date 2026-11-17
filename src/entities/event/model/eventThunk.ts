@@ -23,6 +23,7 @@ export const fetchEventByID = createAsyncThunk<EventFullDetails | null, { eventI
   async ({ eventId }, thunkApi) => {
     try {
       const response = await getEventByID(eventId)
+      console.log('Response from Firebase:', response);
       return response
     } catch (error: unknown) {
       if (error instanceof Error) {

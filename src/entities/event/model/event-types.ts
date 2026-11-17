@@ -7,13 +7,6 @@ export type EventType =
   | 'lecture'
   | 'workshop'
 
-export interface EventCard {
-  event: Event;
-  className?: string;
-  actions: React.ReactElement[];
-  variant: EventCardVariant
-}
-
 export interface Event {
   id: string;
   title: string;
@@ -22,6 +15,7 @@ export interface Event {
   endTime: string;
   format: EventFormat;
   type: EventType;
+  teacherId: string;
 }
 
 export interface AccordionItem {
@@ -30,15 +24,15 @@ export interface AccordionItem {
   content: string;
 }
 
-export interface EventPreview extends Event { }
-
-export interface EventDetails extends Event {
+export interface EventDetailsInfo {
   about: AccordionItem[];
   price: number;
   information?: string[];
 }
 
-export interface EventFullDetails extends Event, EventDetails { }
+export interface EventFullDetails extends Event {
+  details: EventDetailsInfo;
+}
 
 export interface CreateEventPayload {
   title: string;
@@ -47,9 +41,8 @@ export interface CreateEventPayload {
   endTime: string;
   format: EventFormat;
   type: EventType;
-  about: AccordionItem[];
-  price?: number;
-  information?: string[];
+  teacherId: string;
+  details: EventDetailsInfo;
 }
 
 export interface EventState {

@@ -12,7 +12,7 @@ interface AccordionProps {
 }
 
 function Accordion({
-  items,
+  items = [],
   itemLabel,
   className = ''
 }: AccordionProps) {

@@ -5,12 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { Post } from '@/entities/post/model/post-types';
 import { useRef, useState } from 'react';
 import { Swiper as SwiperInstance } from 'swiper';
-import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
+import { WarningMessage } from '@/shared/ui/Messages';
 import Headline from '@/shared/ui/Headline/Headline';
 import { SliderButton, SpinnerDefault } from '@/shared/ui';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useAppSelector } from '@/app/store/hooks';
-import { selectPostError, selectPostLoading } from '@/entities/post/model/postSelector';
 import ExploreWrap from '@/widgets/ExploreWrap/ExploreWrap';
 import { ButtonBasic } from '@/shared/ui/Button';
 

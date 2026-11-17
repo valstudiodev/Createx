@@ -4,7 +4,7 @@
 // --- 2. MOUSE MODE ---
 html[data-input="mouse"] {
   :focus:not(:focus-visible) {
-    outline: none;
+    // outline: none;
   }
 
   &:focus-visible {
@@ -19,8 +19,8 @@ html[data-input="mouse"] {
 // --- 1. KEYBOARD MODE ---
 html[data-input="keyboard"] {
   :focus-visible {
-    outline: toRem(2) solid #000;
-    outline-offset: toRem(4);
+    // outline: toRem(2) solid #000;
+    // outline-offset: toRem(4);
   }
 
   & footer :focus-visible {

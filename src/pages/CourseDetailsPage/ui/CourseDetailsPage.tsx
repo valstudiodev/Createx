@@ -8,12 +8,12 @@ import { selectCourse, selectCourseError, selectCourseLoading, selectCourses, se
 import { SpinnerDefault } from '@/shared/ui';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { CourseAboutWrap, RecommendedCourses } from '@/widgets/Course';
-import { Reviews } from '@/widgets/Reviews';
-import { FormSection } from '@/widgets';
-import BenefitSection from '@/widgets/CourseDetails/BenefitSection/ui/BenefitSection';
+// import { Reviews } from '@/widgets/Reviews';
+// import { FormSection } from '@/widgets';
+// import BenefitSection from '@/widgets/CourseDetails/BenefitSection/ui/BenefitSection';
 import CourseProgram from '@/widgets/CourseDetails/LessonsSection/ui/CourseProgram';
-import CourseDetailsWrap from '@/widgets/Course/CourseDetailsWrap/CourseDetailsWrap';
-import CourseHero from '@/widgets/Course/CourseHero/CourseHero';
+import TeacherDetailsCourse from '@/widgets/CourseDetails/TeacherDetailsSection/TeacherDetailsCourse';
+// import CourseHero from '@/widgets/Course/CourseHero/CourseHero';
 
 function CourseDetailsPage(): React.JSX.Element {
   const courseDetailsPage = 'course-details-page'
@@ -65,15 +65,16 @@ function CourseDetailsPage(): React.JSX.Element {
 
   return (
     <Section className={courseDetailsPage}>
-      <CourseHero />
+      {/* <CourseHero /> */}
       <CourseAboutWrap course={course} />
-      <CourseDetailsWrap course={course} />
+      {/* <CourseDetailsWrap course={course} /> */}
+      <TeacherDetailsCourse teacherId={course.teacherId} />
       {/* learning process */}
       {/* discount */}
-      <BenefitSection />
-      <CourseProgram />
-      <Reviews />
-      <FormSection type='course-registration' />
+      {/* <BenefitSection /> */}
+      <CourseProgram items={course.details.courseProgram} />
+      {/* <Reviews /> */}
+      {/* <FormSection type='course-registration' /> */}
       <RecommendedCourses
         loading={coursesLoading}
         courses={recommendedCourses} />

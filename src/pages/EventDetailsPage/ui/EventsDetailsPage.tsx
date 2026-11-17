@@ -8,6 +8,7 @@ import { fetchEventByID } from '@/entities/event/model/eventThunk';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { EventSectionAbout, EventSectionInfo } from '@/widgets/event';
 import { SpinnerDefault } from '@/shared/ui';
+import EventTeacherDetails from '@/widgets/event/EventTeacherDetails/EventTeacherDetails';
 
 function EventsDetailsPage(): React.JSX.Element {
   const eventsDetailsPage = 'events-details-page'
@@ -25,6 +26,11 @@ function EventsDetailsPage(): React.JSX.Element {
 
     dispatch(fetchEventByID({ eventId: id }))
   }, [dispatch, id]);
+
+  useEffect(() => {
+    console.log('Event from Redux:', event);
+    console.log('Event details:', event?.details);
+  }, [event]);
 
   if (eventLoading) {
     return (
@@ -47,7 +53,7 @@ function EventsDetailsPage(): React.JSX.Element {
       <Container className={`${eventsDetailsPage}__container`}>
         <EventSectionAbout event={event} />
 
-        {/* Teacher */}
+        <EventTeacherDetails teacherId={event.teacherId} />
 
         <EventSectionInfo event={event} />
       </Container>

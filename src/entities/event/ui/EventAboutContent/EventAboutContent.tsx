@@ -23,7 +23,7 @@ function EventAboutContent({
       </h2>
 
       <Accordion
-        items={event.about}
+        items={event.details.about}
         itemLabel='Theme'
         className={`${eventAboutContent}__accordion`}
       />

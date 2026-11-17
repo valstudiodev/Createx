@@ -1,9 +1,9 @@
 import { SuccessMessage } from '@/shared/ui/Messages';
 import useCourseCreateForm from '../model/useCourseCreateForm';
 import '../styles/courseCreateForm.scss';
-import { socialMediaConfig, SocialPlatform } from '@/shared/constants/socialLinks/socialLinks.types';
 import { useEffect, useState } from 'react';
 import CourseProgramFields from './CourseProgramFields';
+import { teachers } from '@/entities/teacher/data/teacher.data';
 
 function CourseCreateForm(): React.JSX.Element {
   const courseCreateForm = 'course-create-form'
@@ -14,7 +14,6 @@ function CourseCreateForm(): React.JSX.Element {
     error,
     handleChange,
     handleSubmit,
-    handleSocialMediaChange,
     handleAddListItem,
     handleRemoveListItem,
     handleListItemChange,
@@ -46,18 +45,22 @@ function CourseCreateForm(): React.JSX.Element {
       onSubmit={handleSubmit}
     >
 
-      <h2 className={`${courseCreateForm}__title`}>
-        Teacher information:
-      </h2>
       <label className={`${courseCreateForm}__field`}>
-        <input
-          type="text"
-          name='title'
-          value={formValues.title}
+        <select
+          name="teacherId"
+          value={formValues.teacherId}
           onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add title...'
-        />
+          className={`${courseCreateForm}__select`}
+          required
+        >
+          <option value="">Select teacher</option>
+
+          {teachers.map((teacher) => (
+            <option key={teacher.id} value={teacher.id}>
+              {teacher.name}
+            </option>
+          ))}
+        </select>
       </label>
 
       <label className={`${courseCreateForm}__field`}>
@@ -77,6 +80,19 @@ function CourseCreateForm(): React.JSX.Element {
 
       <label className={`${courseCreateForm}__field`}>
         <input
+          type="text"
+          name='title'
+          value={formValues.title}
+          onChange={handleChange}
+          className={`${courseCreateForm}__input`}
+          placeholder='Add title...'
+        />
+      </label>
+
+
+
+      <label className={`${courseCreateForm}__field`}>
+        <input
           type="number"
           name='price'
           value={formValues.price}
@@ -87,121 +103,6 @@ function CourseCreateForm(): React.JSX.Element {
           placeholder='Add price...'
         />
       </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="text"
-          name='teacherName'
-          value={formValues.teacherName}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add a teacher name...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="url"
-          name='image'
-          value={formValues.image}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add a teacher image...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="text"
-          name='position'
-          value={formValues.position}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add a position...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="text"
-          name='specialty'
-          value={formValues.specialty}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add a specialty...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="number"
-          name='rating'
-          value={formValues.rating}
-          min='0'
-          max='5'
-          step='0.1'
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          placeholder='Add a rating...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="number"
-          name='coursesCount'
-          value={formValues.coursesCount}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          min='0'
-          step='1'
-          placeholder='Add courses count...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <input
-          type="number"
-          name='studentsCount'
-          value={formValues.studentsCount}
-          onChange={handleChange}
-          className={`${courseCreateForm}__input`}
-          min='0'
-          step='1'
-          placeholder='Add students number...'
-        />
-      </label>
-
-      <label className={`${courseCreateForm}__field`}>
-        <textarea
-          name="description"
-          value={formValues.description}
-          onChange={handleChange}
-          className={`${courseCreateForm}__textarea`}
-          placeholder='Add a description...'
-        >
-        </textarea>
-      </label>
-
-      <fieldset className={`${courseCreateForm}__social-media`}>
-        <legend>Social media</legend>
-
-        {(
-          Object.keys(socialMediaConfig) as SocialPlatform[]
-        ).map((platform) => (
-          <label key={platform}>
-            <input
-              type="checkbox"
-              name='socialMedia'
-              value={platform}
-              checked={formValues.socialMedia.includes(platform)}
-              onChange={(e) => handleSocialMediaChange(platform, e.target.checked)}
-            />
-            {socialMediaConfig[platform].label}
-          </label>
-        ))
-        }
-      </fieldset>
 
       {/* about info */}
       <h2 className={`${courseCreateForm}__title`}>

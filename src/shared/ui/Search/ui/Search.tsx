@@ -3,30 +3,31 @@ import {
   useEffect,
   useId,
   useState,
-  useRef
 } from "react";
 import { SearchProps } from "../model/types";
+import './search.scss';
 
 export default function Search({
   value = '',
   placeholder = 'Search...',
   debounceTime = 300,
   disabled = false,
-  label = 'Search',
+  label = '',
+  className = '',
   onChange,
   onClear,
   ...props
 }: SearchProps): React.JSX.Element {
+
+  const search = 'search'
+
+  const combinedClasses = [
+    search,
+    className
+  ].filter(Boolean).join(' ')
+
   const [searchTerm, setSearchTerm] = useState<string>(value);
   const inputId = useId()
-
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus()
-    }
-  }, []);
 
   useEffect(() => {
     setSearchTerm(value)
@@ -48,52 +49,53 @@ export default function Search({
 
   function handleClear(): void {
     setSearchTerm('')
-    onChange('')
     onClear?.()
   }
 
   return (
-    <div className={`search ${disabled ? 'search--disabled' : ''}`}>
-      <label
-        htmlFor={inputId}
-        className="search__label mb-2"
-        aria-hidden="true">
-        {label}
-      </label>
+    <div className={`${combinedClasses} ${disabled ? 'search--disabled' : ''}`}>
 
-      <div className="search__wrapper flex items-center
-      gap-2">
-        <span
-          className="search__icon"
-          aria-hidden="true"
-        >
-          🔍
-        </span>
+      <form
+        role="search"
+        className={`${search}__form`}
+        onSubmit={(e) => e.preventDefault()}
+      >
+        {label && (
+          <label
+            htmlFor={inputId}
+            className={`${search}__label`}
+          >
+            {label}
+          </label>
+        )}
 
         <input
           {...props}
           id={inputId}
           type="search"
-          className="search__input border w-full"
+          className={`${search}__input`}
           value={searchTerm}
           placeholder={placeholder}
           disabled={disabled}
           onChange={handleChange}
         />
 
+        <span
+          className={`${search}__icon ${search}__icon--icon-search`}
+          aria-hidden="true"
+        >
+        </span>
+
         {searchTerm && !disabled && (
           <button
             type="button"
-            className="search__btn-clear"
+            className={`${search}__btn-clear`}
             aria-label="Clear search"
             onClick={handleClear}>
-            {/* &times; */}
+            &times;
           </button>
         )}
-      </div>
-
-
-
+      </form>
     </div>
   )
 }

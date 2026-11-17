@@ -12,6 +12,10 @@ export function validateEventForm(values: EventFormValues) {
     errors.date = 'Date is required.'
   }
 
+  if (!values.teacherId) {
+    errors.teacherId = 'Please select a teacher.'
+  }
+
   if (values.startTime.trim() === '') {
     errors.startTime = 'Start time is required.'
   }

@@ -5,7 +5,7 @@ import './eventInfoCard.scss';
 interface EventInfoCardProps {
   className?: string;
   event: EventFullDetails;
-  actions: React.ReactElement[]
+  actions: React.ReactNode
 }
 
 function EventInfoCard({
@@ -16,6 +16,7 @@ function EventInfoCard({
   const eventInfoCard = 'event-info-card'
 
   const date = formatDateByStyle(event.date, 'long')
+  const price = event.details.price ?? 0
 
   return (
     <article className={`${eventInfoCard} ${className}`}>
@@ -24,7 +25,7 @@ function EventInfoCard({
         <div className={`${eventInfoCard}__info`}>
           <span className={`${eventInfoCard}__date`}>{date}</span>,
           <div className={`${eventInfoCard}__time`}>
-            <span>{event.startTime}</span> -
+            <span>{event.startTime} - </span>
             <span>{event.endTime}</span>
           </div>
         </div>
@@ -33,14 +34,12 @@ function EventInfoCard({
         </p>
       </div>
       <div className={`${eventInfoCard}__wrap`}>
-        {event.price > 0 ? (
-          <div className={`${eventInfoCard}__price`}>
-            <span className={`${eventInfoCard}__label`}>price</span>
-            <span className={`${eventInfoCard}__amount`}>{event.price}$</span>
-          </div>
-        ) : (
-          <span>Free</span>
-        )}
+        <div className={`${eventInfoCard}__price`}>
+          <span className={`${eventInfoCard}__label`}>price</span>
+          <span className={`${eventInfoCard}__amount`}>
+            {price > 0 ? `${price}$` : 'Free'}
+          </span>
+        </div>
         <p className={`${eventInfoCard}__text`}>
           Nulla sem adipiscing adipiscing felis fringilla. Adipiscing mauris quam ac elit tristique dis.
         </p>

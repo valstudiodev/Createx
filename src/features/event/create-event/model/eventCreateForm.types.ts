@@ -9,6 +9,7 @@ export interface EventFormValues {
   endTime: string;
   format: EventFormat | '';
   type: EventType | '';
+  teacherId: string;
   about: AccordionItem[];
   price?: number;
   information?: string[];
@@ -21,6 +22,7 @@ export interface EventFormErrors {
   startTime?: string;
   endTime?: string;
   format?: string;
+  teacherId?: string;
   type?: string;
   about?: string;
   price?: string;
