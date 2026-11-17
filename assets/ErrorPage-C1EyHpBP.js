@@ -1,0 +1,1 @@
+import{r as e,t}from"./jsx-runtime-Cx0BB4qO.js";var n=e({default:()=>i}),r=t();function i(){let e=`error-page`;return(0,r.jsx)(`div`,{className:e,children:(0,r.jsx)(`p`,{className:`${e}__text`,children:`Error!!!`})})}export{n,i as t};
