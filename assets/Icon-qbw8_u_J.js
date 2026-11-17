@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-Cx0BB4qO.js";var t=e();function n({name:e,className:n=``}){return(0,t.jsx)(`span`,{className:`icon ${e} ${n}`,"aria-hidden":`true`})}export{n as t};
