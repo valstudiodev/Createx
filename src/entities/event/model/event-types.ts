@@ -25,6 +25,7 @@ export interface Event {
   format: EventFormat;
   type: EventType;
   teacherId: string;
+  isLatest?: boolean;
 }
 
 export interface AccordionItem {
@@ -61,5 +62,9 @@ export interface EventState {
   eventLoading: boolean,
   eventsError: string | null,
   eventError: string | null,
+  latestEvents: Event[],
+  latestEventsLoading: boolean,
+  latestEventsError: string | null,
+  latestEventsLoaded: boolean,
 }
 

@@ -1,0 +1,1 @@
+export { default as AboutInfoSection } from '@/widgets/About/AboutInfoSection/ui/AboutInfoSection'

@@ -3,6 +3,7 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .teacher-card {
+  flex-shrink: 0;
 
   &__image {
     aspect-ratio: 285 / 340;

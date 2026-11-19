@@ -9,6 +9,10 @@ export const selectEventsLoading = (state: RootState) => state.events.eventsLoad
 export const selectEventLoading = (state: RootState) => state.events.eventLoading
 export const selectEventsError = (state: RootState) => state.events.eventsError
 export const selectEventError = (state: RootState) => state.events.eventError
+export const selectLatestEvents = (state: RootState) => state.events.latestEvents
+export const selectLatestEventsLoading = (state: RootState) => state.events.latestEventsLoading
+export const selectLatestEventsError = (state: RootState) => state.events.latestEventsError
+export const selectLatestEventsLoaded = (state: RootState) => state.events.latestEventsLoaded
 
 export const selectEventsRecommended = createSelector(
   [

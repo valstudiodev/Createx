@@ -3,7 +3,7 @@ import PostCard from '../PostCard/PostCard';
 import { Post } from '../../model/post-types';
 
 interface PostsGridProps {
-  posts: Post[]
+  posts: Post[];
   className?: string;
 }
 

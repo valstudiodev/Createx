@@ -14,7 +14,6 @@ export const selectLatestPostsLoading = (state: RootState) => state.posts.latest
 export const selectLatestPostsError = (state: RootState) => state.posts.latestPostsError
 export const selectRecommendedPostsLoading = (state: RootState) => state.posts.recommendedPostsLoading
 export const selectRecommendedPostsError = (state: RootState) => state.posts.recommendedPostsError
-// export const selectPostsHasLoaded = (state: RootState) => state.posts.postsHasLoaded
 
 export const selectRecommendedPosts = createSelector(
   [
@@ -52,3 +51,4 @@ export const selectRecommendedPosts = createSelector(
 
   }
 )
+

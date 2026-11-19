@@ -1,0 +1,24 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '../../../../shared/styles/mixins/grid' as *;
+
+.teacher-list {
+  @include grid-adaptive($size: toRem(250));
+  @include adaptiveValue('column-gap', 30, 15);
+  @include adaptiveValue('row-gap', 60, 20);
+
+  @media (max-width: toEm(579)) {
+    display: flex;
+    overflow: auto;
+    padding-inline: toRem(15);
+    margin-left: toRem(-15);
+  }
+
+  &__item {
+
+    @media (max-width: toEm(579)) {
+      flex: 0 0 toRem(235);
+    }
+  }
+}

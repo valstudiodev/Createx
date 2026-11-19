@@ -149,7 +149,8 @@
     "meetOurTeam": "Meet our team",
     "organizationalStructure": "Formation of the organizational structure of the company in the face of uncertainty",
     "youMayBeInterestedIn": "You may be interested in",
-    "doYouWantMore": "Do you want more?"
+    "doYouWantMore": "Do you want more?",
+    "ourCoreValues": "Our core values"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -177,7 +178,8 @@
     "aboutUs": "About us",
     "bestTutors": "Best tutors are all here",
     "onlineLecture": "Online lecture",
-    "checkOtherOnlineEvents": "Check other online events"
+    "checkOtherOnlineEvents": "Check other online events",
+    "weAlwaysStandFor": "We always stand for"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",

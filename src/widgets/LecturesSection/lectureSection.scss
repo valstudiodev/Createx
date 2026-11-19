@@ -24,6 +24,13 @@
     @include adaptiveValue('row-gap', 60, 20);
   }
 
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: toRem(800);
+  }
+
   &__title {
     @include adaptiveValue('font-size', 46, 32);
   }

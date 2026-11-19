@@ -20,3 +20,20 @@
     gap: toRem(24);
   }
 }
+
+.team-section-cards {
+  @include adaptiveValue('padding-top', 180, 40);
+  @include adaptiveValue('padding-bottom', 120, 30);
+
+  &__container {}
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 20);
+
+    h2 {
+      @include adaptiveValue('font-size', 46, 32);
+      color: var(--color-gray-900);
+      line-height: 1.6;
+    }
+  }
+}

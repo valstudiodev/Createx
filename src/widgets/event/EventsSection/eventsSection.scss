@@ -7,7 +7,19 @@
   @include adaptiveValue('padding-top', 200, 150);
   @include adaptiveValue('padding-bottom', 266, 50);
 
+
   &__container {}
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: toRem(900);
+  }
+
+  &__grid {
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
 
   &__title {
     @include adaptiveValue('font-size', 46, 32);

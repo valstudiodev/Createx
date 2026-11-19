@@ -149,7 +149,8 @@
     "meetOurTeam": "Познайомтеся з нашою командою",
     "organizationalStructure": "Формування організаційної структури компанії в умовах невизначеності",
     "youMayBeInterestedIn": "Вас може зацікавити",
-    "doYouWantMore": "Хочете більше?"
+    "doYouWantMore": "Хочете більше?",
+    "ourCoreValues": "Наші основні цінності"
   },
   "labels": {
     "leaveRequestDiscount": "Залиште заявку зараз та отримайте знижку 20%!",
@@ -177,7 +178,8 @@
     "aboutUs": "Про нас",
     "bestTutors": "Найкращі викладачі зібралися тут",
     "onlineLecture": "Онлайн-лекція",
-    "checkOtherOnlineEvents": "Перегляньте інші онлайн-події"
+    "checkOtherOnlineEvents": "Перегляньте інші онлайн-події",
+    "weAlwaysStandFor": "Ми завжди відстоюємо"
   },
   "statistics": {
     "studentsGraduated": "Випускників",

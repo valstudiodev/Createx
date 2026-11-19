@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { EventFullDetails } from "./event-types";
-import { getEventByID, getEvents } from "../api/eventService";
+import { Event } from '@/entities/event/model/event-types'
+import { getEventByID, getEvents, getLatestEvents } from "../api/eventService";
 
 
 export const fetchEvents = createAsyncThunk<EventFullDetails[], void, { rejectValue: string }>(
@@ -30,6 +31,20 @@ export const fetchEventByID = createAsyncThunk<EventFullDetails | null, { eventI
         return thunkApi.rejectWithValue(error.message)
       }
       return thunkApi.rejectWithValue('Failed to fetch event by ID.')
+    }
+  }
+)
+
+export const fetchLatestEvents = createAsyncThunk<Event[], void, { rejectValue: string }>(
+  'events/fetchLatestEvents',
+  async (_, { rejectWithValue }) => {
+    try {
+      return await getLatestEvents()
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message)
+      }
+      return rejectWithValue('Failed to fetch latest events.')
     }
   }
 )

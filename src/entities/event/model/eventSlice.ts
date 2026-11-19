@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { EventState } from "./event-types";
-import { fetchEventByID, fetchEvents } from "./eventThunk";
+import { fetchEventByID, fetchEvents, fetchLatestEvents } from "./eventThunk";
 
 const initialState: EventState = {
   events: [],
@@ -9,6 +9,10 @@ const initialState: EventState = {
   eventsError: null,
   eventLoading: false,
   eventError: null,
+  latestEvents: [],
+  latestEventsLoading: false,
+  latestEventsError: null,
+  latestEventsLoaded: false,
 }
 
 export const eventSlice = createSlice({
@@ -25,10 +29,12 @@ export const eventSlice = createSlice({
         state.eventsLoading = false
         state.eventsError = null
         state.events = action.payload
+        state.latestEventsLoaded = true
       })
       .addCase(fetchEvents.rejected, (state, action) => {
         state.eventsLoading = false
         state.eventsError = action.payload ?? 'Failed to fetch events.'
+        state.latestEventsLoaded = true
       })
 
 
@@ -47,6 +53,20 @@ export const eventSlice = createSlice({
         state.eventLoading = false
         state.eventError = action.payload ?? 'Failed to fetch event by ID.'
         state.event = null
+      })
+
+      .addCase(fetchLatestEvents.pending, (state) => {
+        state.latestEventsLoading = true
+        state.latestEventsError = null
+      })
+      .addCase(fetchLatestEvents.fulfilled, (state, action) => {
+        state.latestEventsLoading = false
+        state.latestEventsError = null
+        state.latestEvents = action.payload
+      })
+      .addCase(fetchLatestEvents.rejected, (state, action) => {
+        state.latestEventsLoading = false
+        state.latestEventsError = action.payload ?? 'Failed to fetch latest events.'
       })
   }
 })

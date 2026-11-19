@@ -1,7 +1,10 @@
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
-import { EventFullDetails } from "../model/event-types";
+import { collection, doc, getDoc, getDocs, limit, orderBy, query } from "firebase/firestore";
+import { Event, EventFullDetails } from "../model/event-types";
 import db from "@/shared/config/firebase/firebase-config";
 
+type EventDocument = Omit<Event, 'id' | 'isLatest'> & {
+  isLatest?: boolean;
+}
 
 export async function getEvents(): Promise<EventFullDetails[]> {
   const eventsCollection = collection(db, 'events')
@@ -40,4 +43,26 @@ export async function getEventByID(
       information: data.details.information,
     },
   };
+}
+
+export async function getLatestEvents(): Promise<Event[]> {
+  const eventsCollection = collection(db, 'events')
+
+  const eventQuery = query(
+    eventsCollection,
+    orderBy('date', 'desc'),
+    limit(3)
+  )
+
+  const snapshot = await getDocs(eventQuery)
+
+  return snapshot.docs.map(doc => {
+    const data = doc.data() as EventDocument
+
+    return {
+      ...data,
+      id: doc.id,
+      isLatest: data.isLatest ?? false
+    }
+  })
 }

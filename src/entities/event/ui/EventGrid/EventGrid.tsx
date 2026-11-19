@@ -1,57 +1,25 @@
-import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
 import './eventGrid.scss';
-import { selectEvents, selectEventsError, selectEventsLoading } from '../../model/eventSelector';
-import { useEffect } from 'react';
-import { fetchEvents } from '../../model/eventThunk';
-import { WarningMessage } from '@/shared/ui/Messages';
 import EventCardPreview from '../EventCardPreview/EventCardPreview';
 import { ButtonBasic } from '@/shared/ui/Button';
-import { EventCardVariant } from '../../model/event-types';
+import { Event, EventCardVariant } from '../../model/event-types';
 import EventCardHorizontal from '../EventCardHorizontal/EventCardHorizontal';
 import { useTranslation } from 'react-i18next';
-import { SpinnerDefault } from '@/shared/ui';
 import { routeMap } from '@/app/routes/routeMap';
 
 interface EventGridProps {
+  events: Event[];
   className?: string;
   variant: EventCardVariant;
 }
 
 function EventGrid({
+  events,
   className = '',
   variant
 }: EventGridProps): React.JSX.Element {
   const eventGrid = 'event-grid'
 
   const { t } = useTranslation()
-
-  const dispatch = useAppDispatch()
-
-  const events = useAppSelector(selectEvents)
-  const loading = useAppSelector(selectEventsLoading)
-  const error = useAppSelector(selectEventsError)
-
-  useEffect(() => {
-    dispatch(fetchEvents())
-  }, [dispatch]);
-
-  if (loading) {
-    return (
-      <div className={`${eventGrid}__loading`}>
-        <SpinnerDefault size='large' />
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div>{error}</div>
-    )
-  }
-
-  if (events.length === 0) {
-    return <WarningMessage message='Events not found.' />
-  }
 
   return (
     <div className={`${eventGrid} ${eventGrid}--${variant} ${className}`}>
@@ -82,6 +50,8 @@ function EventGrid({
                 actions={
                   <ButtonBasic
                     variant='secondary'
+                    type='link'
+                    to={routeMap.eventDetails.navigate(event.id)}
                     className='event-card-btn'
                   >
                     {t('buttons.viewMore')}

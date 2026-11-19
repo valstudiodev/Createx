@@ -5,15 +5,23 @@ import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
 import { selectPosts, selectPostsError, selectPostsLoading } from '@/entities/post/model/postSelector';
 import { useEffect } from 'react';
 import { fetchPosts } from '@/entities/post/model/postThunk';
-import { SpinnerDefault, Title } from '@/shared/ui';
+import { Pagination, SpinnerDefault, Title } from '@/shared/ui';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { useTranslation } from 'react-i18next';
 
+
 interface BlogsSectionProps {
   className?: string;
+
+  currentPage: number;
+  onChagePage: (page: number) => void;
+  itemsPerPage?: number;
 }
 
 function BlogsSection({
+  currentPage,
+  onChagePage,
+  itemsPerPage = 0,
   className = ''
 }: BlogsSectionProps): React.JSX.Element {
   const blogsSection = 'blogs-section'
@@ -50,6 +58,13 @@ function BlogsSection({
     )
   }
 
+  const totalPages = Math.ceil(posts.length / itemsPerPage)
+
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+
+  const visiblePosts = posts.slice(startIndex, endIndex)
+
   return (
     <Section className={`${blogsSection} ${className}`}>
       <Container className={`${blogsSection}__container`}>
@@ -61,8 +76,19 @@ function BlogsSection({
           {t('titles.createxSchoolJournal')}
         </Title>
         {/* filter */}
-        <PostsGrid posts={posts} />
-        {/* pagination */}
+        <PostsGrid
+          posts={visiblePosts}
+          className={`${blogsSection}__grid`}
+        />
+
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            onPageChange={onChagePage}
+            totalPages={totalPages}
+          />
+        )}
+
       </Container>
     </Section>
   );

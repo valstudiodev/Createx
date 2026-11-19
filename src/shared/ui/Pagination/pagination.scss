@@ -1,0 +1,44 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue('gap', 20, 10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__btn {
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &--left {
+      rotate: -90deg;
+    }
+
+    &--right {
+      rotate: 90deg;
+    }
+
+    &.is-active {
+      color: var(--color-primary);
+    }
+
+    @include hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('gap', 20, 10);
+  }
+
+  &__item {}
+
+
+}
