@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-Cx0BB4qO.js";import"./ui-cLIpyGY9.js";import{t}from"./Title-DSEUeE5P.js";var n=e();function r({className:e=``,title:r,label:i,children:a}){let o=`headline`;return(0,n.jsxs)(`div`,{className:`${o} ${e}`,children:[(0,n.jsx)(t,{className:`${o}__title`,label:i,children:r}),a]})}export{r as t};
