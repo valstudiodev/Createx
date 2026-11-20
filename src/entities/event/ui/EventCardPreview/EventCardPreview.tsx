@@ -11,7 +11,6 @@ interface EventCardProps {
   actions?: React.ReactNode;
 }
 
-
 function EventCardPreview({
   event,
   className = '',

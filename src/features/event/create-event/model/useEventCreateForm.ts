@@ -35,7 +35,7 @@ function useEventCreateForm() {
       ...prev,
       [name]:
         name === 'about' || name === 'information'
-          ? value.split('/n').filter(Boolean)
+          ? value.split('\n').filter(Boolean)
           : name === 'price'
             ? value === '' ? undefined : Number(value)
             : value,
@@ -76,7 +76,7 @@ function useEventCreateForm() {
           about: formValues.about,
           price,
           information: formValues.information
-        }
+        },
       }
 
       await createEvent(payload)

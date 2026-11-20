@@ -26,6 +26,7 @@ export interface Event {
   type: EventType;
   teacherId: string;
   isLatest?: boolean;
+  createdAt: string;
 }
 
 export interface AccordionItem {

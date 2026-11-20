@@ -1,0 +1,34 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.event-sort-select {
+  display: flex;
+  align-items: center;
+  gap: toRem(12);
+
+  &__label {
+    @include adaptiveValue('font-size', 16, 14);
+    line-height: 1.6;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__select {
+    border: toRem(1) solid var(--color-border);
+    padding-block: toRem(12);
+    padding-inline: toRem(16);
+    border-radius: toRem(4);
+    background-color: var(--color-white);
+    cursor: pointer;
+    width: 100%;
+
+    &:focus-visible {
+      outline: toRem(2) solid var(--color-gray-900);
+      outline-offset: toRem(2);
+    }
+  }
+
+  &__option {}
+}

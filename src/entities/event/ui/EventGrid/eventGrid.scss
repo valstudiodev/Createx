@@ -5,7 +5,9 @@
 
 .event-grid {
 
-  &--primary {
+  &--primary {}
+
+  &--grid {
     .event-grid__list {
       @include grid-adaptive($size: toRem(350));
       @include adaptiveValue('gap', 30, 15);

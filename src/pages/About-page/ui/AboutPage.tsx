@@ -7,6 +7,7 @@ import { LatestPosts } from '@/widgets/posts';
 import { SubscribeSection } from '@/widgets';
 import { AboutInfoSection } from '@/widgets/About';
 import AboutValuesSection from '@/widgets/About/AboutValuesSection/ui/AboutValuesSection';
+import AboutCompanySection from '@/widgets/About/AboutCompanySection/ui/AboutCompanySection';
 
 function AboutPage(): React.JSX.Element {
   const aboutPage = 'about-page'
@@ -22,6 +23,8 @@ function AboutPage(): React.JSX.Element {
 
       <LatestPosts />
       <SubscribeSection />
+
+      <AboutCompanySection />
     </Section>
   );
 }

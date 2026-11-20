@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import path from "path";
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig(() => {
   const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages'
@@ -9,7 +10,8 @@ export default defineConfig(() => {
     base: isGitHubPages ? '/Createx/' : '/',
     plugins: [
       react(),
-      tailwindcss()
+      tailwindcss(),
+      svgr(),
     ],
     resolve: {
       alias: {

@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, limit, orderBy, query } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, limit, orderBy, query, Timestamp } from "firebase/firestore";
 import { Event, EventFullDetails } from "../model/event-types";
 import db from "@/shared/config/firebase/firebase-config";
 
@@ -6,14 +6,39 @@ type EventDocument = Omit<Event, 'id' | 'isLatest'> & {
   isLatest?: boolean;
 }
 
-export async function getEvents(): Promise<EventFullDetails[]> {
-  const eventsCollection = collection(db, 'events')
-  const snapshot = await getDocs(eventsCollection)
+// export async function getEvents(): Promise<EventFullDetails[]> {
+//   const eventsCollection = collection(db, 'events')
+//   const snapshot = await getDocs(eventsCollection)
 
-  return snapshot.docs.map((eventDoc) => ({
-    id: eventDoc.id,
-    ...eventDoc.data(),
-  } as EventFullDetails))
+//   return snapshot.docs.map((eventDoc) => {
+//     const data = eventDoc.data();
+
+//     return {
+//       id: eventDoc.id,
+//       ...data,
+//       createdAt: (data.createdAt as Timestamp).toDate().toISOString(),
+//     } as EventFullDetails;
+//   });
+// }
+
+export async function getEvents(): Promise<EventFullDetails[]> {
+  const eventsCollection = collection(db, 'events');
+  const snapshot = await getDocs(eventsCollection);
+
+  return snapshot.docs.map((eventDoc) => {
+    const data = eventDoc.data();
+
+    const createdAt =
+      data.createdAt instanceof Timestamp
+        ? data.createdAt.toDate().toISOString()
+        : '';
+
+    return {
+      ...data,
+      id: eventDoc.id,
+      createdAt,
+    } as EventFullDetails;
+  });
 }
 
 export async function getEventByID(
@@ -42,6 +67,10 @@ export async function getEventByID(
       price: data.details.price,
       information: data.details.information,
     },
+    createdAt:
+      data.createdAt instanceof Timestamp
+        ? data.createdAt.toDate().toISOString()
+        : '',
   };
 }
 

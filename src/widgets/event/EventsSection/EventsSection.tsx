@@ -7,8 +7,13 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
 import { selectEvents, selectEventsError, selectEventsLoading, selectLatestEventsLoaded } from '@/entities/event/model/eventSelector';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { fetchEvents } from '@/entities/event/model/eventThunk';
+import EventsToolbar from '../eventsToolbar/EventsToolbar';
+import { EventFilters } from '@/features/event/event-filter/model/event-filter.types';
+import { DEFAULT_EVENT_FILTERS } from '@/features/event/event-filter/model/constants';
+import { filterEvents } from '@/features/event/event-filter/lib/filterEvents';
+import { paginateEvents } from '@/features/event/event-filter/lib/paginateEvents';
 
 interface EventsSectionProps {
   variant: EventCardVariant;
@@ -16,7 +21,6 @@ interface EventsSectionProps {
 
   currentPage: number;
   onPageChange: (page: number) => void;
-  itemsPerPage?: number;
 }
 
 function EventsSection({
@@ -24,13 +28,15 @@ function EventsSection({
   className = '',
   currentPage,
   onPageChange,
-  itemsPerPage = 0
+  // itemsPerPage = 0
 }: EventsSectionProps): React.JSX.Element {
   const eventsSection = 'events-section'
 
   const { t } = useTranslation()
 
   const dispatch = useAppDispatch()
+
+  const [filters, setFilters] = useState<EventFilters>(DEFAULT_EVENT_FILTERS);
 
   const events = useAppSelector(selectEvents)
   const isLoading = useAppSelector(selectEventsLoading)
@@ -40,6 +46,24 @@ function EventsSection({
   useEffect(() => {
     dispatch(fetchEvents())
   }, [dispatch]);
+
+  const filteredEvents = useMemo(
+    () => filterEvents(events, filters),
+    [events, filters]
+  )
+
+  const {
+    events: visibleEvents,
+    totalPages,
+  } = useMemo(
+    () =>
+      paginateEvents({
+        events: filteredEvents,
+        page: currentPage,
+        perPage: filters.perPage,
+      }),
+    [filteredEvents, currentPage, filters.perPage],
+  );
 
   if (isLoading || !isLoaded) {
     return (
@@ -55,18 +79,9 @@ function EventsSection({
     )
   }
 
-  if (events.length === 0) {
-    return (
-      <WarningMessage message='Events not found.' />
-    )
+  if (filteredEvents.length === 0) {
+    return <WarningMessage message="No events found." />;
   }
-
-  const totalPages = Math.ceil(events.length / itemsPerPage)
-
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-
-  const visibleEvents = events.slice(startIndex, endIndex)
 
   return (
     <Section className={`${eventsSection} ${className}`}>
@@ -80,10 +95,18 @@ function EventsSection({
         </Title>
 
         {/* filter */}
+        <EventsToolbar
+          filters={filters}
+          onFiltersChange={(newFilter) => {
+            setFilters(newFilter)
+            onPageChange(1)
+          }}
+        />
 
         <EventGrid
           events={visibleEvents}
           variant={variant}
+          viewMode={filters.viewMode}
           className={`${eventsSection}__grid`}
         />
 
