@@ -6,8 +6,8 @@
 .post-card {
   display: flex;
   height: 100%;
-  // overflow: hidden;
-  // border-radius: toRem(4); 
+
+
 
   @include hover {
     .post-card-link__icon {
@@ -24,6 +24,12 @@
     flex-direction: column;
     gap: toRem(16);
     flex: 1;
+
+    &:focus-visible {
+      outline: toRem(2) solid var(--color-primary);
+      outline-offset: toRem(4);
+      border-radius: toRem(4);
+    }
   }
 
 
@@ -32,7 +38,6 @@
     aspect-ratio: 390 / 300;
     border-radius: toRem(4);
     overflow: hidden;
-    animation: backwards;
 
     img {
       width: 100%;
@@ -90,7 +95,7 @@
 .category-info {
   display: flex;
   align-items: center;
-  gap: toRem(24);
+  @include adaptiveValue('gap', 24, 10);
 
   &__icon {}
 
@@ -127,6 +132,7 @@
     display: flex;
     align-items: center;
     @include adaptiveValue('gap', 8, 2);
+    @include adaptiveValue('font-size', 16, 14);
 
     &::before {
       color: var(--color-gray-900);
@@ -151,7 +157,10 @@
 
   &__icon {}
 
-  &__label {}
+  &__label {
+    @include adaptiveValue('font-size', 14, 12);
+    color: var(--color-gray-700);
+  }
 }
 
 .post-card-label {

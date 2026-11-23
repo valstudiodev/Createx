@@ -12,12 +12,18 @@
     align-items: flex-start;
   }
 
-  &__check {
+  &__checkbox {
     width: toRem(16);
     height: toRem(16);
     border-radius: toRem(3);
-    background-color: var(--color-primary);
-    border: toRem(1) solid var(--color-primary);
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+
+    &:focus-visible {
+      outline: toRem(1) solid var(--color-primary);
+      outline-offset: toRem(1);
+    }
   }
 
   &__text {

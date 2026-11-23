@@ -1,0 +1,96 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.course-registration-form {
+  // display: flex;
+  // align-items: center;
+
+  &__body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    @include adaptiveValue('gap', 24, 12);
+
+    @media (max-width: toEm(900)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: toRem(8);
+    width: 100%;
+  }
+
+  &__label {
+    font-size: toRem(14);
+  }
+
+  &__input {
+    padding-block: toRem(12);
+    padding-left: toRem(16);
+    border: toRem(1) solid var(--color-border);
+    border-radius: toRem(4);
+    background-color: var(--color-white);
+    transition: border-color 0.3s;
+    height: toRem(44);
+    width: 100%;
+
+    &::placeholder {
+      color: var(--color-gray-600);
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:focus-within {
+      outline: toRem(1) solid var(--color-primary);
+      outline-offset: toRem(2);
+    }
+
+    @include hover {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding-inline: toRem(32);
+    height: toRem(44);
+    font-weight: 700;
+    letter-spacing: toRem(0.5);
+    font-size: toRem(14);
+    border-radius: toRem(4);
+    cursor: pointer;
+    border: toRem(1) solid var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-primary);
+    }
+
+    @media (max-width: toEm(900)) {
+      width: 100%;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: toRem(-25);
+    left: 0;
+    color: var(--color-danger);
+  }
+}

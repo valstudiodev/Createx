@@ -14,7 +14,7 @@ function BlogPage(): React.JSX.Element {
       <BlogsSection
         currentPage={currentPage}
         onChagePage={setCurrentPage}
-        itemsPerPage={6}
+        itemsPerPage={9}
       />
       <SubscribeSection variant='newsletter' />
     </Section>

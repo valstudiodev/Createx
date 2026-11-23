@@ -15,7 +15,7 @@ function EventsPage(): React.JSX.Element {
       <EventsSection
         currentPage={currentPage}
         onPageChange={setCurrentPage}
-        itemsPerPage={3}
+        // itemsPerPage={3}
         variant='primary' />
       <SubscribeSection variant='default' />
     </Section>

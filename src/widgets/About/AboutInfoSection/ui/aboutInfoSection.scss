@@ -21,7 +21,7 @@
     aspect-ratio: 810 / 500;
     flex: 0 1 66%;
     border-radius: toRem(4);
-    overflow: hidden;
+    // overflow: hidden;
 
     img {
       width: 100%;
@@ -65,5 +65,58 @@
     @include adaptiveValue('font-size', 18, 16);
     font-weight: 700;
     color: var(--color-gray-900);
+  }
+}
+
+.watch-video-button {
+  display: inline-flex;
+  align-items: center;
+  gap: toRem(16);
+  cursor: pointer;
+  @include adaptiveValue('margin-bottom', 32, 15);
+
+  &__icon {
+    background-color: var(--color-primary);
+    line-height: 0;
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: toRem(18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__label {
+    position: relative;
+    font-size: toRem(14);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    transition: color 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: toRem(1);
+      background-color: var(--color-primary);
+      transition: width 0.3s ease;
+    }
+  }
+
+  &:focus-visible {
+    outline: toRem(2) solid var(--color-primary);
+    outline-offset: toRem(10);
+  }
+
+  @include hover {
+    .watch-video-button__label {
+      color: var(--color-primary);
+
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }

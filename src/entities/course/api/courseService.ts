@@ -10,7 +10,6 @@ export async function getCourses(): Promise<CourseFullDetails[]> {
   const courses: CourseFullDetails[] = []
 
   snapshot.forEach((doc) => {
-    console.log('Firestore document:', doc.id, doc.data());
     const course: CourseFullDetails = {
       id: doc.id,
       ...(doc.data() as Omit<CourseFullDetails, 'id'>)

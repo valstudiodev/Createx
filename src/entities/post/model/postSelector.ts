@@ -7,6 +7,7 @@ export const selectPosts = (state: RootState) => state.posts.posts
 export const selectSinglePost = (state: RootState) => state.posts.singlePost
 export const selectPostsLoading = (state: RootState) => state.posts.postsLoading
 export const selectPostLoading = (state: RootState) => state.posts.postLoading
+export const selectPostsHasLoaded = (state: RootState) => state.posts.postsHasLoaded
 export const selectPostsError = (state: RootState) => state.posts.postsError
 export const selectPostError = (state: RootState) => state.posts.postError
 export const selectLatestPosts = (state: RootState) => state.posts.latestPosts

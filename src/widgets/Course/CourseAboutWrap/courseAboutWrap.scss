@@ -5,7 +5,7 @@
 
 .course-about-wrap {
   @include adaptiveValue('padding-top', 120, 30);
-  @include adaptiveValue('padding-bottom', 60, 30);
+  @include adaptiveValue('padding-bottom', 90, 30);
 
 
   &__container {

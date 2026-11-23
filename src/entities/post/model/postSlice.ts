@@ -15,7 +15,7 @@ const initialState: PostState = {
   recommendedPosts: [],
   recommendedPostsLoading: false,
   recommendedPostsError: null,
-  // postsHasLoaded: false
+  postsHasLoaded: false
 }
 
 
@@ -33,7 +33,7 @@ export const postSlice = createSlice({
         state.postsLoading = false
         state.postsError = null
         state.posts = action.payload
-        // state.postsHasLoaded = true
+        state.postsHasLoaded = true
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.postsLoading = false

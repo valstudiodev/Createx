@@ -1,0 +1,31 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.posts-toolbar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include adaptiveValue('gap', 40, 15);
+  @include adaptiveValue('margin-bottom', 60, 20);
+
+  @media (max-width: toEm(1111.98)) {
+    flex-wrap: wrap;
+
+    .posts-toolbar__type-filter {
+      order: 3;
+    }
+
+    .posts-toolbar__category {
+      order: 2;
+    }
+
+    .posts-toolbar__search {
+      order: 1;
+      width: 100%;
+      flex-grow: 1;
+    }
+  }
+}

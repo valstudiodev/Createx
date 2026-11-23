@@ -1,0 +1,30 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.post-category-select {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue('gap', 12, 6);
+
+  &__label {
+    @include adaptiveValue('font-size', 16, 14);
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__select {
+    padding-block: toRem(12);
+    padding-inline: toRem(16);
+    border: toRem(1) solid var(--color-border);
+    border-radius: toRem(4);
+  }
+
+  &__option {}
+
+  @media (max-width: toEm(615)) {
+    flex-grow: 1;
+    justify-content: center;
+  }
+}

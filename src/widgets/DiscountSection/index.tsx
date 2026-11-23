@@ -1,0 +1,1 @@
+export { default as DiscountSection } from '@/widgets/DiscountSection/DiscountSection'

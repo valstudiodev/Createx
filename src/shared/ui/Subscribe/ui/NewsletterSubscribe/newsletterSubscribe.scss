@@ -8,6 +8,10 @@
   justify-content: space-between;
   @include adaptiveValue('gap', 30, 15);
 
+  @media (max-width: toEm(768)) {
+    padding-block: toRem(30);
+  }
+
   &__title {
     max-width: toRem(600);
     @include adaptiveValue('font-size', 32, 20);

@@ -15,7 +15,7 @@ function AgreementCheckbox({
       <input
         type="checkbox"
         required
-        className={`${agreementCheckbox}__check`}
+        className={`${agreementCheckbox}__checkbox`}
       />
       <p className={`${agreementCheckbox}__text`}>
         {text}

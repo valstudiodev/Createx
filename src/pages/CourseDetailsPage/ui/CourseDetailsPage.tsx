@@ -15,6 +15,8 @@ import { FormSection } from '@/widgets';
 import { Reviews } from '@/widgets/Reviews';
 import HeroSectionDetails from '@/widgets/HeroSectionDetails/HeroSectionDetails';
 import { useTranslation } from 'react-i18next';
+import { DiscountSection } from '@/widgets/DiscountSection';
+import LearningProcess from '@/widgets/CourseDetails/LearningProcess/ui/LearningProcess';
 
 function CourseDetailsPage(): React.JSX.Element {
   const courseDetailsPage = 'course-details-page'
@@ -68,7 +70,6 @@ function CourseDetailsPage(): React.JSX.Element {
 
   return (
     <Section className={courseDetailsPage}>
-      {/* <CourseHero /> */}
       <HeroSectionDetails
         title={t('titles.userExperience')}
         label={t('labels.course')}
@@ -76,8 +77,8 @@ function CourseDetailsPage(): React.JSX.Element {
       <CourseAboutWrap course={course} />
       <TeacherDetailsCourse teacherId={course.teacherId} />
 
-      {/* learning process */}
-      {/* discount */}
+      <LearningProcess />
+      <DiscountSection courseId={course.id} />
 
       <BenefitSection />
       <CourseProgram items={course.details.courseProgram} />

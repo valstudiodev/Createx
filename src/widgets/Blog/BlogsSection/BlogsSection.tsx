@@ -2,12 +2,15 @@ import { Container, Section } from '@/shared/primitives';
 import './blogsSection.scss';
 import PostsGrid from '@/entities/post/ui/PostGrid/PostsGrid';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
-import { selectPosts, selectPostsError, selectPostsLoading } from '@/entities/post/model/postSelector';
-import { useEffect } from 'react';
+import { selectPosts, selectPostsError, selectPostsHasLoaded, selectPostsLoading } from '@/entities/post/model/postSelector';
+import { useEffect, useMemo, useState } from 'react';
 import { fetchPosts } from '@/entities/post/model/postThunk';
 import { Pagination, SpinnerDefault, Title } from '@/shared/ui';
 import { ErrorMessage, WarningMessage } from '@/shared/ui/Messages';
 import { useTranslation } from 'react-i18next';
+import PostsToolbar from '@/widgets/posts/PostsToolbar/PostsToolbar';
+import { initialPostFilters, PostFilters } from '@/features/post/filter-posts/model/filterPosts.types';
+import filterPosts from '@/features/post/filter-posts/lib/filterPosts';
 
 
 interface BlogsSectionProps {
@@ -33,12 +36,26 @@ function BlogsSection({
   const posts = useAppSelector(selectPosts)
   const postsLoading = useAppSelector(selectPostsLoading)
   const postsError = useAppSelector(selectPostsError)
+  const isLoaded = useAppSelector(selectPostsHasLoaded)
+
+  const [filters, setFilters] = useState<PostFilters>(initialPostFilters);
 
   useEffect(() => {
     dispatch(fetchPosts())
   }, [dispatch]);
 
-  if (postsLoading) {
+  const filteredPosts = useMemo(
+    () => filterPosts(posts, filters),
+    [posts, filters]
+  )
+
+  const totalPages = Math.ceil(filteredPosts.length / itemsPerPage)
+
+  const startIndex = (currentPage - 1) * itemsPerPage
+
+  const visiblePosts = filteredPosts.slice(startIndex, startIndex + itemsPerPage)
+
+  if (postsLoading || !isLoaded) {
     return (
       <div className={`${blogsSection}__loading`}>
         <SpinnerDefault size='large' />
@@ -58,13 +75,6 @@ function BlogsSection({
     )
   }
 
-  const totalPages = Math.ceil(posts.length / itemsPerPage)
-
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-
-  const visiblePosts = posts.slice(startIndex, endIndex)
-
   return (
     <Section className={`${blogsSection} ${className}`}>
       <Container className={`${blogsSection}__container`}>
@@ -75,11 +85,22 @@ function BlogsSection({
         >
           {t('titles.createxSchoolJournal')}
         </Title>
-        {/* filter */}
-        <PostsGrid
-          posts={visiblePosts}
-          className={`${blogsSection}__grid`}
+
+        <PostsToolbar
+          filters={filters}
+          onFiltersChange={(newFilter) => {
+            setFilters(newFilter)
+          }}
         />
+
+        {visiblePosts.length > 0 ? (
+          <PostsGrid
+            posts={visiblePosts}
+            className={`${blogsSection}__grid`}
+          />
+        ) : (
+          <WarningMessage message="No posts match your filters." />
+        )}
 
         {totalPages > 1 && (
           <Pagination

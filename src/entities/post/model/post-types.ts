@@ -43,7 +43,7 @@ export interface PostState {
   recommendedPosts: Post[];
   recommendedPostsLoading: boolean;
   recommendedPostsError: string | null;
-  // postsHasLoaded: boolean
+  postsHasLoaded: boolean
 }
 
 export interface PostDetailsInterface extends Post {

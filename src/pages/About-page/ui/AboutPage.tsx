@@ -8,6 +8,7 @@ import { SubscribeSection } from '@/widgets';
 import { AboutInfoSection } from '@/widgets/About';
 import AboutValuesSection from '@/widgets/About/AboutValuesSection/ui/AboutValuesSection';
 import AboutCompanySection from '@/widgets/About/AboutCompanySection/ui/AboutCompanySection';
+import AboutStudyingProcess from '@/widgets/About/AboutStudyingProcess/ui/AboutStudyingProcess';
 
 function AboutPage(): React.JSX.Element {
   const aboutPage = 'about-page'
@@ -17,14 +18,12 @@ function AboutPage(): React.JSX.Element {
       <AboutUsHeroSection />
       <AboutInfoSection />
       <AboutValuesSection />
+      <AboutStudyingProcess />
       <TeamSectionCards />
       <Reviews />
-      {/* best jobs */}
-
+      <AboutCompanySection />
       <LatestPosts />
       <SubscribeSection />
-
-      <AboutCompanySection />
     </Section>
   );
 }

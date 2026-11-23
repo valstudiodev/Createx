@@ -48,7 +48,8 @@
     "viewAllCourses": "View all courses",
     "goToBlock": "Go to block",
     "exploreEvents": "Explore events",
-    "browseCourses": "Browse courses"
+    "browseCourses": "Browse courses",
+    "watchVideo": "Watch video"
   },
   "submitForm": {
     "name": {
@@ -150,7 +151,9 @@
     "organizationalStructure": "Formation of the organizational structure of the company in the face of uncertainty",
     "youMayBeInterestedIn": "You may be interested in",
     "doYouWantMore": "Do you want more?",
-    "ourCoreValues": "Our core values"
+    "ourCoreValues": "Our core values",
+    "earlyBirdDiscount": "20% discount for early birds!",
+    "onlineLearningProcess": "Online learning process"
   },
   "labels": {
     "leaveRequestDiscount": "Leave a request now and get 20% off!",
@@ -179,7 +182,10 @@
     "bestTutors": "Best tutors are all here",
     "onlineLecture": "Online lecture",
     "checkOtherOnlineEvents": "Check other online events",
-    "weAlwaysStandFor": "We always stand for"
+    "weAlwaysStandFor": "We always stand for",
+    "mainSteps": "Main steps",
+    "studyingProcess": "Studying process",
+    "step": "Step"
   },
   "statistics": {
     "studentsGraduated": "Students graduated",
@@ -220,5 +226,32 @@
   "aboutUs": {
     "description": "Createx Online School is a leader in online studying. We have lots of courses and programs from the main market experts.",
     "text": "We provide relevant approaches to online learning, internships and employment in the largest companies in the country. Our educational programs help you get a new specialty from scratch. During your studies, we will help you find a job. Check the courses and online events that we organise."
+  },
+  "discount": {
+    "timer": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Mins",
+      "seconds": "Sec",
+      "expired": "The course has started!"
+    }
+  },
+  "learningProcess": {
+    "videoLectures": {
+      "title": "Watching online video lectures",
+      "description": "Learn at your own pace with practical video lessons from experienced professionals."
+    },
+    "passingTest": {
+      "title": "Passing test",
+      "description": "Test your knowledge and check how well you understand the material."
+    },
+    "curatorFeedback": {
+      "title": "Curator’s feedback",
+      "description": "Receive detailed feedback and recommendations from your personal curator."
+    },
+    "corrections": {
+      "title": "Corrections if needed",
+      "description": "Improve your work by applying feedback and correcting any mistakes."
+    }
   }
 }

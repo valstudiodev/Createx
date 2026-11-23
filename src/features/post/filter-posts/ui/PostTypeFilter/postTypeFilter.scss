@@ -1,0 +1,60 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.post-type-filter {
+  flex-grow: 1;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('gap', 12, 6);
+    // flex-wrap: wrap;
+
+    @media (max-width: toEm(600)) {
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+  }
+
+  &__item {
+    @media (max-width: toEm(600)) {
+      flex-grow: 1;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+    cursor: pointer;
+    color: var(--color-gray-600);
+    transition: color 0.3s, border-color 0.3s;
+    padding-block: toRem(10);
+    padding-inline: toRem(20);
+    border: toRem(1) solid transparent;
+    border-radius: toRem(4);
+    justify-content: center;
+
+    &--active {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    @include hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    @media (max-width: toEm(600)) {
+      width: 100%;
+      // flex-grow: 1;
+    }
+  }
+
+  &__icon {
+    color: var(--color-gray-900);
+    font-size: toRem(16);
+  }
+}

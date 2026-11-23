@@ -61,6 +61,7 @@ function LectureSection(): React.JSX.Element {
         <EventGrid
           events={latestEvents}
           variant='featured'
+          viewMode='list'
         />
         <ExploreWrap
           title={t('labels.doYouWantMore')}
