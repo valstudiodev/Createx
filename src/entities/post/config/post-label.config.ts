@@ -24,3 +24,19 @@ export const postLabelConfig: Record<PostLabel, PostLabelConfigProps> = {
     background: '#fff'
   }
 }
+
+export const postTags = [
+  '#marketing',
+  '#SEO',
+  '#business',
+  '#management',
+  '#HR',
+  '#design',
+  '#development',
+  '#recruiting',
+  '#learning',
+  '#self-development',
+  '#coding'
+] as const;
+
+export type PostTag = (typeof postTags)[number];

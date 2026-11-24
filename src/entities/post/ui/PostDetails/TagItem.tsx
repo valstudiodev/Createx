@@ -1,3 +1,4 @@
+import { routeMap } from '@/app/routes/routeMap';
 import './postDetails.scss';
 
 interface TagItemProps {
@@ -12,7 +13,7 @@ function TagItem({
   return (
     <a
       className={tagItem}
-      href="/">
+      href={routeMap.blog.path}>
       {label}
     </a>
   );

@@ -3,12 +3,14 @@ import '../styles/singlePost.scss';
 import SinglePostSection from '@/widgets/SinglePost/SinglePostSection/SinglePostSection';
 import SinglePostRecommended from '@/widgets/SinglePost/SinglePostRecommended/SinglePostRecommended';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
-import { selectPostsError, selectPostsLoading, selectRecommendedPosts } from '@/entities/post/model/postSelector';
+import { selectPostsError, selectPostsLoading, selectRecommendedPosts, selectSinglePost } from '@/entities/post/model/postSelector';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import { fetchPosts } from '@/entities/post/model/postThunk';
 import { ErrorMessage } from '@/shared/ui/Messages';
 import { SubscribeSection } from '@/widgets';
+import { teachers } from '@/entities/teacher/data/teacher.data';
+import PostAuthor from '@/widgets/PostAside/ui/PostAuthor/PostAuthor';
 
 
 function SinglePostPage(): React.JSX.Element {
@@ -17,13 +19,8 @@ function SinglePostPage(): React.JSX.Element {
   const { id } = useParams<{ id: string }>()
 
   const dispatch = useAppDispatch()
-
   const postsLoading = useAppSelector(selectPostsLoading)
   const postsError = useAppSelector(selectPostsError)
-
-  const recommendedPosts = useAppSelector((state) =>
-    selectRecommendedPosts(state, id ?? '')
-  )
 
   useEffect(() => {
     if (!id) return
@@ -31,6 +28,10 @@ function SinglePostPage(): React.JSX.Element {
     dispatch(fetchPosts())
 
   }, [dispatch, id]);
+
+  const recommendedPosts = useAppSelector((state) =>
+    selectRecommendedPosts(state, id ?? '')
+  )
 
   return (
     <Section className={singlePostPage}>

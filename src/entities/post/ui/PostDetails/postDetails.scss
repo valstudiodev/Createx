@@ -137,6 +137,16 @@
   padding-inline: toRem(16);
   border: toRem(1) solid var(--color-border);
   border-radius: toRem(4);
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+
+  @include hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
 }
 
 .tag-items {

@@ -7,6 +7,37 @@
   @include adaptiveValue('padding-top', 200, 150);
   @include adaptiveValue('padding-bottom', 120, 30);
 
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include adaptiveValue('gap', 50, 30);
+
+    @media (max-width: toEm(768)) {
+      flex-wrap: wrap;
+
+      .single-post-section__details {
+        order: 2;
+      }
+
+      .single-post-section__aside {
+        order: 1;
+      }
+    }
+  }
+
+  &__details {
+    flex: 0 1 toRem(810);
+
+  }
+
+  &__aside {
+
+    @media (min-width: toEm(768)) {
+      flex: 0 0 toRem(342);
+    }
+  }
+
   &__loading {
     display: flex;
     justify-content: center;

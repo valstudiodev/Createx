@@ -1,0 +1,1 @@
+export { default as PostAside } from '@/widgets/PostAside/ui/PostAside'

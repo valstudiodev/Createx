@@ -1,0 +1,15 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+@use '@/shared/styles/mixins/grid' as *;
+
+.post-aside {
+  display: grid;
+  @include adaptiveValue('row-gap', 60, 20);
+
+  &__search {}
+
+  &__author {}
+
+  &__posts {}
+}

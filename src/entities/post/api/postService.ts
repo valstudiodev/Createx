@@ -3,8 +3,9 @@ import { Post, PostDetailsInterface } from "../model/post-types";
 import db from "@/shared/config/firebase/firebase-config";
 
 
-type PostDocument = Omit<Post, 'id' | 'isRecommended'> & {
+type PostDocument = Omit<Post, 'id' | 'isRecommended' | 'isTrending'> & {
   isRecommended?: boolean;
+  isTrending?: boolean;
 };
 
 export async function getPosts(): Promise<Post[]> {
@@ -17,7 +18,8 @@ export async function getPosts(): Promise<Post[]> {
     return {
       ...data,
       id: doc.id,
-      isRecommended: data.isRecommended ?? false
+      isRecommended: data.isRecommended ?? false,
+      isTrending: data.isTrending ?? false,
     };
   });
 }
@@ -39,7 +41,8 @@ export async function getLatestPosts(): Promise<Post[]> {
     return {
       ...data,
       id: doc.id,
-      isRecommended: data.isRecommended ?? false
+      isRecommended: data.isRecommended ?? false,
+      isTrending: data.isTrending ?? false,
     };
   });
 }
@@ -60,11 +63,11 @@ export async function getRecommendedPosts(): Promise<Post[]> {
     return {
       ...data,
       id: doc.id,
-      isRecommended: true
+      isRecommended: true,
+      isTrending: data.isTrending ?? false,
     };
   });
 }
-
 
 export async function getPostById(postId: string): Promise<PostDetailsInterface | null> {
   console.log('Requested post ID:', postId);

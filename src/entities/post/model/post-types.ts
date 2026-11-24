@@ -28,6 +28,8 @@ export interface Post {
   action: PostAction;
   label: PostLabel;
   isRecommended: boolean;
+  teacherId: string;
+  isTrending: boolean;
 }
 
 export interface PostState {
