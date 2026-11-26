@@ -3,8 +3,42 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .about-section {
+  position: relative;
   @include adaptiveValue('padding-top', 180, 40);
   @include adaptiveValue('padding-bottom', 90, 30);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: url('../assets/dots.png');
+    background-repeat: no-repeat;
+    width: toRem(132);
+    height: toRem(181);
+    translate: 0 -50%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url('../assets/circles-decor.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: toRem(287);
+    height: toRem(287);
+    translate: 60% -20%;
+  }
+
+  @media (max-width: toEm(1075)) {
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
 
   &__container {
     display: flex;

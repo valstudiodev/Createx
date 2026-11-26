@@ -1,4 +1,4 @@
-import { Search } from '@/shared/ui';
+// import { Search } from '@/shared/ui';
 import './postAside.scss';
 import PostAuthorWrap from './PostAuthor/PostAuthorWrap';
 import { Teacher } from '@/entities/teacher/model/teacher.types';
@@ -21,9 +21,9 @@ function PostAside({
 
   return (
     <aside className={`${postAside} ${className}`}>
-      <Search
+      {/* <Search
         className={`${postAside}__search`}
-      />
+      /> */}
 
       <PostAuthorWrap
         className={`${postAside}__author`}

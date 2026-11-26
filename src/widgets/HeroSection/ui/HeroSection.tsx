@@ -1,4 +1,4 @@
-import { Container, Section } from '@/shared/primitives';
+import { Container, Section, Wrapper } from '@/shared/primitives';
 import './heroSection.scss';
 import ButtonPlay from '@/shared/ui/Button/ButtonPlay/ButtonPlay';
 import Title from '@/shared/ui/Title/Title';
@@ -15,41 +15,43 @@ function HeroSection(): React.JSX.Element {
 
   return (
     <Section className={heroSection}>
-      <Container className={`${heroSection}__container`}>
-        <div className={`${heroSection}__body`}>
-          <div className={`${heroSection}__content`}>
-            <ButtonPlay className={`${heroSection}__btn`} />
-            <Title
-              as='h1'
-              className={`${heroSection}__title`}
-            >
-              {t('titles.enjoyStudying')}
-            </Title>
-            <div className={`${heroSection}__actions`}>
-              <ButtonBasic
-                type='link'
-                className={`${heroSection}__actions-btn`}
-                to={routeMap.about.path}
-                variant='secondary'>
-                {t('buttons.aboutUs')}
-              </ButtonBasic>
-              <ButtonBasic
-                type='link'
-                className={`${heroSection}__actions-btn`}
-                to={routeMap.courses.path}
-                variant='primary'>
-                {t('buttons.exploreCourses')}
-              </ButtonBasic>
+      <div className={`${heroSection}__wrapper`}>
+        <Container className={`${heroSection}__container`}>
+          <div className={`${heroSection}__body`}>
+            <div className={`${heroSection}__content`}>
+              <ButtonPlay className={`${heroSection}__btn`} />
+              <Title
+                as='h1'
+                className={`${heroSection}__title`}
+              >
+                {t('titles.enjoyStudying')}
+              </Title>
+              <div className={`${heroSection}__actions`}>
+                <ButtonBasic
+                  type='link'
+                  className={`${heroSection}__actions-btn`}
+                  to={routeMap.about.path}
+                  variant='secondary'>
+                  {t('buttons.aboutUs')}
+                </ButtonBasic>
+                <ButtonBasic
+                  type='link'
+                  className={`${heroSection}__actions-btn`}
+                  to={routeMap.courses.path}
+                  variant='primary'>
+                  {t('buttons.exploreCourses')}
+                </ButtonBasic>
+              </div>
+            </div>
+            <div className={`${heroSection}__image`}>
+              <img
+                aria-hidden='true'
+                src={heroImage} alt="" />
             </div>
           </div>
-          <div className={`${heroSection}__image`}>
-            <img
-              aria-hidden='true'
-              src={heroImage} alt="" />
-          </div>
-        </div>
-        <Statistics />
-      </Container>
+          <Statistics />
+        </Container>
+      </div>
     </Section>
   );
 }

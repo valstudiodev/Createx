@@ -5,6 +5,7 @@ import MainLayout from "@/widgets/MainLayout/ui/MainLayout";
 import ErrorPage from "@/pages/ErrorPage/ui/ErrorPage";
 import { routeMap } from "./routeMap";
 import { AppRoute } from "@/widgets/MainMenu/model/mainMenuTypes";
+import GlobalLoader from "@/shared/ui/GlobalLoader/GlobalLoader";
 
 
 export const routes: AppRoute[] = [
@@ -17,13 +18,13 @@ export const routes: AppRoute[] = [
         index: true,
         id: 'home-page',
         element: (
-          <Suspense>
+          <Suspense >
             <LazyHomePage />
-          </Suspense>
+          </Suspense >
         ),
         meta: {
           isInMenu: false,
-          title: 'Home',
+          title: 'navigation.home',
         }
       },
       {
@@ -36,7 +37,7 @@ export const routes: AppRoute[] = [
         ),
         meta: {
           isInMenu: true,
-          title: 'About us'
+          title: 'navigation.about'
         }
       },
       {
@@ -49,7 +50,7 @@ export const routes: AppRoute[] = [
         ),
         meta: {
           isInMenu: true,
-          title: 'courses'
+          title: 'navigation.courses'
         },
       },
       {
@@ -62,7 +63,7 @@ export const routes: AppRoute[] = [
         ),
         meta: {
           isInMenu: true,
-          title: 'events'
+          title: 'navigation.events'
         },
       },
       {
@@ -75,7 +76,7 @@ export const routes: AppRoute[] = [
         ),
         meta: {
           isInMenu: true,
-          title: 'Blog'
+          title: 'navigation.blog'
         },
       },
       {
@@ -88,7 +89,7 @@ export const routes: AppRoute[] = [
         ),
         meta: {
           isInMenu: true,
-          title: 'contacts'
+          title: 'navigation.contacts'
         }
       },
       {

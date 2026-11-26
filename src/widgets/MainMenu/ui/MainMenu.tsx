@@ -8,11 +8,14 @@ import AuthHeader from '@/widgets/Header/ui/AuthHeader';
 import MobileMenu from '@/shared/ui/MobileMenu/ui/MobileMenu';
 import { useEffect, useState } from 'react';
 import useMediaQuery from '@/shared/lib/adaptive/useMediaQuery';
+import { useTranslation } from 'react-i18next';
 
 function MainMenu({
   className = ''
 }: MainMenuProps): React.JSX.Element {
   const classMainMenu = 'main-menu'
+
+  const { t } = useTranslation()
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -84,7 +87,7 @@ function MainMenu({
                 end={Boolean(route.index)}
                 onClick={closeMenu}
               >
-                {route?.meta?.title}
+                {route?.meta?.title && t(route?.meta?.title)}
               </NavLink>
             </li>
 
@@ -102,7 +105,7 @@ function MainMenu({
           size='large'
           className={`${classMainMenu}__btn ${classMainMenu}__btn`}
         >
-          Get consultation
+          {t('buttons.getConsultation')}
         </ButtonBasic>
         {!isMobile && (
           <AuthHeader />

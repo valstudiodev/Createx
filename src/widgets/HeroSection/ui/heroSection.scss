@@ -4,6 +4,7 @@
 
 .hero-section {
   position: relative;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -19,7 +20,91 @@
     pointer-events: none;
   }
 
-  &__container {}
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    translate: -30% 30%;
+    background-image: url('../assets/circle-decor.png');
+    background-repeat: no-repeat;
+    width: toRem(284);
+    height: toRem(284);
+    aspect-ratio: 1;
+    opacity: 0.2;
+  }
+
+  @media (max-width: toEm(768)) {
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: toRem(133);
+      left: toRem(82);
+      background-image: url('../assets/arrows-decor.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(95);
+      height: toRem(95);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: toRem(-20);
+      right: toRem(96);
+      background-image: url('../assets/arrows-decor.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(110);
+      height: toRem(110);
+      rotate: 135deg;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @media (max-width: toEm(768)) {
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: toRem(186);
+      right: toRem(-322);
+      background-image: url('../assets/dots-decor.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+      pointer-events: none;
+      width: toRem(187);
+      height: toRem(137);
+    }
+
+    @media (max-width: toEm(768)) {
+      &::after {
+        display: none;
+      }
+    }
+  }
 
   &__body {
     @include adaptiveValue('padding-top', 212, 150);
@@ -31,10 +116,44 @@
   }
 
   &__content {
+    position: relative;
     flex: 0 1 50%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: toRem(-140);
+      left: toRem(330);
+      background-image: url('../assets/ellepse-decor.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(60);
+      height: toRem(60);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: toRem(145);
+      right: toRem(70);
+      background-image: url('../assets/shapes-decor.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(88);
+      height: toRem(47);
+      z-index: -1;
+      pointer-events: none;
+    }
 
     @media (max-width: toEm(768)) {
       flex: 100%;
+
+      &::before,
+      &::after {
+        display: none;
+      }
     }
   }
 

@@ -9,7 +9,7 @@ function Wrapper({
 }: WrapperProps): React.JSX.Element {
   return (
     <div
-      className={`${className}`.trim()}
+      className={`${className}`}
     >
       {children}
     </div>

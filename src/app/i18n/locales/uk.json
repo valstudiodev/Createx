@@ -1,4 +1,11 @@
 {
+  "navigation": {
+    "about": "Про нас",
+    "courses": "Курси",
+    "events": "Події",
+    "blog": "Блог",
+    "contacts": "Контакти"
+  },
   "footer": {
     "siteMap": {
       "title": "КАРТА САЙТУ",
