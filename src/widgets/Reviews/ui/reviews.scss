@@ -4,9 +4,66 @@
 @use '@/shared/styles/mixins/grid' as *;
 
 .reviews {
+  position: relative;
   background-color: var(--color-gray-200);
   @include adaptiveValue('padding-top', 90, 30);
   @include adaptiveValue('padding-bottom', 80, 30);
+  // overflow: hidden;
+
+  @media (min-width: toEm(768)) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: toRem(100);
+      background-image: url('../assets/circles-small.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(145);
+      aspect-ratio: 1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      translate: 30% 30%;
+      background-image: url('../assets/circles.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(258);
+      height: toRem(258);
+      pointer-events: none;
+      opacity: 0.4;
+    }
+  }
+
+
+
+  &__container {
+    position: relative;
+
+    @media (min-width: toEm(768)) {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url('../assets/dots.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: toRem(143);
+        height: toRem(105);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.6;
+      }
+    }
+  }
+
 
   &__body {
     display: flex;
@@ -30,10 +87,27 @@
   }
 
   &__title {
+    position: relative;
     @include adaptiveValue('font-size', 46, 32);
     color: var(--color-gray-900);
     line-height: 1.3;
     @include adaptiveValue('margin-bottom', 60, 20);
+
+    @media (min-width: toEm(768)) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: toRem(30);
+        right: toRem(300);
+        background-image: url('../assets/shapes.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: toRem(87);
+        height: toRem(47);
+        pointer-events: none;
+        opacity: 0.4;
+      }
+    }
   }
 
   &__pagination {

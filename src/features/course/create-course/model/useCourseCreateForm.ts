@@ -3,6 +3,7 @@ import { CourseFormValues } from "./courseCreateForm.types";
 import { RequestStatus } from "@/shared/types/types";
 import { CreateCoursePayload } from "@/entities/course/model/course.types";
 import { createCourse } from "../api/createCourseServise";
+import { getAuth } from 'firebase/auth';
 
 
 const initialState: CourseFormValues = {
@@ -141,6 +142,22 @@ function useCourseCreateForm() {
           lessonsCount,
         },
       };
+
+      const user = getAuth().currentUser;
+
+      if (!user) {
+        throw new Error('User is not authenticated.');
+      }
+
+      const tokenResult = await user.getIdTokenResult(true);
+
+      console.log('Current user:', user.uid);
+      console.log('Admin claim:', tokenResult.claims.admin);
+      console.log('All claims:', tokenResult.claims);
+
+      if (tokenResult.claims.admin !== true) {
+        throw new Error('User does not have admin permissions.');
+      }
 
       await createCourse(payload);
 

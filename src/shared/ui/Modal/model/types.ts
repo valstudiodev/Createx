@@ -4,15 +4,16 @@ export interface ModalProps {
   className: string;
   onClose: () => void;
   children: React.ReactNode;
+  text?: string;
 }
 
 export interface ModalCloseButtonProps {
-  title: string;
   onClick: () => void;
 }
 
 export interface ModalHeaderProps {
   title: string;
+  text?: string;
 }
 
 export interface ModalContentProps {

@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import courseReducer from "@/entities/course/model/courseSlice";
 import postReducer from "@/entities/post/model/postSlice";
 import eventReducer from "@/entities/event/model/eventSlice";
+import authReducer from "@/features/auth/model/authSlice";
 
 export const store = configureStore({
   reducer: {
     courses: courseReducer,
     posts: postReducer,
     events: eventReducer,
+    auth: authReducer,
   }
 })
 

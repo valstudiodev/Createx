@@ -18,7 +18,75 @@
     pointer-events: none;
   }
 
-  &__container {}
+  &__wrapper {
+    position: relative;
+
+    @media (min-width: toEm(768)) {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url('./assets/img/circle-decor.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        width: toRem(285);
+        aspect-ratio: 1;
+        opacity: 0.2;
+        translate: -30% 70%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url('./assets/img/dots-decor.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        width: toRem(187);
+        height: toRem(137);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    @media (min-width: toEm(768)) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: toRem(0);
+        background-image: url('./assets/img/shapes-decor.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        width: toRem(88);
+        height: toRem(47);
+        opacity: 0.6;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: toRem(-30);
+        right: toRem(0);
+        translate: 0 100%;
+        background-image: url('./assets/img/arrows-decor.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        width: toRem(110);
+        height: toRem(110);
+        opacity: 0.8;
+      }
+    }
+  }
 
   &__title {
     text-align: center;

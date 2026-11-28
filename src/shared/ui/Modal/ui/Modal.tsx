@@ -2,7 +2,7 @@ import { ModalProps } from "../model/types";
 import { useEffect } from "react";
 import { ModalHeader, ModalContent, ModalCloseButton } from "./index";
 
-export default function Modal({ title, isOpen, onClose, className, children }: ModalProps): React.JSX.Element {
+export default function Modal({ title, text, isOpen, onClose, className, children }: ModalProps): React.JSX.Element {
 
   useEffect(() => {
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth
@@ -38,14 +38,20 @@ export default function Modal({ title, isOpen, onClose, className, children }: M
   return (
     <>
       {isOpen && (
-        <div className="overlay modal-overlay" onClick={onClose}>
+        <div
+          className="overlay modal-overlay"
+          onClick={onClose}>
           <div className={className}
             onClick={(e) => e.stopPropagation()}>
-            <ModalHeader title={title} />
+            <ModalHeader
+              title={title}
+              text={text}
+            />
             <ModalContent>
               {children}
             </ModalContent>
-            <ModalCloseButton title="Close" onClick={onClose} />
+            <ModalCloseButton
+              onClick={onClose} />
           </div>
         </div>
       )}

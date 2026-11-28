@@ -3,9 +3,59 @@
 @use '@/shared/styles/theme/lightTheme' as *;
 
 .team-section {
+  position: relative;
   @include adaptiveValue('padding-top', 166, 40);
   @include adaptiveValue('padding-bottom', 90, 30);
   background-color: var(--color-gray-200);
+
+  @media (min-width: toEm(768)) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: toRem(83);
+      left: toRem(200);
+      background-image: url('./assets/img/elipse.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(41);
+      aspect-ratio: 1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: toRem(200);
+      right: 0;
+      background-image: url('./assets/img/shapes.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: toRem(96);
+      aspect-ratio: 1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    @media (min-width: toEm(768)) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: toRem(-100);
+        right: toRem(200);
+        background-image: url('./assets/img/dots.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: toRem(143);
+        height: toRem(105);
+        pointer-events: none;
+      }
+    }
+  }
 
   &__headline {
 

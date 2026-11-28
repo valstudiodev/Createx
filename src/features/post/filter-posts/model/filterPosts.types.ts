@@ -5,11 +5,11 @@ export type PostTypeFilterParams = 'all' | PostLabel
 export interface PostFilters {
   type: PostTypeFilterParams;
   category: PostCategory | 'all';
-  seacrh: string;
+  search: string;
 }
 
 export const initialPostFilters: PostFilters = {
   type: 'all',
   category: 'all',
-  seacrh: ''
+  search: ''
 }

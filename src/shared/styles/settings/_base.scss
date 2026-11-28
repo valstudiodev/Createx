@@ -18,6 +18,10 @@ body {
   line-height: 1.5;
   background-color: var(--color-white);
   color: var(--color-gray-800);
+
+  &.scroll-lock {
+    overflow: hidden;
+  }
 }
 
 [class*="__container"] {

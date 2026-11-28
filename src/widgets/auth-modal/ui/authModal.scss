@@ -1,0 +1,12 @@
+@use '@/shared/styles/settings/settings' as *;
+@use '@/shared/styles/abstracts/input-mixins' as *;
+@use '@/shared/styles/theme/lightTheme' as *;
+
+.auth-modal {
+  position: relative;
+  max-width: toRem(486);
+  background-color: var(--color-white);
+  border-radius: toRem(4);
+  overflow: hidden;
+  padding: toRem(48);
+}

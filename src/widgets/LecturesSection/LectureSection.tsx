@@ -50,31 +50,33 @@ function LectureSection(): React.JSX.Element {
 
   return (
     <Section className={leactureSection}>
-      <Container className={`${leactureSection}__container`}>
-        <Title
-          variant='centered'
-          label={t('labels.ourEvents')}
-          className={`${leactureSection}__title`}
-        >
-          {t('titles.lecturesWorkshops')}
-        </Title>
-        <EventGrid
-          events={latestEvents}
-          variant='featured'
-          viewMode='list'
-        />
-        <ExploreWrap
-          title={t('labels.doYouWantMore')}
-          actions={
-            <ButtonBasic
-              type='link'
-              to={routeMap.events.path}
-            >
-              {t('buttons.exploreAllEvents')}
-            </ButtonBasic>
-          }
-        />
-      </Container>
+      <div className={`${leactureSection}__wrapper`}>
+        <Container className={`${leactureSection}__container`}>
+          <Title
+            variant='centered'
+            label={t('labels.ourEvents')}
+            className={`${leactureSection}__title`}
+          >
+            {t('titles.lecturesWorkshops')}
+          </Title>
+          <EventGrid
+            events={latestEvents}
+            variant='featured'
+            viewMode='list'
+          />
+          <ExploreWrap
+            title={t('labels.doYouWantMore')}
+            actions={
+              <ButtonBasic
+                type='link'
+                to={routeMap.events.path}
+              >
+                {t('buttons.exploreAllEvents')}
+              </ButtonBasic>
+            }
+          />
+        </Container>
+      </div>
     </Section>
   );
 }

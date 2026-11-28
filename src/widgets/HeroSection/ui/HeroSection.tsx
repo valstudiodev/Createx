@@ -1,4 +1,4 @@
-import { Container, Section, Wrapper } from '@/shared/primitives';
+import { Container, Section } from '@/shared/primitives';
 import './heroSection.scss';
 import ButtonPlay from '@/shared/ui/Button/ButtonPlay/ButtonPlay';
 import Title from '@/shared/ui/Title/Title';

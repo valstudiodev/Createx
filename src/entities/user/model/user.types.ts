@@ -1,7 +1,7 @@
-export type UserRole = 'admin'
+export type UserRole = 'admin' | 'user'
 
-export interface User {
+export interface AuthUser {
   uid: string;
-  email: string;
+  email: string | null;
   role: UserRole;
 }

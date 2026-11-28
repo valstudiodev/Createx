@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import PostsToolbar from '@/widgets/posts/PostsToolbar/PostsToolbar';
 import { initialPostFilters, PostFilters } from '@/features/post/filter-posts/model/filterPosts.types';
 import filterPosts from '@/features/post/filter-posts/lib/filterPosts';
+import { useSearchParams } from 'react-router';
 
 
 interface BlogsSectionProps {
@@ -40,6 +41,10 @@ function BlogsSection({
 
   const [filters, setFilters] = useState<PostFilters>(initialPostFilters);
 
+  const [seacrhParams] = useSearchParams()
+
+  const searchQuery = seacrhParams.get('search') ?? '';
+
   useEffect(() => {
     dispatch(fetchPosts())
   }, [dispatch]);
@@ -48,6 +53,13 @@ function BlogsSection({
     () => filterPosts(posts, filters),
     [posts, filters]
   )
+
+  useEffect(() => {
+    setFilters((prev) => ({
+      ...prev,
+      search: searchQuery
+    }));
+  }, [searchQuery]);
 
   const totalPages = Math.ceil(filteredPosts.length / itemsPerPage)
 

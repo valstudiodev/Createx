@@ -20,15 +20,17 @@ function HeroSectionDetails({
 
   return (
     <Section className={`${heroSectionDetails} ${className}`}>
-      <Container className={`${heroSectionDetails}__container`}>
-        <Title
-          label={label}
-          className={`${heroSectionDetails}__title`}
-          variant={variant}
-        >
-          {title}
-        </Title>
-      </Container>
+      <div className={`${heroSectionDetails}__wrapper`}>
+        <Container className={`${heroSectionDetails}__container`}>
+          <Title
+            label={label}
+            className={`${heroSectionDetails}__title`}
+            variant={variant}
+          >
+            {title}
+          </Title>
+        </Container>
+      </div>
     </Section>
   );
 }

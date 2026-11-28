@@ -3,9 +3,9 @@ import { PostFilters } from "../model/filterPosts.types";
 
 
 function filterPosts(posts: Post[], filters: PostFilters): Post[] {
-  const { type, category, seacrh } = filters
+  const { type, category, search } = filters
 
-  const normalizedSearch = seacrh.trim().toLowerCase()
+  const normalizedSearch = search.trim().toLowerCase()
 
   return posts.filter((post) => {
     const matchesType = type === 'all' || post.label === type

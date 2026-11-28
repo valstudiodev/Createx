@@ -62,10 +62,6 @@ function CoursesSection({
     })
   }, [courses, filters])
 
-  console.log('Filters:', filters);
-  console.log('All courses:', courses);
-  console.log('Filtered courses:', filteredCourses);
-
   const handleFilterChange = useCallback(
     (category: CourseFilterCategory, search: string) => {
       setFilters({ category, search })

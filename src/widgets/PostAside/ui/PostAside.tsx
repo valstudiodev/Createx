@@ -5,6 +5,7 @@ import { Teacher } from '@/entities/teacher/model/teacher.types';
 import TrendingPostsListWrap from './TrendingPostsList/TrendingPostsListWrap';
 import { Post } from '@/entities/post/model/post-types';
 import TagItemsWrap from './TagItems/TagItemsWrap';
+import PostSearch from '@/features/post/post-search/PostSearch';
 
 interface PostAsideProps {
   author: Teacher | undefined;
@@ -24,6 +25,7 @@ function PostAside({
       {/* <Search
         className={`${postAside}__search`}
       /> */}
+      <PostSearch />
 
       <PostAuthorWrap
         className={`${postAside}__author`}

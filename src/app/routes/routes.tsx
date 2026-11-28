@@ -5,7 +5,6 @@ import MainLayout from "@/widgets/MainLayout/ui/MainLayout";
 import ErrorPage from "@/pages/ErrorPage/ui/ErrorPage";
 import { routeMap } from "./routeMap";
 import { AppRoute } from "@/widgets/MainMenu/model/mainMenuTypes";
-import GlobalLoader from "@/shared/ui/GlobalLoader/GlobalLoader";
 
 
 export const routes: AppRoute[] = [

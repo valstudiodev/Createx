@@ -20,7 +20,7 @@ export const teachers: Teacher[] = [
     rating: 4.9,
     coursesCount: 12,
     studentsCount: 2400,
-    description: 'Marketing strategist specializing in digital marketing.',
+    description: 'An experienced marketing specialist with a strong background in digital marketing and brand development. She helps businesses build effective marketing strategies and connect with their target audiences. Her expertise includes SEO, social media marketing, and content strategy. She believes that successful marketing starts with understanding people and their needs.',
     socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.behance, socialMediaConfig.twitter],
   },
   {
@@ -32,7 +32,7 @@ export const teachers: Teacher[] = [
     rating: 4.8,
     coursesCount: 8,
     studentsCount: 1850,
-    description: 'HR professional specializing in talent acquisition.',
+    description: 'An HR specialist with a passion for people development and talent management. She has extensive experience in recruitment, employee engagement, and building positive workplace cultures. She helps organizations attract talented professionals and develop effective HR strategies. Her teaching focuses on communication, teamwork, and creating supportive work environments.',
     socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.facebook],
   },
   {
@@ -44,8 +44,8 @@ export const teachers: Teacher[] = [
     rating: 4.9,
     coursesCount: 15,
     studentsCount: 3100,
-    description: 'Product designer focused on user-centered interfaces.',
-    socialMedia: [socialMediaConfig.behance],
+    description: 'A talented designer with a strong background in graphic design and visual communication. She specializes in creating memorable brand identities and engaging digital experiences. Her work combines creativity, functionality, and attention to detail. She encourages students to develop their own visual style and approach every project with curiosity.',
+    socialMedia: [socialMediaConfig.behance, socialMediaConfig.facebook, socialMediaConfig.twitter],
   },
   {
     id: 'teacher-4',
@@ -56,8 +56,8 @@ export const teachers: Teacher[] = [
     rating: 5,
     coursesCount: 10,
     studentsCount: 2750,
-    description: 'Frontend developer specializing in JavaScript and React.',
-    socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.behance],
+    description: 'An experienced web developer specializing in modern frontend technologies and responsive web applications. He works with JavaScript, TypeScript, React, and modern development tools. His teaching approach focuses on clean code, problem-solving, and practical programming skills. He helps students understand complex concepts and build real-world applications.',
+    socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.behance, socialMediaConfig.twitter],
   },
   {
     id: 'teacher-5',
@@ -68,7 +68,7 @@ export const teachers: Teacher[] = [
     rating: 4.7,
     coursesCount: 9,
     studentsCount: 1600,
-    description: 'Business expert focused on strategic planning and leadership.',
+    description: 'A human resources professional specializing in recruitment and organizational development. He has worked with companies of different sizes, helping them improve hiring processes and employee performance. His expertise includes talent acquisition, professional development, and HR management. He believes that people are the most valuable asset of every successful organization.',
     socialMedia: [socialMediaConfig.linkedin],
   },
   {
@@ -80,8 +80,8 @@ export const teachers: Teacher[] = [
     rating: 4.9,
     coursesCount: 11,
     studentsCount: 2200,
-    description: 'Creative professional specializing in branding and visual communication.',
-    socialMedia: [socialMediaConfig.behance],
+    description: 'An experienced Creative Director specializing in brand strategy, visual identity, and creative leadership. She has led multidisciplinary teams in developing innovative campaigns and memorable brand experiences. Her expertise combines design thinking, creative problem-solving, and strategic vision. She inspires students to think outside the box, develop their creative skills, and turn ideas into impactful visual solutions.',
+    socialMedia: [socialMediaConfig.behance, socialMediaConfig.facebook, socialMediaConfig.linkedin, socialMediaConfig.twitter],
   },
   {
     id: 'teacher-7',
@@ -92,7 +92,7 @@ export const teachers: Teacher[] = [
     rating: 4.8,
     coursesCount: 7,
     studentsCount: 1450,
-    description: 'Project manager focused on effective workflows and delivery.',
+    description: 'An experienced management consultant passionate about leadership and organizational development. He specializes in business planning, team management, and improving operational efficiency. She has helped companies build productive teams and achieve long-term business goals. Her lessons focus on practical management skills and effective decision-making.',
     socialMedia: [socialMediaConfig.linkedin],
   },
   {
@@ -104,7 +104,7 @@ export const teachers: Teacher[] = [
     rating: 4.9,
     coursesCount: 13,
     studentsCount: 2900,
-    description: 'Marketing consultant specializing in content and social media.',
+    description: 'A creative marketing professional specializing in brand positioning and marketing communications. He has worked with international companies, helping them develop recognizable brands and successful campaigns. His teaching approach combines practical knowledge with real-world business examples. He encourages students to think strategically and creatively.',
     socialMedia: [
       socialMediaConfig.facebook,
       socialMediaConfig.twitter,
@@ -119,7 +119,7 @@ export const teachers: Teacher[] = [
     rating: 4.8,
     coursesCount: 14,
     studentsCount: 2600,
-    description: 'Developer specializing in JavaScript, TypeScript, and backend technologies.',
-    socialMedia: [socialMediaConfig.linkedin],
+    description: 'A software development specialist with extensive experience in building scalable web applications. She specializes in JavaScript, backend development, and software architecture. She is passionate about writing maintainable code and applying modern development practices. Her goal is to help students become confident developers who can solve real-world technical challenges.',
+    socialMedia: [socialMediaConfig.linkedin, socialMediaConfig.twitter, socialMediaConfig.facebook],
   },
 ];

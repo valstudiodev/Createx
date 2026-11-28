@@ -9,6 +9,8 @@ import MobileMenu from '@/shared/ui/MobileMenu/ui/MobileMenu';
 import { useEffect, useState } from 'react';
 import useMediaQuery from '@/shared/lib/adaptive/useMediaQuery';
 import { useTranslation } from 'react-i18next';
+import { AuthModalType } from '@/widgets/auth-modal/model/authModal.types';
+import AuthModal from '@/widgets/auth-modal/ui/AuthModal';
 
 function MainMenu({
   className = ''
@@ -18,6 +20,8 @@ function MainMenu({
   const { t } = useTranslation()
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const [AuthModalType, setAuthModalType] = useState<AuthModalType>(null);
 
   const isMobile = useMediaQuery('(max-width:530px)')
 
@@ -56,69 +60,93 @@ function MainMenu({
     setIsMenuOpen(false)
   }
 
-  // const menuItems = routes[0].children.filter(
-  //   (route) => route?.meta?.isInMenu
-  // ) ?? []
+  const openLogin = (): void => {
+    closeMenu()
+    setAuthModalType('login')
+  }
+
+  const openSignup = (): void => {
+    closeMenu()
+    setAuthModalType('signup')
+  }
+
+  const closeAuthModal = (): void => {
+    setAuthModalType(null)
+  }
 
   const menuItems = (routes[0]?.children ?? []).filter(
     (route) => route.meta?.isInMenu,
   );
 
   return (
-    <nav
-      className={`${classMainMenu} ${className}`}
-      aria-label="Main navigation"
-    >
-      <Logo />
-      <ul className={`${classMainMenu}__list`}>
-        {menuItems.map((route) => {
-          const path = route.index ? '/' : route.path
+    <>
+      <nav
+        className={`${classMainMenu} ${className}`}
+        aria-label="Main navigation"
+      >
+        <Logo />
+        <ul className={`${classMainMenu}__list`}>
+          {menuItems.map((route) => {
+            const path = route.index ? '/' : route.path
 
-          if (!path || !route.meta?.title) return null
+            if (!path || !route.meta?.title) return null
 
-          return (
-            <li
-              key={route.id ?? path}
-              className={`${classMainMenu}__item`}
-            >
-              <NavLink
-                to={path ?? ''}
-                className={({ isActive }) => `${classMainMenu}__link ${isActive ? 'is-active' : ''}`}
-                end={Boolean(route.index)}
-                onClick={closeMenu}
+            return (
+              <li
+                key={route.id ?? path}
+                className={`${classMainMenu}__item`}
               >
-                {route?.meta?.title && t(route?.meta?.title)}
-              </NavLink>
+                <NavLink
+                  to={path ?? ''}
+                  className={({ isActive }) => `${classMainMenu}__link ${isActive ? 'is-active' : ''}`}
+                  end={Boolean(route.index)}
+                  onClick={closeMenu}
+                >
+                  {route?.meta?.title && t(route?.meta?.title)}
+                </NavLink>
+              </li>
+
+            )
+          })}
+          {isMobile && (
+            <li className={`${classMainMenu}__item`}>
+              <AuthHeader
+                onLogin={openLogin}
+                onSignup={openSignup}
+              />
             </li>
+          )}
+        </ul>
+        <div className={`${classMainMenu}__actions`}>
+          <ButtonBasic
+            type='button'
+            size='large'
+            className={`${classMainMenu}__btn ${classMainMenu}__btn`}
+          >
+            {t('buttons.getConsultation')}
+          </ButtonBasic>
+          {!isMobile && (
+            <AuthHeader
+              onLogin={openLogin}
+              onSignup={openSignup}
+            />
+          )}
+        </div>
 
-          )
-        })}
-        {isMobile && (
-          <li className={`${classMainMenu}__item`}>
-            <AuthHeader />
-          </li>
-        )}
-      </ul>
-      <div className={`${classMainMenu}__actions`}>
-        <ButtonBasic
-          type='button'
-          size='large'
-          className={`${classMainMenu}__btn ${classMainMenu}__btn`}
-        >
-          {t('buttons.getConsultation')}
-        </ButtonBasic>
-        {!isMobile && (
-          <AuthHeader />
-        )}
-      </div>
+        <MobileMenu
+          isOpen={isMenuOpen}
+          onToggle={toggleMenu}
+          className={`${className}__btn-menu`}
+          color='var(--color-garay-900)'
+        />
+      </nav>
 
-      <MobileMenu
-        isOpen={isMenuOpen}
-        onToggle={toggleMenu}
-        className={`${className}__btn-menu`}
-        color='var(--color-garay-900)'
+      <AuthModal
+        type={AuthModalType}
+        onClose={closeAuthModal}
       />
-    </nav>
+    </>
+
   );
 }
 
